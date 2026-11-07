@@ -1,0 +1,55 @@
+{
+  "id": "./",
+  "name": "دليل التحويلات الداخلية | مستشفى عبري المرجعي",
+  "short_name": "IRH",
+  "description": "دليل التحويلات الداخلية لمستشفى عبري المرجعي — بحث سريع بأسماء الأقسام وأرقام التحويلات، ويعمل بدون إنترنت.",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#0f5c5a",
+  "background_color": "#faf8f3",
+  "categories": ["medical", "productivity", "utilities"],
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "خدمات الواتساب",
+      "short_name": "واتساب",
+      "url": "./#whatsapp",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "الأجنحة ووحدات العناية",
+      "short_name": "الأجنحة",
+      "url": "./#wards",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    }
+  ]
+}

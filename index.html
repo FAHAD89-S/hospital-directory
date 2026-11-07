@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0f5c5a">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="IRH">
+<meta name="application-name" content="IRH">
+<meta name="format-detection" content="telephone=no">
+<title>دليل التحويلات الداخلية | مستشفى عبري المرجعي</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+<style>
+:root{--ink:#183d40;--muted:#627578;--teal:#087c73;--line:#dfE8e7;--bg:#f5f8f7;--focus:#087c73;--sticky:170px;color-scheme:light}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:var(--sticky)}body{margin:0;background:var(--bg);color:var(--ink);font-family:"Segoe UI",Tahoma,Arial,sans-serif;line-height:1.65}button,input{font:inherit}button,a{-webkit-tap-highlight-color:transparent}button{cursor:pointer}a{color:inherit}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--focus);outline-offset:4px}.icon{width:22px;height:22px;flex-shrink:0;vertical-align:middle}.en,.dept-name-en,.title-en{font-family:"Segoe UI",Arial,sans-serif;unicode-bidi:isolate}.en{color:var(--muted);font-weight:400}.skip-link{position:fixed;top:-100px;right:20px;z-index:100;background:white;padding:12px 20px;border-radius:10px}.skip-link:focus{top:10px}.brandbar{background:#fff;border-bottom:1px solid var(--line)}.brand-inner{max-width:1280px;margin:auto;padding:18px 32px;display:flex;align-items:center;gap:24px}.brand{display:flex;align-items:center;gap:12px}.brand>.icon{width:44px;height:44px;background:#eaf5f2;border:1px solid #d5e9e4;border-radius:13px;padding:8px;color:var(--teal)}.brand strong{font-size:15px;display:block}.brand span{display:block;font-size:11px;color:var(--muted)}.internal-tag{font-size:12px;color:var(--muted);border-inline-start:1px solid var(--line);padding-inline-start:24px}.print-btn{margin-inline-start:auto;display:flex;align-items:center;gap:9px;border:1px solid var(--line);padding:8px 13px;min-height:44px;border-radius:10px;background:#fff;font-size:12px;color:var(--ink)}.print-btn:hover{background:#edf6f3}.print-btn .icon{width:17px;height:17px}
+.masthead{background:#103f40;color:#fff;position:relative;overflow:hidden}.masthead:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 12% 15%,#24726466,transparent 60%),linear-gradient(115deg,transparent 65%,#ffffff04 65%)}.masthead-inner{max-width:1280px;padding:35px 32px 36px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:32px;position:relative}.eyebrow{font-size:11px;font-weight:600;letter-spacing:.4px;color:var(--teal)}.hero-copy .eyebrow{color:#b7d9d0;display:flex;align-items:center;gap:8px}.eyebrow>span{height:6px;width:6px;border-radius:50%;background:#76d5b6}.title-ar{font-size:clamp(27px,3.1vw,40px);font-weight:700;line-height:1.5;margin:7px 0 3px;letter-spacing:-.8px}.title-ar em{color:#9de0c8;font-style:normal}.hero-description{font-size:14px;color:#d1e1de;margin:5px 0 12px}.title-en{font-size:9px;letter-spacing:2.8px;color:#b1cdca;text-align:right;margin:0}.hero-stats{display:flex;align-items:center;gap:30px;position:relative;padding:26px 32px;border:1px solid #ffffff26;border-radius:18px;background:#ffffff05;overflow:hidden;min-width:260px}.hero-stats>div:not(.hero-symbol){display:flex;flex-direction:column;text-align:center;z-index:1}.hero-stats strong{font-size:32px;line-height:1.2;font-weight:500;direction:ltr;font-variant-numeric:tabular-nums}.hero-stats span{color:#bed6d2;font-size:11px;margin-top:8px}.hero-stats i{width:1px;height:38px;background:#ffffff26}.hero-symbol{position:absolute;left:-12px;bottom:-26px;opacity:.04}.hero-symbol .icon{width:150px;height:150px}
+.toolbar{position:sticky;top:0;z-index:30;background:#fffffff5;backdrop-filter:blur(18px);border-bottom:1px solid var(--line);box-shadow:0 3px 14px #183d4005}.toolbar-inner{max-width:1280px;margin:auto;padding:16px 32px 0}.search-label{display:block;font-size:11px;font-weight:600;margin-bottom:7px;color:var(--muted)}.search-box{position:relative;display:flex;align-items:center}.search-box>svg{position:absolute;right:17px;width:21px;height:21px;color:var(--teal);pointer-events:none}#searchInput{width:100%;height:52px;background:#f5f8f7;border:1px solid #dce6e3;border-radius:11px;padding:0 48px;font-size:15px;color:var(--ink);transition:.15s}#searchInput:focus{background:white;border-color:var(--teal);outline:none;box-shadow:0 0 0 3px #087c7319}#searchInput::placeholder{color:#738581}#clearBtn{position:absolute;left:5px;display:none;align-items:center;justify-content:center;width:44px;height:44px;background:transparent;border:0;color:var(--muted);border-radius:8px}.quick-nav{display:flex;gap:7px;overflow-x:auto;scrollbar-width:thin;padding:12px 0 10px}.nav-chip{display:flex;align-items:center;justify-content:center;gap:8px;flex:1 0 auto;min-height:43px;padding:8px 13px;background:transparent;border:1px solid transparent;border-radius:9px;color:#607575;font-size:12px;font-weight:600;white-space:nowrap}.nav-chip:hover{background:#f1f7f5;color:var(--teal)}.nav-chip.active{background:#e9f5ef;border-color:#cfe7de;color:#176e57}.nav-icon{display:flex}.nav-icon .icon{width:18px;height:18px}#resultCount{display:none;font-size:12px;color:var(--teal);padding-top:8px}
+.emergency-strip{max-width:1280px;margin:23px auto 0;padding:0 32px}.emergency-card{display:flex;align-items:center;gap:14px;background:#fff8f7;border:1px solid #f0dcd8;border-radius:13px;padding:14px 18px}.emergency-card>.ico{display:flex;color:#b65045;background:#f9e9e5;border-radius:10px;padding:10px}.emergency-label b{display:block;color:#93473e;font-size:14px}.emergency-label>span{font-size:10px;color:#9b655c}.emergency-numbers{display:flex;gap:28px;margin-inline-start:auto;align-items:center}.emergency-link{display:flex;align-items:center;gap:12px;font-size:12px;text-decoration:none;color:#864a44;min-height:44px}.emergency-link b,.emergency-link a{font-family:"Segoe UI",Arial,sans-serif;font-size:16px;text-decoration:none;font-weight:650;font-variant-numeric:tabular-nums}.emergency-link:hover b,.emergency-link a:hover{text-decoration:underline}.separator{color:#cda29c}
+.whatsapp-strip{max-width:1280px;padding:23px 32px 0;margin:auto}.whatsapp-title{display:flex;align-items:center;gap:8px;margin-bottom:11px;font-size:13px;font-weight:700}.whatsapp-title .en{font-size:10px;margin-inline-start:5px}.wa-icon{display:flex;align-items:center;justify-content:center;background:#318768;border-radius:6px;width:23px;height:23px}.wa-icon svg{width:17px;height:17px}.whatsapp-cards{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}.wa-card{display:flex;align-items:center;background:#fff;border:1px solid var(--line);border-radius:11px;padding:12px 8px;gap:4px;transition:border-color .15s,box-shadow .15s}.wa-card:hover{border-color:#82b8a6;box-shadow:0 4px 16px #183d4008}.wa-card-main{display:flex;align-items:center;gap:8px;flex:1;min-width:0;text-decoration:none}.wa-card-icon{display:flex;align-items:center;justify-content:center;width:31px;height:36px;flex-shrink:0;color:#328367}.wa-card-icon .icon{width:22px;height:22px}.wa-card-text{display:flex;flex-direction:column;gap:4px;min-width:0}.wa-name{font-size:11px;font-weight:600;line-height:1.5}.wa-num{font-size:11px;color:#547568;direction:ltr;unicode-bidi:isolate;text-align:right;font-variant-numeric:tabular-nums}.wa-share-btn{width:32px;min-height:44px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#67877b;border-radius:7px}.wa-share-btn:hover{background:#eaf4ef}
+main{max-width:1280px;margin:0 auto;padding:29px 32px 45px;outline:none}.directory-heading{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:20px}.directory-heading h2{font-size:20px;margin:2px 0 0;font-weight:650;letter-spacing:-.35px}.directory-hint{display:flex;align-items:center;gap:7px;color:var(--muted);font-size:11px}.directory-hint .icon{width:15px;height:15px}.dept-section{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-bottom:24px;scroll-margin-top:12px;box-shadow:0 4px 16px #183d4003}.section-title{display:flex;align-items:center;gap:12px;margin:0;padding:19px 22px;border-bottom:1px solid var(--line);background:#fff}.section-icon{width:42px;height:42px;display:flex;align-items:center;justify-content:center;background:#edf5f1;color:#2b8069;border-radius:11px}.section-title-text{display:flex;flex-direction:column;gap:0}.section-title-text .ar{font-size:16px;font-weight:650}.section-title-text .en{font-size:11px}.section-count{margin-inline-start:auto;background:#f0f5f3;color:#527369;border:1px solid #e1eae5;min-width:30px;text-align:center;padding:2px 8px;border-radius:7px;font-size:12px;font-weight:500}.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;table-layout:fixed}.col-name-header{width:34%}.dept-table th{text-align:right;padding:11px 22px;background:#f9fbfa;border-bottom:1px solid #e9eeec;font-size:11px;color:#506c68;font-weight:600}.dept-table th .en{font-size:9px;color:#718680;display:inline-block}.dept-table td{padding:14px 22px;vertical-align:middle}.dept-table tbody tr{border-bottom:1px solid #edf1ef}.dept-table tbody tr:last-child{border:0}.dept-table tbody tr:hover{background:#fafcfb}.dept-name-ar{font-size:13px;font-weight:600}.dept-name-en{font-size:10px;color:#6c807c;margin-top:3px;direction:ltr;text-align:right}.badge{display:inline-flex;align-items:center;gap:7px;border:1px solid #dae6e2;background:#f2f7f4;color:#315f52;padding:6px 10px;border-radius:7px;text-decoration:none;font:600 13px "Segoe UI",Arial,sans-serif;min-height:38px;direction:ltr;unicode-bidi:isolate;font-variant-numeric:tabular-nums;transition:background .15s,border-color .15s}.badge .icon{width:13px;height:13px;opacity:.65}.badge:hover{border-color:#6ea38c;background:#e2f0e8}.badge-rec{background:#edf7f3;border-color:#d3e8de;color:#286a53}.badge-hod{background:#fbf6e9;border-color:#eee2bf;color:#806323}.badge-oncall{background:#fcf0ed;border-color:#f0d6cd;color:#a35644}.badge-group{display:inline-flex;align-items:center;flex-wrap:wrap;gap:5px;margin:3px 0 3px 5px}.badge-label{font-size:10px;color:#71827b;direction:ltr;unicode-bidi:isolate}.hidden-row,.hidden-section{display:none!important}#noResults{display:none;text-align:center;padding:55px 20px;border:1px dashed #cbded7;border-radius:14px;background:white;color:var(--muted)}#noResults .ico{color:var(--teal)}#noResults .ico svg{width:40px;height:40px}#noResults h3{font-size:19px;color:var(--ink);margin:12px 0 4px}#noResults p{font-size:13px}#resetSearch{background:var(--teal);color:white;border:0;padding:10px 18px;border-radius:8px;min-height:44px}footer{text-align:center;color:var(--muted);font-size:11px;padding:25px 20px 30px;border-top:1px solid var(--line)}.credit{font-size:10px;display:inline-block;margin-top:5px}#backTop{position:fixed;bottom:24px;left:24px;width:44px;height:44px;display:none;align-items:center;justify-content:center;border:1px solid #d2e3db;border-radius:12px;background:white;color:var(--teal);box-shadow:0 5px 20px #163e3a15;z-index:35}#shareToast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);padding:12px 20px;border-radius:10px;background:var(--ink);color:white;font-size:13px;z-index:50;display:none}#shareToast.show{display:block}
+@media(min-width:1500px){.masthead-inner{padding-top:44px;padding-bottom:44px}}
+@media(max-width:1100px){.emergency-numbers{gap:16px}.emergency-link{gap:7px}.whatsapp-cards{grid-template-columns:repeat(3,minmax(0,1fr))}.hero-stats{min-width:230px;gap:25px;padding:24px}.nav-chip{padding:8px 10px}.dept-table td,.dept-table th{padding-inline:14px}}
+@media(max-width:760px){.brand-inner{padding:13px 18px;gap:10px}.brand strong{font-size:13px}.brand span{font-size:9px}.internal-tag{display:none}.print-btn{padding:8px 10px}.print-btn span{display:none}.masthead-inner{padding:25px 18px 26px;gap:15px}.title-ar{font-size:28px}.hero-description{font-size:12px;max-width:330px}.title-en{font-size:8px;letter-spacing:1.6px}.hero-stats{display:none}.toolbar-inner{padding:12px 18px 0}.search-label{font-size:10px}.search-box input{font-size:14px!important}.quick-nav{gap:5px}.nav-chip{flex:0 0 auto;font-size:11px;min-height:44px}.emergency-strip{padding:0 18px;margin-top:16px}.emergency-card{flex-wrap:wrap;padding:12px;gap:10px}.emergency-numbers{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:5px 12px;border-top:1px solid #f0dfda;padding-top:8px}.emergency-link{justify-content:space-between;gap:4px;font-size:11px;min-height:44px}.emergency-label{display:flex;gap:10px;align-items:center}.emergency-label>span{font-size:10px}.emergency-card>.ico{padding:7px}.emergency-card>.ico svg{width:18px;height:18px}.whatsapp-strip{padding:19px 18px 0}.whatsapp-cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.wa-card{padding:10px 5px}.wa-card:last-child{grid-column:1/-1}.wa-name{font-size:11px}.wa-card-main{gap:4px}.wa-share-btn{width:32px}.whatsapp-title .en{font-size:9px}main{padding:24px 18px 30px}.directory-heading{align-items:flex-start;flex-direction:column;gap:8px}.directory-heading h2{font-size:19px}.directory-hint{font-size:10px}.section-title{padding:15px;gap:10px}.section-title-text .ar{font-size:14px}.section-title-text .en{font-size:10px}.section-icon{width:36px;height:36px}.dept-section{border-radius:12px;margin-bottom:18px}.table-wrap{overflow:visible}table,.dept-table tbody{display:block;width:100%}.dept-table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}.dept-table tr.dept-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:16px}.dept-table td{padding:0;display:block;min-width:0}.dept-table .col-name{grid-column:1/-1;margin-bottom:0}.dept-name-ar{font-size:14px}.dept-name-en{font-size:11px}.dept-table td:not(.col-name):before{content:attr(data-label);display:block;font-size:10px;color:#667e75;margin-bottom:3px}.dept-table td[colspan]{grid-column:1/-1}.badge{min-height:44px;font-size:14px;padding:7px 12px}.badge .icon{width:14px;height:14px}.badge-group{gap:5px;margin:2px 0 2px 4px}.empty-cell{display:none!important}.badge-label{font-size:10px}#backTop{bottom:16px;left:16px}.search-label{margin-bottom:5px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+@media print{.toolbar,.whatsapp-strip,.emergency-strip,.print-btn,.skip-link,#backTop,#shareToast,.directory-hint{display:none!important}html{scroll-padding-top:0}body{background:#fff;color:#000;font-size:10px}.masthead{background:#fff;color:#183d40}.masthead-inner{padding:15px 0}.hero-copy .eyebrow,.hero-description,.title-en{color:#435f58}.hero-stats{display:none}.title-ar em{color:#183d40}.brand-inner{padding:10px 0}main{padding:10px 0}.dept-section{break-inside:auto;border-radius:0;box-shadow:none}.section-title{padding:10px;break-after:avoid}.dept-table thead{display:table-header-group}.dept-table td,.dept-table th{padding:7px}.dept-row{break-inside:avoid}.badge{min-height:0;background:white;padding:3px 6px}.badge .icon{display:none}footer{padding:10px}}
+
+
+/* Vibrant edition: expressive header, color-coded navigation and contact cards. */
+:root{--ink:#1f2647;--muted:#626b82;--teal:#3054d6;--focus:#3152dc;--line:#e1e5f0;--bg:#f4f5fa}
+body{background:#f4f5fa;font-family:"Segoe UI",Tahoma,Arial,sans-serif}.brandbar{background:#f4f5fa;border:0}.brand-inner{max-width:1320px;padding:20px 36px}.brand>.icon{background:#2d50df;color:#fff;border:0;border-radius:16px;width:48px;height:48px;box-shadow:0 5px 12px #2d50df20}.brand strong{font-size:16px}.brand span{font-size:11px}.internal-tag{border:0;padding:6px 13px;background:#e6eafa;color:#536190;border-radius:20px}.print-btn{border:1px solid #d9deec;border-radius:50px;background:transparent;padding:10px 18px;font-weight:600}.print-btn:hover{background:#e7ebff}
+.masthead{margin:0 auto;max-width:1248px;border-radius:30px;background:#2c50e3;color:white;isolation:isolate;overflow:hidden}.masthead:before{background:radial-gradient(ellipse at 18% 105%,#65b6ff99,transparent 50%),linear-gradient(120deg,#243dca44,transparent 60%)}.masthead:after{content:"";position:absolute;inset:0;background-image:radial-gradient(#ffffff32 .8px,transparent .8px);background-size:19px 19px;mask-image:linear-gradient(90deg,#000,transparent 60%);z-index:-1}.masthead-inner{padding:40px 48px 43px;gap:25px;min-height:350px}.hero-copy{position:relative;z-index:2}.hero-copy .eyebrow{color:white;font-size:12px;letter-spacing:0;font-weight:600;gap:8px}.eyebrow>span{background:#c4f58d;width:7px;height:7px;box-shadow:0 0 0 5px #ffffff12}.title-ar{font-size:clamp(38px,4vw,55px);line-height:1.45;letter-spacing:-1.6px;margin:12px 0 8px;font-weight:800}.title-ar em{color:#cbf99a;display:inline-block}.hero-description{font-size:15px;color:#ecedff;line-height:1.8;margin:7px 0 22px}.hero-bottom{display:flex;align-items:center;gap:22px;font-size:12px;color:#e5eaff}.hero-bottom>span{white-space:nowrap}.hero-bottom b{font-size:18px;color:#fff;margin-inline-end:4px;font-weight:600}.hero-cta{display:flex;align-items:center;gap:15px;border:1px solid #ffffff55;padding:7px 15px;border-radius:30px;color:#fff;text-decoration:none;min-height:44px;font-weight:600}.hero-cta:hover{background:#fff;color:#2e50df}.hero-cta>span{font-size:22px;line-height:1}.connection-art{position:relative;width:410px;height:280px;flex-shrink:0;margin-left:5px}.orbit{position:absolute;width:250px;height:250px;border:1px solid #ffffff30;border-radius:50%;top:16px;left:60px;transform:rotate(-25deg)}.orbit-two{width:350px;height:180px;top:53px;left:15px;transform:rotate(-34deg);border-color:#ffffff45}.orbit-one:before{content:"";width:13px;height:13px;background:#cafd9c;border-radius:50%;position:absolute;top:26px;left:24px;box-shadow:0 0 24px #cafd9c88}.phone-sculpture{position:absolute;left:102px;top:48px;display:grid;place-items:center;width:160px;height:170px;background:linear-gradient(145deg,#e4ffc4,#b3ed7d);border:1px solid #eeffdc;border-radius:45px;transform:rotate(-17deg);box-shadow:10px 14px 0 #172ba933,0 24px 60px #14268d66,inset -5px -6px 12px #79b85555;color:#2b50de}.phone-sculpture>svg{width:93px;height:93px;filter:drop-shadow(3px 3px 0 #fff9)}.floating-label{position:absolute;display:flex;align-items:center;gap:10px;padding:12px 17px;background:#fff;border:1px solid #ffffff66;color:#27386e;border-radius:16px;box-shadow:0 15px 35px #152c8130;font-size:12px;font-weight:600;z-index:2}.label-one{top:12px;right:0;transform:rotate(5deg)}.mini-dot{width:9px;height:9px;border-radius:50%;background:#6bae40}.label-two{bottom:5px;left:4px;transform:rotate(4deg);padding:12px 18px;gap:14px;background:#d6d0ff;color:#352b75}.label-two b{font-size:33px;line-height:1}.label-two span{font-size:10px;line-height:1.7}.art-spark{position:absolute;color:#c6f898;font-size:40px}.spark-one{left:13px;top:29px}.spark-two{right:30px;bottom:33px;font-size:29px;color:#fff}.art-wave{position:absolute;width:310px;bottom:42px;left:32px;opacity:.4;color:#fff;z-index:-1}
+.toolbar{margin:18px auto 0;max-width:1248px;background:#f4f5faf2;border:0;box-shadow:none;border-radius:20px;backdrop-filter:blur(20px)}.toolbar-inner{padding:12px 0 8px}.search-label{font-size:12px;color:#4c587c;margin:0 4px 8px;font-weight:600}.search-box{border-radius:18px;box-shadow:0 7px 24px #26348206}#searchInput{height:62px;font-size:17px;background:white;border:1px solid #dfe3ef;border-radius:17px;padding-right:57px}#searchInput::placeholder{color:#7a8097}#searchInput:focus{border-color:#6d83e7;box-shadow:0 0 0 4px #4766e61a}.search-box>svg{width:24px;height:24px;right:20px;color:#3054d6}.quick-nav{padding:13px 0 2px;gap:8px}.nav-chip{--accent:#465dd5;--wash:#e6ebff;min-height:51px;gap:8px;background:white;color:#48516b;border:1px solid #e2e6ef;border-radius:13px;padding:9px 12px;font-size:12px;transition:transform .18s,background .18s,box-shadow .18s}.nav-icon{width:28px;height:28px;display:grid;place-items:center;border-radius:9px;color:var(--accent);background:var(--wash)}.nav-icon .icon{width:18px;height:18px}.nav-chip[data-target="admin-fin"],#admin-fin{--accent:#8660c5;--wash:#f0e9ff}.nav-chip[data-target="tech"],#tech{--accent:#226aa6;--wash:#e0f1ff}.nav-chip[data-target="ops"],#ops{--accent:#976126;--wash:#fff0d7}.nav-chip[data-target="quality"],#quality{--accent:#27775d;--wash:#e0f5e8}.nav-chip[data-target="opd"],#opd{--accent:#b04f71;--wash:#fce8ee}.nav-chip[data-target="medical"],#medical{--accent:#447278;--wash:#e0f1f1}.nav-chip[data-target="wards"],#wards{--accent:#6955ba;--wash:#eee8ff}.nav-chip:hover{transform:translateY(-2px);background:var(--wash);border-color:var(--accent)}.nav-chip.active{background:#294edb;border-color:#294edb;color:white;box-shadow:0 4px 12px #2f50ce22}.nav-chip.active .nav-icon{background:#ffffff25;color:#fff}
+.emergency-strip{max-width:1320px;margin:16px auto 0;padding:0 36px}.emergency-card{border:0;border-radius:18px;background:#ffebe5;padding:16px 20px;gap:13px}.emergency-card>.ico{color:white;background:#e16a4a;border-radius:13px;padding:13px;box-shadow:0 5px 12px #d55a3320}.emergency-label b{font-size:16px;color:#793d30}.emergency-label>span{font-size:11px;color:#855144}.emergency-numbers{gap:10px}.emergency-link{background:#ffffffa6;border:1px solid #fff;border-radius:12px;padding:9px 13px;gap:12px;min-height:50px;font-size:12px;color:#7d4337}.emergency-link b,.emergency-link a{font-size:18px;color:#753528}.emergency-link:hover{background:#fff}
+.whatsapp-strip{max-width:1320px;padding:25px 36px 0}.whatsapp-title{font-size:16px;margin-bottom:13px;gap:9px}.whatsapp-title .en{font-size:10px;color:#68748a}.wa-icon{background:#2d8c64;width:27px;height:27px;border-radius:9px}.whatsapp-cards{gap:12px}.wa-card{background:#e8f4ec;border:1px solid #d8e8dc;padding:15px 11px;border-radius:18px;align-items:stretch;position:relative;transition:transform .2s,box-shadow .2s}.wa-card:hover{transform:translateY(-4px);box-shadow:0 10px 18px #24563a0b;border-color:#a8c4af}.wa-card-main{align-items:flex-start;flex-direction:column;gap:11px}.wa-card-icon{background:#fff;color:#2c7852;width:39px;height:39px;border-radius:12px;box-shadow:0 3px 8px #35634707}.wa-name{font-size:12px;line-height:1.6}.wa-num{font-size:12px;color:#436d53;margin-top:3px}.wa-share-btn{position:absolute;top:13px;left:9px;width:35px;border-radius:10px;color:#4a7358}.wa-share-btn:hover{background:#fff}.wa-card-text{gap:1px}
+main{max-width:1320px;padding:35px 36px 50px}.directory-heading{margin-bottom:24px}.directory-heading .eyebrow{font-size:12px;color:#5364a8}.directory-heading h2{font-size:27px;font-weight:750;letter-spacing:-.65px}.directory-hint{font-size:12px;color:#66718c;background:#e8ebf6;border-radius:30px;padding:8px 14px}.dept-section{--accent:#465dd5;--wash:#e6ebff;background:transparent;border:0;box-shadow:none;border-radius:0;margin-bottom:35px;overflow:visible}.section-title{background:transparent;border:0;padding:0 0 17px;gap:12px}.section-icon{width:45px;height:45px;background:var(--accent);color:white;border-radius:14px;box-shadow:0 5px 13px #2a386214}.section-title-text .ar{font-size:19px;font-weight:700}.section-title-text .en{font-size:10px;color:#727a92}.section-count{border:0;background:var(--wash);color:var(--accent);border-radius:9px;font-size:14px;min-width:34px;padding:4px 9px}.table-wrap{overflow:visible}table.dept-table{display:block;width:100%;table-layout:auto}.dept-table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}.dept-table tbody{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;width:100%}.dept-table tr.dept-row{display:grid;grid-template-columns:1fr 1fr;align-content:start;gap:14px 12px;padding:21px;background:#fff;border:1px solid #e0e4ef;border-radius:20px;position:relative;overflow:hidden;transition:box-shadow .2s,transform .2s,border-color .2s}.dept-table tr.dept-row:before{content:"";position:absolute;width:36px;height:4px;background:var(--accent);top:0;right:22px;border-radius:0 0 4px 4px;opacity:.65}.dept-table tr.dept-row:last-child{border:1px solid #e0e4ef}.dept-table tr.dept-row:hover{transform:translateY(-3px);border-color:var(--accent);background:white;box-shadow:0 12px 25px #2633620b}.dept-table td{display:block;min-width:0;padding:0;vertical-align:top}.dept-table .col-name{grid-column:1/-1;padding-bottom:13px;margin-bottom:0;border-bottom:1px solid #f0f1f7;min-height:67px}.dept-name-ar{font-size:15px;font-weight:650;line-height:1.7;color:#242e52}.dept-name-en{font-size:11px;color:#717a91;margin-top:4px;line-height:1.5;overflow-wrap:anywhere}.dept-table td:not(.col-name):before{content:attr(data-label);display:block;font-size:11px;color:#6a748b;margin-bottom:5px}.dept-table td[colspan]{grid-column:1/-1}.empty-cell{display:none!important}.badge-group{gap:5px;margin:2px 0 3px 4px;max-width:100%}.badge{font-size:16px;min-height:44px;padding:8px 12px;background:#edf0ff;border-color:#e0e6ff;color:#354fb1;border-radius:10px;gap:8px;transition:background .15s,transform .15s}.badge .icon{width:14px;height:14px;opacity:.75}.badge:hover{background:#2e50d7;color:#fff;border-color:#2e50d7;transform:translateY(-1px)}.badge-rec{background:#e9f6ef;border-color:#d8ebdf;color:#2c7650}.badge-hod{background:#fff3dc;border-color:#f1e3c6;color:#89651b}.badge-oncall{background:#fff0ea;border-color:#f2ded4;color:#a44c35}.badge-label{font-size:10px;color:#69748a;width:100%;overflow-wrap:anywhere}footer{background:#e9ecf6;border-top:0;color:#5d6885;font-size:12px;padding:26px 20px}.credit{font-size:11px}#backTop{background:#294edb;color:white;border:0;border-radius:50%;box-shadow:0 7px 20px #2343b52b}#noResults{grid-column:1/-1;border-color:#b9c6f2;border-radius:22px}#shareToast{background:#283f96}
+@media(prefers-reduced-motion:no-preference){.phone-sculpture{animation:float-phone 5s ease-in-out 2}.label-one{animation:float-label 6s ease-in-out 2}.masthead-inner{animation:enter .5s ease-out}.wa-card,.nav-chip,.badge{transition:transform .18s,box-shadow .18s,background .18s}@keyframes float-phone{50%{transform:translateY(-8px) rotate(-13deg)}}@keyframes float-label{50%{transform:translateY(5px) rotate(3deg)}}@keyframes enter{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}}
+@media(max-width:1320px){.masthead,.toolbar{margin-left:36px;margin-right:36px}.connection-art{width:350px;transform:scale(.94)}.emergency-link{padding:9px 10px;gap:8px}.nav-chip{font-size:11px;padding:8px 10px}.hero-bottom{gap:17px}}
+@media(max-width:1100px){.connection-art{width:280px;transform:scale(.85);transform-origin:left center}.masthead-inner{padding:32px;gap:5px}.title-ar{font-size:43px}.hero-bottom{gap:12px;font-size:11px}.hero-cta{padding:7px 12px}.emergency-card{flex-wrap:wrap}.emergency-numbers{flex:1;justify-content:flex-end;flex-wrap:wrap}.emergency-link{font-size:11px}.whatsapp-cards{grid-template-columns:repeat(5,minmax(0,1fr))}.wa-name{font-size:11px}.wa-card{padding:13px 10px}.wa-num{font-size:10px}.dept-table tbody{grid-template-columns:repeat(2,minmax(0,1fr))}.nav-chip{flex:0 0 auto}.quick-nav{padding-bottom:8px}.toolbar{border-radius:0}}
+@media(max-width:760px){.brand-inner{padding:16px 18px}.brand strong{font-size:13px}.brand span{font-size:9px}.brand>.icon{width:41px;height:41px;border-radius:13px}.print-btn{width:42px;height:42px;padding:11px;min-height:42px}.masthead{margin:0 14px;border-radius:23px}.masthead-inner{min-height:0;padding:27px 22px 28px;display:block}.title-ar{font-size:36px;letter-spacing:-1px;line-height:1.45;margin:14px 0 10px}.hero-copy .eyebrow{font-size:11px}.hero-description{font-size:12px;line-height:1.8;max-width:none;margin-bottom:18px}.hero-bottom{gap:13px;flex-wrap:wrap;font-size:10px}.hero-bottom b{font-size:16px}.hero-cta{margin-inline-start:auto;font-size:11px;padding:6px 12px;gap:10px}.connection-art{display:none}.masthead:after{mask-image:linear-gradient(90deg,#0007,transparent)}.toolbar{margin:10px 0 0;border-radius:0;padding:0 18px}.toolbar-inner{padding:12px 0 8px}.search-label{font-size:11px}#searchInput{height:55px;border-radius:14px;font-size:15px!important}.search-box>svg{width:21px;height:21px}.quick-nav{gap:7px;padding-top:11px;padding-bottom:5px}.nav-chip{font-size:11px;min-height:48px;border-radius:12px;padding:7px 10px;gap:7px}.nav-icon{width:26px;height:26px}.emergency-strip{margin-top:12px;padding:0 18px}.emergency-card{padding:13px;border-radius:17px;gap:10px}.emergency-card>.ico{padding:9px;border-radius:10px}.emergency-label{display:block}.emergency-label b{font-size:14px}.emergency-label>span{font-size:10px}.emergency-numbers{display:grid;grid-template-columns:1fr 1fr;gap:7px;width:100%;flex-basis:100%;border:0;padding-top:3px}.emergency-link{min-height:49px;padding:7px 9px;font-size:10px;gap:4px;justify-content:space-between;flex-wrap:wrap}.emergency-link b,.emergency-link a{font-size:16px}.whatsapp-strip{padding:21px 18px 0}.whatsapp-title{font-size:14px}.whatsapp-title .en{font-size:9px}.whatsapp-cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.wa-card{padding:13px;border-radius:16px}.wa-card:last-child{grid-column:1/-1}.wa-card:last-child .wa-card-main{flex-direction:row;align-items:center;gap:12px}.wa-card-icon{width:34px;height:34px;border-radius:10px}.wa-name{font-size:11px}.wa-num{font-size:11px}.wa-card-main{gap:10px}.wa-share-btn{top:9px;left:7px}main{padding:27px 18px 35px}.directory-heading{gap:12px;margin-bottom:24px}.directory-heading h2{font-size:23px;line-height:1.6;letter-spacing:-.7px}.directory-heading .eyebrow{font-size:11px}.directory-hint{font-size:10px;padding:6px 11px}.section-title{padding:0 0 13px;gap:10px}.section-title-text .ar{font-size:16px}.section-title-text .en{font-size:9px}.section-icon{width:40px;height:40px;border-radius:12px}.section-count{font-size:12px}.dept-section{margin-bottom:30px}.dept-table tbody{grid-template-columns:1fr;gap:11px}.dept-table tr.dept-row{padding:19px;gap:12px;border-radius:18px}.dept-table .col-name{min-height:0;padding-bottom:12px}.dept-name-ar{font-size:15px}.dept-name-en{font-size:11px}.badge{font-size:16px;padding:8px 12px}.dept-table td:not(.col-name):before{font-size:11px}.badge-group{gap:6px}.badge-label{font-size:10px}}
+@media print{.connection-art,.hero-bottom,.masthead:after,.masthead:before{display:none}.masthead{background:#fff;margin:0;max-width:none;color:#111;border-radius:0}.masthead-inner{min-height:0;padding:10px}.hero-copy .eyebrow,.title-ar em,.hero-description{color:#111}.title-ar{font-size:25px}.brandbar{background:#fff}.brand>.icon{background:#fff;color:#111;box-shadow:none}.dept-table tbody{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.dept-table tr.dept-row{break-inside:avoid;box-shadow:none;padding:10px;gap:8px}.dept-table .col-name{min-height:0}.dept-name-ar{font-size:12px}.dept-name-en{font-size:9px}.badge{font-size:12px;min-height:0;padding:3px 6px}.section-icon{background:#fff;color:#111;box-shadow:none}.section-title{break-after:avoid}main{padding:10px}.directory-heading h2{font-size:19px}.dept-section{margin-bottom:18px}footer{background:#fff}}
+.dept-table tr:has(> .col-ext):not(:has(> .col-hod:not(.empty-cell),> .col-oncall:not(.empty-cell),> .col-rec:not(.empty-cell)))>.col-ext{grid-column:1/-1}
+
+/* Original hospital palette, applied to the approved expressive layout. */
+:root{--ink:#1f2a2a;--muted:#5b6866;--teal:#137a73;--focus:#137a73;--line:#dfd6c2;--bg:#faf8f3;--teal-900:#0b3d3e;--teal-700:#0f5c5a;--teal-600:#137a73;--teal-500:#1a9c8f;--sand-100:#f2ede1;--amber:#c98a2c;--rose:#b0473f}
+body,.brandbar{background:var(--bg)}.brand>.icon{background:var(--teal-700);box-shadow:0 5px 12px #0b3d3e20}.brand strong{color:var(--teal-900)}.internal-tag{background:#f2ede1;color:#5b6866}.print-btn{border-color:#dfd6c2;color:#0b3d3e}.print-btn:hover{background:#f2ede1}
+.masthead{background:linear-gradient(125deg,#137a73 0%,#0f5c5a 55%,#0b3d3e 100%)}.masthead:before{background:radial-gradient(ellipse at 12% 105%,#1a9c8f88,transparent 55%)}.title-ar em{color:#f6e6c8}.hero-description{color:#e3efeb}.hero-bottom{color:#e3efeb}.hero-cta:hover{color:#0b3d3e}.eyebrow>span{background:#e6c180}.orbit-one:before{background:#f6e6c8;box-shadow:0 0 24px #f6e6c866}.phone-sculpture{background:linear-gradient(145deg,#faf8f3,#f6e6c8 65%,#e6cd97);border-color:#faf8f3;color:#0f5c5a;box-shadow:10px 14px 0 #0b3d3e33,0 24px 60px #0b3d3e55,inset -5px -6px 12px #c98a2c25}.floating-label{color:#0b3d3e;box-shadow:0 15px 35px #0b3d3e30}.mini-dot{background:#137a73}.label-two{background:#f6e6c8;color:#0b3d3e}.art-spark{color:#e6cd97}.spark-two{color:#faf8f3}
+.toolbar{background:#faf8f3f5}.search-label{color:#5b6866}.search-box{box-shadow:0 7px 24px #0b3d3e06}#searchInput{border-color:#dfd6c2;color:#1f2a2a}#searchInput::placeholder{color:#5b6866}#searchInput:focus{border-color:#137a73;box-shadow:0 0 0 4px #1a9c8f1a}.search-box>svg{color:#137a73}.nav-chip{--accent:#0f5c5a;--wash:#e8f1ee;color:#485754;border-color:#e5dfd2}.nav-chip[data-target="admin-fin"],#admin-fin{--accent:#8a5c14;--wash:#f6e6c8}.nav-chip[data-target="tech"],#tech{--accent:#137a73;--wash:#e8f1ee}.nav-chip[data-target="ops"],#ops{--accent:#8a5c14;--wash:#f6e6c8}.nav-chip[data-target="quality"],#quality{--accent:#0f5c5a;--wash:#e8f1ee}.nav-chip[data-target="opd"],#opd{--accent:#b0473f;--wash:#f5e1de}.nav-chip[data-target="medical"],#medical{--accent:#137a73;--wash:#e8f1ee}.nav-chip[data-target="wards"],#wards{--accent:#0f5c5a;--wash:#e8f1ee}.nav-chip.active{background:#0f5c5a;border-color:#0f5c5a;box-shadow:0 4px 12px #0b3d3e22;color:white}
+.emergency-card{background:#f5e1de;border:1px solid #e3c1bc}.emergency-card>.ico{background:#b0473f;box-shadow:0 5px 12px #b0473f20}.emergency-label b{color:#963b34}.emergency-label>span{color:#794640}.emergency-link{color:#794640;border-color:#fff;background:#ffffffb5}.emergency-link b,.emergency-link a{color:#963b34}.emergency-link>div>a{display:inline-flex;align-items:center;min-height:44px}.emergency-link>div{display:flex;align-items:center;direction:ltr}.separator{color:#99665e}
+.whatsapp-title .en{color:#5b6866}.wa-card{background:#e8f1ee;border-color:#c8ddd6}.wa-card:hover{border-color:#7baa9b;box-shadow:0 10px 18px #0b3d3e0b}.wa-icon{background:#137a73}.wa-card-icon{color:#0f5c5a;box-shadow:0 3px 8px #0b3d3e07}.wa-num{color:#356753}.wa-share-btn{color:#3b715f;min-width:36px;min-height:44px}.wa-name{color:#1f2a2a}.directory-heading .eyebrow{color:#137a73}.directory-hint{color:#5b6866;background:#f2ede1}.dept-section{--accent:#0f5c5a;--wash:#e8f1ee}.section-title-text .en{color:#5b6866}.section-icon{box-shadow:0 5px 13px #0b3d3e14}.dept-table tr.dept-row,.dept-table tr.dept-row:last-child{border-color:#e5dfd2}.dept-table tr.dept-row:hover{border-color:var(--accent);box-shadow:0 12px 25px #0b3d3e0b}.dept-table .col-name{border-color:#eee9de}.dept-name-ar{color:#1f2a2a}.dept-name-en,.dept-table td:not(.col-name):before,.badge-label{color:#5b6866}.badge{background:#f2ede1;border-color:#dfd6c2;color:#0b3d3e}.badge-rec{background:#e8f1ee;border-color:#c8ddd6;color:#0f5c5a}.badge-hod{background:#f6e6c8;border-color:#e6cd97;color:#8a5c14}.badge-oncall{background:#f5e1de;border-color:#e3c1bc;color:#b0473f}.badge:hover{background:#0f5c5a;border-color:#0f5c5a;color:#fff}.badge-hod:hover{background:#8a5c14;border-color:#8a5c14}.badge-oncall:hover{background:#b0473f;border-color:#b0473f}.dept-table td.many-numbers{grid-column:1/-1}.many-numbers .badge-group{vertical-align:top;margin-inline-end:9px}footer{background:#f2ede1;color:#5b6866}#backTop{background:#0f5c5a;box-shadow:0 7px 20px #0b3d3e2b}#noResults{border-color:#c8ddd6}#shareToast{background:#0b3d3e}
+@media(prefers-reduced-motion:no-preference){.phone-sculpture{animation:float-phone 4s ease-in-out 1}.label-one{animation:float-label 4s ease-in-out 1}}
+@media print{body,.brandbar,.masthead,footer{background:#fff}.masthead{color:#111}.title-ar em,.hero-description,.hero-copy .eyebrow{color:#111}.brand>.icon,.section-icon{background:#fff;color:#0b3d3e;box-shadow:none}.badge{background:#fff}.dept-table tr.dept-row{transform:none;box-shadow:none}}
+
+
+/* ===== Overrides: 3-col mobile-first quick access grid ===== */
+.quick-nav{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;overflow:visible;padding:12px 0 6px}
+.nav-chip{display:flex!important;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:6px;flex:none;width:100%;min-width:48px;min-height:88px;padding:10px 6px;white-space:normal;line-height:1.35;font-size:13px;font-weight:700;border-radius:14px}
+.nav-chip>span:last-child{display:block;font-size:13px;font-weight:700;text-align:center;overflow-wrap:anywhere}
+.nav-icon{width:44px;height:44px;border-radius:13px;margin:0 auto}
+.nav-icon .icon{width:24px;height:24px}
+@media(min-width:761px){.quick-nav{gap:12px}.nav-chip{min-height:96px;font-size:14px}.nav-chip>span:last-child{font-size:14px}}
+@media(max-width:360px){.quick-nav{gap:8px}.nav-chip,.nav-chip>span:last-child{font-size:12px}}
+footer .credit{display:block;margin-top:12px;font-size:17px;font-weight:800;color:#0f5c5a;letter-spacing:.2px}
+footer{text-align:center}
+
+/* ===== Override: toolbar scrolls with page (no sticky) so data is never covered ===== */
+.toolbar{position:static!important;top:auto!important;backdrop-filter:none!important;box-shadow:none!important}
+html{scroll-padding-top:12px!important}
+section,.dept-section,[id="admin"],[id="admin-fin"],[id="tech"],[id="ops"],[id="quality"],[id="opd"],[id="medical"],[id="wards"]{scroll-margin-top:12px!important}
+
+.nav-chip>span:last-child{display:flex!important;flex-direction:column;align-items:center;gap:2px}
+.nav-en{display:block;font-size:10px;font-weight:500;opacity:.75;line-height:1.2;direction:ltr;letter-spacing:.1px}
+.nav-chip[data-target="whatsapp"]{--accent:#128c7e;--wash:#dcf8ec}
+#whatsapp{scroll-margin-top:12px}
+
+.print-wrap{margin-inline-start:auto;display:flex;flex-direction:column;align-items:center;gap:3px}
+.print-wrap .print-btn{margin-inline-start:0}
+.prep-en{display:block;font-size:11px;color:var(--muted);line-height:1.2;white-space:nowrap}
+@media(max-width:760px){.prep-en{font-size:9px}}
+footer .credit{display:flex!important;flex-wrap:wrap;align-items:center;justify-content:center;column-gap:8px}
+footer .credit .credit-ico{width:22px;height:22px;flex:none}
+footer .credit .credit-en{flex-basis:100%;font-size:12px;font-weight:500;color:var(--muted);letter-spacing:.2px;margin-top:2px}
+
+footer .credit{flex-wrap:nowrap!important;gap:8px;white-space:nowrap}
+footer .credit .credit-en{flex-basis:auto!important;margin:0!important;font-size:13px;font-weight:600;color:var(--muted);letter-spacing:.4px;padding-inline-start:8px;border-inline-start:1px solid var(--line)}
+
+.prep-en{display:flex!important;align-items:center;gap:4px}
+.prep-en .prep-ico{width:13px;height:13px;flex:none}
+@media(max-width:760px){.prep-en .prep-ico{width:11px;height:11px}}
+footer .credit,footer .credit>span:not(.credit-en){font-size:13px!important;font-weight:600}
+footer .credit .credit-en{font-size:13px!important}
+footer .credit .credit-ico{width:18px;height:18px}
+
+
+/* ===== PWA: safe areas (notch / home indicator) ===== */
+body{padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right)}
+footer{padding-bottom:calc(30px + env(safe-area-inset-bottom))}
+#backTop{margin-bottom:env(safe-area-inset-bottom);margin-left:env(safe-area-inset-left)}
+
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#directory">تجاوز إلى دليل الأقسام</a>
+<div class="brandbar"><div class="brand-inner"><div class="brand"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21V3h8v18M3 21V9h5m8 0h5v12M10 7h4m-2-2v4M10 13h4m-4 4h4M1 21h22"/></svg><div><strong>مستشفى عبري المرجعي</strong><span lang="en" dir="ltr">Ibri Regional Hospital</span></div></div><span class="internal-tag">دليل التواصل الداخلي</span><div class="print-wrap"><button class="print-btn" id="printBtn" type="button"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V3h12v6M6 17H3V9h18v8h-3M6 14h12v7H6v-7Z"/></svg><span>طباعة الدليل</span></button><span class="prep-en" lang="en" dir="ltr"><svg class="icon prep-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg><span>FAHAD ALSHUHUMI</span></span></div></div></div>
+
+<div class="toolbar">
+  <div class="toolbar-inner">
+    <label class="search-label" for="searchInput">ابحث في دليل المستشفى</label><div class="search-box">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="searchInput" placeholder="اسم القسم أو رقم التحويلة…" autocomplete="off" enterkeyhint="search" aria-controls="directory">
+      <button id="clearBtn" aria-label="مسح البحث">✕</button>
+    </div>
+    <div id="resultCount" role="status" aria-live="polite"></div>
+    <nav class="quick-nav" id="quickNav" aria-label="الانتقال إلى أقسام الدليل">
+      <button type="button" class="nav-chip" data-target="admin" title="الإدارة"><span class="nav-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 9 9-6 9 6H3Zm2 3v6m7-6v6m7-6v6M3 21h18"/></svg></span><span>الإدارة<small class="nav-en">Management</small></span></button>
+<button type="button" class="nav-chip" data-target="admin-fin" title="الأقسام الإدارية والمالية"><span class="nav-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="14" rx="3"/><path d="M8 7V3h8v4M3 12a24 24 0 0 0 18 0m-9 0v3"/></svg></span><span>إدارية ومالية<small class="nav-en">Admin &amp; Finance</small></span></button>
+<button type="button" class="nav-chip" data-target="tech" title="أقسام الدعم الفني والتقني"><span class="nav-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 6a5 5 0 0 0-6 6l-5 5a2.8 2.8 0 0 0 4 4l5-5a5 5 0 0 0 6-6l-3 3-4-4 3-3Z"/></svg></span><span>الدعم الفني<small class="nav-en">Technical Support</small></span></button>
+<button type="button" class="nav-chip" data-target="ops" title="أقسام الدعم التشغيلي والخدمات العامة"><span class="nav-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 7 9-4 9 4v10l-9 4-9-4V7Zm0 0 9 4 9-4m-9 4v10M7 5l10 4"/></svg></span><span>خدمات عامة<small class="nav-en">General Services</small></span></button>
+<button type="button" class="nav-chip" data-target="quality" title="أقسام الجودة والسلامة والتمريض"><span class="nav-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3Z"/><path d="m8 12 3 3 5-6"/></svg></span><span>الجودة والتمريض<small class="nav-en">Quality &amp; Nursing</small></span></button>
+<button type="button" class="nav-chip" data-target="opd" title="العيادات الخارجية"><span class="nav-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 3v6a5 5 0 0 0 10 0V3M3 3h3m6 0h3M9 14v2a5 5 0 0 0 10 0v-2"/><circle cx="19" cy="11" r="3"/></svg></span><span>العيادات<small class="nav-en">Outpatient Clinics</small></span></button>
+<button type="button" class="nav-chip" data-target="medical" title="الأقسام الطبية والتشخيصية"><span class="nav-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 3 6 3-4 8-6-3 4-8ZM3 21h18M9 17H4m10-7a6 6 0 0 1 3 11"/></svg></span><span>طبية وتشخيصية<small class="nav-en">Medical &amp; Diagnostic</small></span></button>
+<button type="button" class="nav-chip" data-target="wards" title="الأجنحة ووحدات العناية"><span class="nav-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5v16m18-8v8M3 17h18M3 9h5a3 3 0 0 1 3 3v5m0-6h7a3 3 0 0 1 3 3"/></svg></span><span>الأجنحة<small class="nav-en">Wards &amp; ICU</small></span></button>
+    <button type="button" class="nav-chip" data-target="whatsapp" title="خدمات الواتساب"><span class="nav-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.7-5.2A8.5 8.5 0 1 1 21 11.5Z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.5-2-1-1 .8a4 4 0 0 1-2-2l.8-1-1-2L9 8.5Z"/></svg></span><span>خدمات الواتساب<small class="nav-en">WhatsApp Services</small></span></button>
+</nav>
+  </div>
+</div>
+
+<div class="emergency-strip">
+  <div class="emergency-card">
+    <span class="ico"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17V9a7 7 0 0 1 14 0v8M3 21h18M12 7v5m0 3h.01"/></svg></span>
+    <div class="emergency-label"><b>أرقام سريعة</b><span>الطوارئ والخدمات الأساسية</span></div>
+    <div class="emergency-numbers">
+      <a class="emergency-link" href="tel:25881276"><span>الطوارئ</span><b>1276</b></a>
+      <div class="emergency-link"><span>العناية المركزة</span><div><a href="tel:25881293">1293</a><span class="separator"> / </span><a href="tel:25881294">1294</a></div></div>
+      <a class="emergency-link" href="tel:25881133"><span>الأمن</span><b>1133</b></a>
+      <a class="emergency-link" href="tel:25882054"><span>مشرف المناوبة</span><b>2054</b></a>
+    </div>
+  </div>
+</div>
+
+<div class="whatsapp-strip" id="whatsapp">
+  <div class="whatsapp-inner">
+    <div class="whatsapp-title">
+      <span class="wa-icon" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="20" height="20" fill="#fff"><path d="M16.02 3C9.4 3 4 8.37 4 15c0 2.32.66 4.48 1.8 6.32L4 29l7.86-1.75A11.9 11.9 0 0 0 16.02 27C22.63 27 28 21.63 28 15S22.63 3 16.02 3Zm0 21.7c-2 0-3.86-.56-5.45-1.53l-.39-.23-4.66 1.04 1.02-4.54-.25-.4A9.63 9.63 0 0 1 6.3 15c0-5.36 4.36-9.7 9.72-9.7 5.36 0 9.7 4.34 9.7 9.7 0 5.36-4.34 9.7-9.7 9.7Zm5.32-7.26c-.29-.15-1.72-.85-1.98-.95-.27-.1-.46-.15-.66.15-.2.29-.75.94-.92 1.14-.17.2-.34.22-.63.07-.29-.15-1.23-.45-2.34-1.44-.87-.77-1.45-1.72-1.62-2.01-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.5.15-.17.2-.29.29-.49.1-.2.05-.37-.02-.52-.07-.15-.66-1.59-.9-2.18-.24-.57-.48-.5-.66-.5-.17 0-.37-.02-.56-.02-.2 0-.52.07-.79.37-.27.29-1.04 1.02-1.04 2.48s1.07 2.87 1.22 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.62.71.23 1.36.2 1.87.12.57-.08 1.72-.7 1.96-1.38.24-.68.24-1.26.17-1.38-.07-.13-.27-.2-.56-.35Z"/></svg>
+      </span>
+      <span>خدمات الواتساب <span class="en">— WhatsApp Services</span></span>
+    </div>
+    <div class="whatsapp-cards">
+      <div class="wa-card">
+        <a class="wa-card-main" href="https://wa.me/96825881211" target="_blank" rel="noopener">
+          <span class="wa-card-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 5c-4 0-4-4-1-4m-3 11h.01M16 12h.01M9 16q3 3 6 0"/></svg></span>
+          <span class="wa-card-text">
+            <span class="wa-name">خدمة بلاغات المواليد والوفيات</span>
+            <span class="wa-num" dir="ltr">+96825881211</span>
+          </span>
+        </a>
+        <a class="wa-share-btn" href="https://api.whatsapp.com/send?text=%D8%AE%D8%AF%D9%85%D8%A9%20%D8%A8%D9%84%D8%A7%D8%BA%D8%A7%D8%AA%20%D8%A7%D9%84%D9%85%D9%88%D8%A7%D9%84%D9%8A%D8%AF%20%D9%88%D8%A7%D9%84%D9%88%D9%81%D9%8A%D8%A7%D8%AA%20%E2%80%94%20%D8%AF%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%AA%D8%AD%D9%88%D9%8A%D9%84%D8%A7%D8%AA%20%D8%A7%D9%84%D8%AF%D8%A7%D8%AE%D9%84%D9%8A%D8%A9%D8%8C%20%D9%85%D8%B3%D8%AA%D8%B4%D9%81%D9%89%20%D8%B9%D8%A8%D8%B1%D9%8A%20%D8%A7%D9%84%D9%85%D8%B1%D8%AC%D8%B9%D9%8A%3A%20https%3A//wa.me/96825881211" target="_blank" rel="noopener" data-url="https://wa.me/96825881211" data-name="خدمة بلاغات المواليد والوفيات" aria-label="مشاركة عبر واتساب أو تطبيق آخر">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="10.5" x2="15.4" y2="6.5"/><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/></svg>
+        </a>
+      </div>
+      <div class="wa-card">
+        <a class="wa-card-main" href="https://wa.me/96825881124" target="_blank" rel="noopener">
+          <span class="wa-card-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 3v4m10-4v4M3 11h18m-14 4h3m4 0h3"/></svg></span>
+          <span class="wa-card-text">
+            <span class="wa-name">خدمة المواعيد</span>
+            <span class="wa-num" dir="ltr">+96825881124</span>
+          </span>
+        </a>
+        <a class="wa-share-btn" href="https://api.whatsapp.com/send?text=%D8%AE%D8%AF%D9%85%D8%A9%20%D8%A7%D9%84%D9%85%D9%88%D8%A7%D8%B9%D9%8A%D8%AF%20%E2%80%94%20%D8%AF%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%AA%D8%AD%D9%88%D9%8A%D9%84%D8%A7%D8%AA%20%D8%A7%D9%84%D8%AF%D8%A7%D8%AE%D9%84%D9%8A%D8%A9%D8%8C%20%D9%85%D8%B3%D8%AA%D8%B4%D9%81%D9%89%20%D8%B9%D8%A8%D8%B1%D9%8A%20%D8%A7%D9%84%D9%85%D8%B1%D8%AC%D8%B9%D9%8A%3A%20https%3A//wa.me/96825881124" target="_blank" rel="noopener" data-url="https://wa.me/96825881124" data-name="خدمة المواعيد" aria-label="مشاركة عبر واتساب أو تطبيق آخر">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="10.5" x2="15.4" y2="6.5"/><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/></svg>
+        </a>
+      </div>
+      <div class="wa-card">
+        <a class="wa-card-main" href="https://wa.me/96825881282" target="_blank" rel="noopener">
+          <span class="wa-card-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12h5l3-8 4 16 3-8h5"/></svg></span>
+          <span class="wa-card-text">
+            <span class="wa-name">قسم العلاج الطبيعي</span>
+            <span class="wa-num" dir="ltr">+96825881282</span>
+          </span>
+        </a>
+        <a class="wa-share-btn" href="https://api.whatsapp.com/send?text=%D9%82%D8%B3%D9%85%20%D8%A7%D9%84%D8%B9%D9%84%D8%A7%D8%AC%20%D8%A7%D9%84%D8%B7%D8%A8%D9%8A%D8%B9%D9%8A%20%E2%80%94%20%D8%AF%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%AA%D8%AD%D9%88%D9%8A%D9%84%D8%A7%D8%AA%20%D8%A7%D9%84%D8%AF%D8%A7%D8%AE%D9%84%D9%8A%D8%A9%D8%8C%20%D9%85%D8%B3%D8%AA%D8%B4%D9%81%D9%89%20%D8%B9%D8%A8%D8%B1%D9%8A%20%D8%A7%D9%84%D9%85%D8%B1%D8%AC%D8%B9%D9%8A%3A%20https%3A//wa.me/96825881282" target="_blank" rel="noopener" data-url="https://wa.me/96825881282" data-name="قسم العلاج الطبيعي" aria-label="مشاركة عبر واتساب أو تطبيق آخر">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="10.5" x2="15.4" y2="6.5"/><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/></svg>
+        </a>
+      </div>
+      <div class="wa-card">
+        <a class="wa-card-main" href="https://wa.me/96825881217" target="_blank" rel="noopener">
+          <span class="wa-card-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 4-6 6a6 6 0 0 0 8 8l6-6a6 6 0 0 0-8-8Zm-3 3 10 10"/></svg></span>
+          <span class="wa-card-text">
+            <span class="wa-name">الصيدلية</span>
+            <span class="wa-num" dir="ltr">+96825881217</span>
+          </span>
+        </a>
+        <a class="wa-share-btn" href="https://api.whatsapp.com/send?text=%D8%A7%D9%84%D8%B5%D9%8A%D8%AF%D9%84%D9%8A%D8%A9%20%E2%80%94%20%D8%AF%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%AA%D8%AD%D9%88%D9%8A%D9%84%D8%A7%D8%AA%20%D8%A7%D9%84%D8%AF%D8%A7%D8%AE%D9%84%D9%8A%D8%A9%D8%8C%20%D9%85%D8%B3%D8%AA%D8%B4%D9%81%D9%89%20%D8%B9%D8%A8%D8%B1%D9%8A%20%D8%A7%D9%84%D9%85%D8%B1%D8%AC%D8%B9%D9%8A%3A%20https%3A//wa.me/96825881217" target="_blank" rel="noopener" data-url="https://wa.me/96825881217" data-name="الصيدلية" aria-label="مشاركة عبر واتساب أو تطبيق آخر">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="10.5" x2="15.4" y2="6.5"/><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/></svg>
+        </a>
+      </div>
+      <div class="wa-card">
+        <a class="wa-card-main" href="https://wa.me/96825881118" target="_blank" rel="noopener">
+          <span class="wa-card-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11a9 9 0 0 1-9 9H3l1-5A9 9 0 1 1 21 11Z"/><path d="M8 10h8m-8 4h5"/></svg></span>
+          <span class="wa-card-text">
+            <span class="wa-name">العلاقات العامة</span>
+            <span class="wa-num" dir="ltr">+96825881118</span>
+          </span>
+        </a>
+        <a class="wa-share-btn" href="https://api.whatsapp.com/send?text=%D8%A7%D9%84%D8%B9%D9%84%D8%A7%D9%82%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B9%D8%A7%D9%85%D8%A9%20%E2%80%94%20%D8%AF%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%AA%D8%AD%D9%88%D9%8A%D9%84%D8%A7%D8%AA%20%D8%A7%D9%84%D8%AF%D8%A7%D8%AE%D9%84%D9%8A%D8%A9%D8%8C%20%D9%85%D8%B3%D8%AA%D8%B4%D9%81%D9%89%20%D8%B9%D8%A8%D8%B1%D9%8A%20%D8%A7%D9%84%D9%85%D8%B1%D8%AC%D8%B9%D9%8A%3A%20https%3A//wa.me/96825881118" target="_blank" rel="noopener" data-url="https://wa.me/96825881118" data-name="العلاقات العامة" aria-label="مشاركة عبر واتساب أو تطبيق آخر">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="10.5" x2="15.4" y2="6.5"/><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main id="directory" tabindex="-1"><div class="directory-heading"><div><span class="eyebrow">دليل الأقسام</span></div><span class="directory-hint"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg> اضغط على الرقم للاتصال</span></div>
+  
+    <section class="dept-section" id="admin" data-section-search="الإدارة administration">
+        <h2 class="section-title">
+            <span class="section-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 9 9-6 9 6H3Zm2 3v6m7-6v6m7-6v6M3 21h18"/></svg></span>
+            <span class="section-title-text">
+                <span class="ar">الإدارة</span>
+                <span class="en">Administration</span>
+            </span>
+            <span class="section-count">5</span>
+        </h2>
+        <div class="table-wrap">
+        <table class="dept-table">
+            <thead>
+                <tr>
+                    <th scope="col" class="col-name-header">القسم<br><span class="en">Department</span></th>
+                    <th scope="col">الأرقام الداخلية<br><span class='en'>Ext Nos</span></th><th scope="col">المسؤول<br><span class='en'>HOD</span></th><th scope="col">المناوب<br><span class='en'>On Call</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr class="dept-row" data-search="مدير المستشفى hospital director 1444 2001 1444  2001 ">
+            <td class="col-name">
+                <div class="dept-name-ar">مدير المستشفى</div>
+                <div class="dept-name-en">Hospital Director</div>
+            </td>
+            <td class="col-ext" data-label="الأرقام الداخلية Ext Nos"><span class="badge-group"><a class="badge  tel-link" href="tel:25881444" aria-label="الاتصال بالتحويلة 1444"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1444</span></a></span></td><td class="col-hod" data-label="المسؤول HOD"><span class="badge-group"><a class="badge badge-hod tel-link" href="tel:25882001" aria-label="الاتصال بالتحويلة 2001"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2001</span></a></span></td><td class="col-oncall" data-label="المناوب On Call">—</td>
+        </tr>
+        <tr class="dept-row" data-search="مساعد المدير للشؤون الطبية والطبية المساعدة asst. director of medical & paramedical 1144 2120 1144  2120 ">
+            <td class="col-name">
+                <div class="dept-name-ar">مساعد المدير للشؤون الطبية والطبية المساعدة</div>
+                <div class="dept-name-en">ASST. Director of Medical & paramedical</div>
+            </td>
+            <td class="col-ext" data-label="الأرقام الداخلية Ext Nos"><span class="badge-group"><a class="badge  tel-link" href="tel:25881144" aria-label="الاتصال بالتحويلة 1144"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1144</span></a></span></td><td class="col-hod" data-label="المسؤول HOD"><span class="badge-group"><a class="badge badge-hod tel-link" href="tel:25882120" aria-label="الاتصال بالتحويلة 2120"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2120</span></a></span></td><td class="col-oncall" data-label="المناوب On Call">—</td>
+        </tr>
+        <tr class="dept-row" data-search="مساعد المدير للشؤون الإدارية والمالية asst. director of admin & finance 1140 2025 1140  2025 ">
+            <td class="col-name">
+                <div class="dept-name-ar">مساعد المدير للشؤون الإدارية والمالية</div>
+                <div class="dept-name-en">ASST. Director of Admin & Finance</div>
+            </td>
+            <td class="col-ext" data-label="الأرقام الداخلية Ext Nos"><span class="badge-group"><a class="badge  tel-link" href="tel:25881140" aria-label="الاتصال بالتحويلة 1140"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1140</span></a></span></td><td class="col-hod" data-label="المسؤول HOD"><span class="badge-group"><a class="badge badge-hod tel-link" href="tel:25882025" aria-label="الاتصال بالتحويلة 2025"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2025</span></a></span></td><td class="col-oncall" data-label="المناوب On Call">—</td>
+        </tr>
+        <tr class="dept-row" data-search="قسم العلاقات العامة وخدمات المرضى public relations & patient services 1118 2020 2122 1118  2020 2122">
+            <td class="col-name">
+                <div class="dept-name-ar">قسم العلاقات العامة وخدمات المرضى</div>
+                <div class="dept-name-en">Public Relations & Patient Services</div>
+            </td>
+            <td class="col-ext" data-label="الأرقام الداخلية Ext Nos"><span class="badge-group"><a class="badge  tel-link" href="tel:25881118" aria-label="الاتصال بالتحويلة 1118"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1118</span></a></span></td><td class="col-hod" data-label="المسؤول HOD"><span class="badge-group"><a class="badge badge-hod tel-link" href="tel:25882020" aria-label="الاتصال بالتحويلة 2020"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2020</span></a></span></td><td class="col-oncall" data-label="المناوب On Call"><span class="badge-group"><a class="badge badge-oncall tel-link" href="tel:25882122" aria-label="الاتصال بالتحويلة 2122"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2122</span></a></span></td>
+        </tr>
+        <tr class="dept-row" data-search="قسم التنسيق والمتابعة coordinators & follow up 1318 1142 1132 1357 1318 1142 1132 1357   ">
+            <td class="col-name">
+                <div class="dept-name-ar">قسم التنسيق والمتابعة</div>
+                <div class="dept-name-en">Coordinators & follow up</div>
+            </td>
+            <td class="col-ext" data-label="الأرقام الداخلية Ext Nos"><span class="badge-group"><a class="badge  tel-link" href="tel:25881318" aria-label="الاتصال بالتحويلة 1318"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1318</span></a></span><span class="badge-group"><a class="badge  tel-link" href="tel:25881142" aria-label="الاتصال بالتحويلة 1142"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1142</span></a></span><span class="badge-group"><a class="badge  tel-link" href="tel:25881132" aria-label="الاتصال بالتحويلة 1132"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1132</span></a></span><span class="badge-group"><a class="badge  tel-link" href="tel:25881357" aria-label="الاتصال بالتحويلة 1357"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1357</span></a></span></td><td class="col-hod" data-label="المسؤول HOD">—</td><td class="col-oncall" data-label="المناوب On Call">—</td>
+        </tr>
+            </tbody>
+        </table>
+        </div>
+    </section>
+
+    <section class="dept-section" id="admin-fin" data-section-search="الأقسام الإدارية والمالية administrative & financial departments">
+        <h2 class="section-title">
+            <span class="section-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="14" rx="3"/><path d="M8 7V3h8v4M3 12a24 24 0 0 0 18 0m-9 0v3"/></svg></span>
+            <span class="section-title-text">
+                <span class="ar">الأقسام الإدارية والمالية</span>
+                <span class="en">Administrative & Financial Departments</span>
+            </span>
+            <span class="section-count">5</span>
+        </h2>
+        <div class="table-wrap">
+        <table class="dept-table">
+            <thead>
+                <tr>
+                    <th scope="col" class="col-name-header">القسم<br><span class="en">Department</span></th>
+                    <th scope="col">الأرقام الداخلية<br><span class='en'>Ext Nos</span></th><th scope="col">المسؤول<br><span class='en'>HOD</span></th><th scope="col">المناوب<br><span class='en'>On Call</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr class="dept-row" data-search="قسم الشؤون الإدارية admin affairs 1115 1353 1119 2121 1115-1353 passports dept 1119  2121 ">
+            <td class="col-name">
+                <div class="dept-name-ar">قسم الشؤون الإدارية</div>
+                <div class="dept-name-en">Admin Affairs</div>
+            </td>
+            <td class="col-ext" data-label="الأرقام الداخلية Ext Nos"><span class="badge-group"><a class="badge  tel-link" href="tel:25881115" aria-label="الاتصال بالتحويلة 1115"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1115</span></a><a class="badge  tel-link" href="tel:25881353" aria-label="الاتصال بالتحويلة 1353"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1353</span></a></span><span class="badge-group"><span class="badge-label">Passports Dept</span><a class="badge  tel-link" href="tel:25881119" aria-label="الاتصال بالتحويلة 1119"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1119</span></a></span></td><td class="col-hod" data-label="المسؤول HOD"><span class="badge-group"><a class="badge badge-hod tel-link" href="tel:25882121" aria-label="الاتصال بالتحويلة 2121"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2121</span></a></span></td><td class="col-oncall" data-label="المناوب On Call">—</td>
+        </tr>
+        <tr class="dept-row" data-search="قسم الشؤون المالية finance affairs 1146 1352 1356 1113 1112 1243 1114 1575 2012 sal&exp 1146-1352 budget 1356-1113 purch 1112-1243 adv 1114-1575  2012 ">
+            <td class="col-name">
+                <div class="dept-name-ar">قسم الشؤون المالية</div>
+                <div class="dept-name-en">Finance Affairs</div>
+            </td>
+            <td class="col-ext" data-label="الأرقام الداخلية Ext Nos"><span class="badge-group"><span class="badge-label">Salary &amp; Expenses</span><a class="badge  tel-link" href="tel:25881146" aria-label="الاتصال بالتحويلة 1146"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1146</span></a><a class="badge  tel-link" href="tel:25881352" aria-label="الاتصال بالتحويلة 1352"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1352</span></a></span><span class="badge-group"><span class="badge-label">Budget</span><a class="badge  tel-link" href="tel:25881356" aria-label="الاتصال بالتحويلة 1356"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1356</span></a><a class="badge  tel-link" href="tel:25881113" aria-label="الاتصال بالتحويلة 1113"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1113</span></a></span><span class="badge-group"><span class="badge-label">Purchase</span><a class="badge  tel-link" href="tel:25881112" aria-label="الاتصال بالتحويلة 1112"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1112</span></a><a class="badge  tel-link" href="tel:25881243" aria-label="الاتصال بالتحويلة 1243"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1243</span></a></span><span class="badge-group"><span class="badge-label">Payroll &amp; Advances</span><a class="badge  tel-link" href="tel:25881114" aria-label="الاتصال بالتحويلة 1114"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1114</span></a><a class="badge  tel-link" href="tel:25881575" aria-label="الاتصال بالتحويلة 1575"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1575</span></a></span></td><td class="col-hod" data-label="المسؤول HOD"><span class="badge-group"><a class="badge badge-hod tel-link" href="tel:25882012" aria-label="الاتصال بالتحويلة 2012"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2012</span></a></span></td><td class="col-oncall" data-label="المناوب On Call">—</td>
+        </tr>
+        <tr class="dept-row" data-search="المحاسبة accounting 1130 1130   ">
+            <td class="col-name">
+                <div class="dept-name-ar">المحاسبة</div>
+                <div class="dept-name-en">Accounting</div>
+            </td>
+            <td class="col-ext" data-label="الأرقام الداخلية Ext Nos"><span class="badge-group"><a class="badge  tel-link" href="tel:25881130" aria-label="الاتصال بالتحويلة 1130"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1130</span></a></span></td><td class="col-hod" data-label="المسؤول HOD">—</td><td class="col-oncall" data-label="المناوب On Call">—</td>
+        </tr>
+        <tr class="dept-row" data-search="قسم البريد والوثائق section of post & documents 1139 1139   ">
+            <td class="col-name">
+                <div class="dept-name-ar">قسم البريد والوثائق</div>
+                <div class="dept-name-en">Section Of Post & Documents</div>
+            </td>
+            <td class="col-ext" data-label="الأرقام الداخلية Ext Nos"><span class="badge-group"><a class="badge  tel-link" href="tel:25881139" aria-label="الاتصال بالتحويلة 1139"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1139</span></a></span></td><td class="col-hod" data-label="المسؤول HOD">—</td><td class="col-oncall" data-label="المناوب On Call">—</td>
+        </tr>
+        <tr class="dept-row" data-search="قسم المعلومات والإحصاء الصحي health information & statistics 2034 1324 1215 1128 2034 1324 ed records 1215 1128   ">
+            <td class="col-name">
+                <div class="dept-name-ar">قسم المعلومات والإحصاء الصحي</div>
+                <div class="dept-name-en">Health information & Statistics</div>
+            </td>
+            <td class="col-ext" data-label="الأرقام الداخلية Ext Nos"><span class="badge-group"><a class="badge  tel-link" href="tel:25882034" aria-label="الاتصال بالتحويلة 2034"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2034</span></a></span><span class="badge-group"><a class="badge  tel-link" href="tel:25881324" aria-label="الاتصال بالتحويلة 1324"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1324</span></a></span><span class="badge-group"><span class="badge-label">ED Records</span><a class="badge  tel-link" href="tel:25881215" aria-label="الاتصال بالتحويلة 1215"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1215</span></a></span><span class="badge-group"><a class="badge  tel-link" href="tel:25881128" aria-label="الاتصال بالتحويلة 1128"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1128</span></a></span></td><td class="col-hod" data-label="المسؤول HOD">—</td><td class="col-oncall" data-label="المناوب On Call">—</td>
+        </tr>
+            </tbody>
+        </table>
+        </div>
+    </section>
+
+    <section class="dept-section" id="tech" data-section-search="أقسام الدعم الفني والتقني technical & it support departments">
+        <h2 class="section-title">
+            <span class="section-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 6a5 5 0 0 0-6 6l-5 5a2.8 2.8 0 0 0 4 4l5-5a5 5 0 0 0 6-6l-3 3-4-4 3-3Z"/></svg></span>
+            <span class="section-title-text">
+                <span class="ar">أقسام الدعم الفني والتقني</span>
+                <span class="en">Technical & IT Support Departments</span>
+            </span>
+            <span class="section-count">3</span>
+        </h2>
+        <div class="table-wrap">
+        <table class="dept-table">
+            <thead>
+                <tr>
+                    <th scope="col" class="col-name-header">القسم<br><span class="en">Department</span></th>
+                    <th scope="col">الأرقام الداخلية<br><span class='en'>Ext Nos</span></th><th scope="col">المسؤول<br><span class='en'>HOD</span></th><th scope="col">المناوب<br><span class='en'>On Call</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr class="dept-row" data-search="قسم تقنية المعلومات it department 1127 2126 2059 2060 1127  2126 2059-2060">
+            <td class="col-name">
+                <div class="dept-name-ar">قسم تقنية المعلومات</div>
+                <div class="dept-name-en">IT Department</div>
+            </td>
+            <td class="col-ext" data-label="الأرقام الداخلية Ext Nos"><span class="badge-group"><a class="badge  tel-link" href="tel:25881127" aria-label="الاتصال بالتحويلة 1127"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1127</span></a></span></td><td class="col-hod" data-label="المسؤول HOD"><span class="badge-group"><a class="badge badge-hod tel-link" href="tel:25882126" aria-label="الاتصال بالتحويلة 2126"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2126</span></a></span></td><td class="col-oncall" data-label="المناوب On Call"><span class="badge-group"><a class="badge badge-oncall tel-link" href="tel:25882059" aria-label="الاتصال بالتحويلة 2059"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2059</span></a><a class="badge badge-oncall tel-link" href="tel:25882060" aria-label="الاتصال بالتحويلة 2060"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2060</span></a></span></td>
+        </tr>
+        <tr class="dept-row" data-search="قسم الهندسة والصيانة engineering and maintenance 1333 2063 2130 2019 2135 1333  2063 2130-2019-2135">
+            <td class="col-name">
+                <div class="dept-name-ar">قسم الهندسة والصيانة</div>
+                <div class="dept-name-en">Engineering and Maintenance</div>
+            </td>
+            <td class="col-ext" data-label="الأرقام الداخلية Ext Nos"><span class="badge-group"><a class="badge  tel-link" href="tel:25881333" aria-label="الاتصال بالتحويلة 1333"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1333</span></a></span></td><td class="col-hod" data-label="المسؤول HOD"><span class="badge-group"><a class="badge badge-hod tel-link" href="tel:25882063" aria-label="الاتصال بالتحويلة 2063"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2063</span></a></span></td><td class="col-oncall" data-label="المناوب On Call"><span class="badge-group"><a class="badge badge-oncall tel-link" href="tel:25882130" aria-label="الاتصال بالتحويلة 2130"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2130</span></a><a class="badge badge-oncall tel-link" href="tel:25882019" aria-label="الاتصال بالتحويلة 2019"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2019</span></a><a class="badge badge-oncall tel-link" href="tel:25882135" aria-label="الاتصال بالتحويلة 2135"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2135</span></a></span></td>
+        </tr>
+        <tr class="dept-row" data-search="المعدات الطبية bio-medical 1122 1515 2016 2044 1122 1515  2016-2044 ">
+            <td class="col-name">
+                <div class="dept-name-ar">المعدات الطبية</div>
+                <div class="dept-name-en">Bio-Medical</div>
+            </td>
+            <td class="col-ext" data-label="الأرقام الداخلية Ext Nos"><span class="badge-group"><a class="badge  tel-link" href="tel:25881122" aria-label="الاتصال بالتحويلة 1122"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1122</span></a></span><span class="badge-group"><a class="badge  tel-link" href="tel:25881515" aria-label="الاتصال بالتحويلة 1515"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1515</span></a></span></td><td class="col-hod" data-label="المسؤول HOD"><span class="badge-group"><a class="badge badge-hod tel-link" href="tel:25882016" aria-label="الاتصال بالتحويلة 2016"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2016</span></a><a class="badge badge-hod tel-link" href="tel:25882044" aria-label="الاتصال بالتحويلة 2044"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2044</span></a></span></td><td class="col-oncall" data-label="المناوب On Call">—</td>
+        </tr>
+            </tbody>
+        </table>
+        </div>
+    </section>
+
+    <section class="dept-section" id="ops" data-section-search="أقسام الدعم التشغيلي والخدمات العامة operational support & general services">
+        <h2 class="section-title">
+            <span class="section-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 7 9-4 9 4v10l-9 4-9-4V7Zm0 0 9 4 9-4m-9 4v10M7 5l10 4"/></svg></span>
+            <span class="section-title-text">
+                <span class="ar">أقسام الدعم التشغيلي والخدمات العامة</span>
+                <span class="en">Operational Support & General Services</span>
+            </span>
+            <span class="section-count">4</span>
+        </h2>
+        <div class="table-wrap">
+        <table class="dept-table">
+            <thead>
+                <tr>
+                    <th scope="col" class="col-name-header">القسم<br><span class="en">Department</span></th>
+                    <th scope="col">الأرقام الداخلية<br><span class='en'>Ext Nos</span></th><th scope="col">المسؤول<br><span class='en'>HOD</span></th><th scope="col">المناوب<br><span class='en'>On Call</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr class="dept-row" data-search="قسم الخدمات العامة والنقليات general services 1141 2039 2050 2092 2080 1141 supervisor 2039 services 2050-2092  2080 ">
+            <td class="col-name">
+                <div class="dept-name-ar">قسم الخدمات العامة والنقليات</div>
+                <div class="dept-name-en">General Services</div>
+            </td>
+            <td class="col-ext" data-label="الأرقام الداخلية Ext Nos"><span class="badge-group"><a class="badge  tel-link" href="tel:25881141" aria-label="الاتصال بالتحويلة 1141"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1141</span></a></span><span class="badge-group"><span class="badge-label">Supervisor</span><a class="badge  tel-link" href="tel:25882039" aria-label="الاتصال بالتحويلة 2039"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2039</span></a></span><span class="badge-group"><span class="badge-label">Services</span><a class="badge  tel-link" href="tel:25882050" aria-label="الاتصال بالتحويلة 2050"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2050</span></a><a class="badge  tel-link" href="tel:25882092" aria-label="الاتصال بالتحويلة 2092"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2092</span></a></span></td><td class="col-hod" data-label="المسؤول HOD"><span class="badge-group"><a class="badge badge-hod tel-link" href="tel:25882080" aria-label="الاتصال بالتحويلة 2080"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2080</span></a></span></td><td class="col-oncall" data-label="المناوب On Call">—</td>
+        </tr>
+        <tr class="dept-row" data-search="قسم المخازن وقطع الغيار general stores & spare parts 1137 2064 1137  2064 ">
+            <td class="col-name">
+                <div class="dept-name-ar">قسم المخازن وقطع الغيار</div>
+                <div class="dept-name-en">General Stores & spare parts</div>
+            </td>
+            <td class="col-ext" data-label="الأرقام الداخلية Ext Nos"><span class="badge-group"><a class="badge  tel-link" href="tel:25881137" aria-label="الاتصال بالتحويلة 1137"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1137</span></a></span></td><td class="col-hod" data-label="المسؤول HOD"><span class="badge-group"><a class="badge badge-hod tel-link" href="tel:25882064" aria-label="الاتصال بالتحويلة 2064"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2064</span></a></span></td><td class="col-oncall" data-label="المناوب On Call">—</td>
+        </tr>
+        <tr class="dept-row" data-search="قسم المستودعات الطبية medical stores 1105 1107 2062 1105 1107  2062 ">
+            <td class="col-name">
+                <div class="dept-name-ar">قسم المستودعات الطبية</div>
+                <div class="dept-name-en">Medical Stores</div>
+            </td>
+            <td class="col-ext" data-label="الأرقام الداخلية Ext Nos"><span class="badge-group"><a class="badge  tel-link" href="tel:25881105" aria-label="الاتصال بالتحويلة 1105"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1105</span></a></span><span class="badge-group"><a class="badge  tel-link" href="tel:25881107" aria-label="الاتصال بالتحويلة 1107"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1107</span></a></span></td><td class="col-hod" data-label="المسؤول HOD"><span class="badge-group"><a class="badge badge-hod tel-link" href="tel:25882062" aria-label="الاتصال بالتحويلة 2062"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2062</span></a></span></td><td class="col-oncall" data-label="المناوب On Call">—</td>
+        </tr>
+        <tr class="dept-row" data-search="حارس الأمن security guard 1133 1302 1325 1133 maternity ward 1302 emergency dept 1325   ">
+            <td class="col-name">
+                <div class="dept-name-ar">حارس الأمن</div>
+                <div class="dept-name-en">Security Guard</div>
+            </td>
+            <td class="col-ext" data-label="الأرقام الداخلية Ext Nos"><span class="badge-group"><a class="badge  tel-link" href="tel:25881133" aria-label="الاتصال بالتحويلة 1133"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1133</span></a></span><span class="badge-group"><span class="badge-label">Maternity Ward</span><a class="badge  tel-link" href="tel:25881302" aria-label="الاتصال بالتحويلة 1302"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1302</span></a></span><span class="badge-group"><span class="badge-label">Emergency Dept</span><a class="badge  tel-link" href="tel:25881325" aria-label="الاتصال بالتحويلة 1325"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1325</span></a></span></td><td class="col-hod" data-label="المسؤول HOD">—</td><td class="col-oncall" data-label="المناوب On Call">—</td>
+        </tr>
+            </tbody>
+        </table>
+        </div>
+    </section>
+
+    <section class="dept-section" id="quality" data-section-search="أقسام الجودة والسلامة والتمريض quality, safety & nursing departments">
+        <h2 class="section-title">
+            <span class="section-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3Z"/><path d="m8 12 3 3 5-6"/></svg></span>
+            <span class="section-title-text">
+                <span class="ar">أقسام الجودة والسلامة والتمريض</span>
+                <span class="en">Quality, Safety & Nursing Departments</span>
+            </span>
+            <span class="section-count">7</span>
+        </h2>
+        <div class="table-wrap">
+        <table class="dept-table">
+            <thead>
+                <tr>
+                    <th scope="col" class="col-name-header">القسم<br><span class="en">Department</span></th>
+                    <th scope="col">الأرقام الداخلية<br><span class='en'>Ext Nos</span></th><th scope="col">المسؤول<br><span class='en'>HOD</span></th><th scope="col">المناوب<br><span class='en'>On Call</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr class="dept-row" data-search="قسم ضمان الجودة quality assurance 1129 2114 1367 2011 1129 2114 1367  2011 ">
+            <td class="col-name">
+                <div class="dept-name-ar">قسم ضمان الجودة</div>
+                <div class="dept-name-en">Quality Assurance</div>
+            </td>
+            <td class="col-ext" data-label="الأرقام الداخلية Ext Nos"><span class="badge-group"><a class="badge  tel-link" href="tel:25881129" aria-label="الاتصال بالتحويلة 1129"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1129</span></a></span><span class="badge-group"><a class="badge  tel-link" href="tel:25882114" aria-label="الاتصال بالتحويلة 2114"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2114</span></a></span><span class="badge-group"><a class="badge  tel-link" href="tel:25881367" aria-label="الاتصال بالتحويلة 1367"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1367</span></a></span></td><td class="col-hod" data-label="المسؤول HOD"><span class="badge-group"><a class="badge badge-hod tel-link" href="tel:25882011" aria-label="الاتصال بالتحويلة 2011"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2011</span></a></span></td><td class="col-oncall" data-label="المناوب On Call">—</td>
+        </tr>
+        <tr class="dept-row" data-search="قسم الصحة البيئية والسلامة المهنية health & safety 1367 2111 1367  2111 ">
+            <td class="col-name">
+                <div class="dept-name-ar">قسم الصحة البيئية والسلامة المهنية</div>
+                <div class="dept-name-en">Health & Safety</div>
+            </td>
+            <td class="col-ext" data-label="الأرقام الداخلية Ext Nos"><span class="badge-group"><a class="badge  tel-link" href="tel:25881367" aria-label="الاتصال بالتحويلة 1367"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1367</span></a></span></td><td class="col-hod" data-label="المسؤول HOD"><span class="badge-group"><a class="badge badge-hod tel-link" href="tel:25882111" aria-label="الاتصال بالتحويلة 2111"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2111</span></a></span></td><td class="col-oncall" data-label="المناوب On Call">—</td>
+        </tr>
+        <tr class="dept-row" data-search="قسم مكافحة العدوى وخدمات التعقيم infection control 1126 2104 2090 2040 1126  2104 2090-2040">
+            <td class="col-name">
+                <div class="dept-name-ar">قسم مكافحة العدوى وخدمات التعقيم</div>
+                <div class="dept-name-en">Infection control</div>
+            </td>
+            <td class="col-ext" data-label="الأرقام الداخلية Ext Nos"><span class="badge-group"><a class="badge  tel-link" href="tel:25881126" aria-label="الاتصال بالتحويلة 1126"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1126</span></a></span></td><td class="col-hod" data-label="المسؤول HOD"><span class="badge-group"><a class="badge badge-hod tel-link" href="tel:25882104" aria-label="الاتصال بالتحويلة 2104"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2104</span></a></span></td><td class="col-oncall" data-label="المناوب On Call"><span class="badge-group"><a class="badge badge-oncall tel-link" href="tel:25882090" aria-label="الاتصال بالتحويلة 2090"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2090</span></a><a class="badge badge-oncall tel-link" href="tel:25882040" aria-label="الاتصال بالتحويلة 2040"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2040</span></a></span></td>
+        </tr>
+        <tr class="dept-row" data-search="قسم التطوير والتوجيه المهني professional development & career guidance 1110 2118 2053 1110  2118 2053">
+            <td class="col-name">
+                <div class="dept-name-ar">قسم التطوير والتوجيه المهني</div>
+                <div class="dept-name-en">Professional Development & Career guidance</div>
+            </td>
+            <td class="col-ext" data-label="الأرقام الداخلية Ext Nos"><span class="badge-group"><a class="badge  tel-link" href="tel:25881110" aria-label="الاتصال بالتحويلة 1110"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1110</span></a></span></td><td class="col-hod" data-label="المسؤول HOD"><span class="badge-group"><a class="badge badge-hod tel-link" href="tel:25882118" aria-label="الاتصال بالتحويلة 2118"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2118</span></a></span></td><td class="col-oncall" data-label="المناوب On Call"><span class="badge-group"><a class="badge badge-oncall tel-link" href="tel:25882053" aria-label="الاتصال بالتحويلة 2053"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2053</span></a></span></td>
+        </tr>
+        <tr class="dept-row" data-search="قسم التغذية nutrition therapy 1242 1436 1108 1109 2081 o.p.n.c 1242 cln-nutrition 1436 food-safety 1108 kitchen 1109  2081 ">
+            <td class="col-name">
+                <div class="dept-name-ar">قسم التغذية</div>
+                <div class="dept-name-en">Nutrition Therapy</div>
+            </td>
+            <td class="col-ext" data-label="الأرقام الداخلية Ext Nos"><span class="badge-group"><span class="badge-label">O.P.N.C</span><a class="badge  tel-link" href="tel:25881242" aria-label="الاتصال بالتحويلة 1242"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1242</span></a></span><span class="badge-group"><span class="badge-label">CLN-Nutrition</span><a class="badge  tel-link" href="tel:25881436" aria-label="الاتصال بالتحويلة 1436"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1436</span></a></span><span class="badge-group"><span class="badge-label">Food-Safety</span><a class="badge  tel-link" href="tel:25881108" aria-label="الاتصال بالتحويلة 1108"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1108</span></a></span><span class="badge-group"><span class="badge-label">Kitchen</span><a class="badge  tel-link" href="tel:25881109" aria-label="الاتصال بالتحويلة 1109"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1109</span></a></span></td><td class="col-hod" data-label="المسؤول HOD"><span class="badge-group"><a class="badge badge-hod tel-link" href="tel:25882081" aria-label="الاتصال بالتحويلة 2081"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2081</span></a></span></td><td class="col-oncall" data-label="المناوب On Call">—</td>
+        </tr>
+        <tr class="dept-row" data-search="قسم التمريض nursing 1145 2015 1145  2015 ">
+            <td class="col-name">
+                <div class="dept-name-ar">قسم التمريض</div>
+                <div class="dept-name-en">Nursing</div>
+            </td>
+            <td class="col-ext" data-label="الأرقام الداخلية Ext Nos"><span class="badge-group"><a class="badge  tel-link" href="tel:25881145" aria-label="الاتصال بالتحويلة 1145"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1145</span></a></span></td><td class="col-hod" data-label="المسؤول HOD"><span class="badge-group"><a class="badge badge-hod tel-link" href="tel:25882015" aria-label="الاتصال بالتحويلة 2015"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2015</span></a></span></td><td class="col-oncall" data-label="المناوب On Call">—</td>
+        </tr>
+        <tr class="dept-row" data-search="مشرف التمريض nursing supervisor 1136 2049 2007 2013 2054 1136 2049-2007-2013 duty supervisor 2054   ">
+            <td class="col-name">
+                <div class="dept-name-ar">مشرف التمريض</div>
+                <div class="dept-name-en">Nursing Supervisor</div>
+            </td>
+            <td class="col-ext" data-label="الأرقام الداخلية Ext Nos"><span class="badge-group"><a class="badge  tel-link" href="tel:25881136" aria-label="الاتصال بالتحويلة 1136"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1136</span></a></span><span class="badge-group"><a class="badge  tel-link" href="tel:25882049" aria-label="الاتصال بالتحويلة 2049"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2049</span></a><a class="badge  tel-link" href="tel:25882007" aria-label="الاتصال بالتحويلة 2007"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2007</span></a><a class="badge  tel-link" href="tel:25882013" aria-label="الاتصال بالتحويلة 2013"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2013</span></a></span><span class="badge-group"><span class="badge-label">Duty Supervisor</span><a class="badge  tel-link" href="tel:25882054" aria-label="الاتصال بالتحويلة 2054"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2054</span></a></span></td><td class="col-hod" data-label="المسؤول HOD">—</td><td class="col-oncall" data-label="المناوب On Call">—</td>
+        </tr>
+            </tbody>
+        </table>
+        </div>
+    </section>
+
+    <section class="dept-section" id="opd" data-section-search="العيادات الخارجية outpatient departments (opd)">
+        <h2 class="section-title">
+            <span class="section-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 3v6a5 5 0 0 0 10 0V3M3 3h3m6 0h3M9 14v2a5 5 0 0 0 10 0v-2"/><circle cx="19" cy="11" r="3"/></svg></span>
+            <span class="section-title-text">
+                <span class="ar">العيادات الخارجية</span>
+                <span class="en">Outpatient Departments (OPD)</span>
+            </span>
+            <span class="section-count">12</span>
+        </h2>
+        <div class="table-wrap">
+        <table class="dept-table">
+            <thead>
+                <tr>
+                    <th scope="col" class="col-name-header">القسم<br><span class="en">Department</span></th>
+                    <th scope="col">الاستقبال<br><span class='en'>Rec.</span></th><th scope="col">الأرقام الداخلية<br><span class='en'>Ext Nos</span></th><th scope="col">المسؤول<br><span class='en'>HOD</span></th><th scope="col">المناوب<br><span class='en'>On Call</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr class="dept-row" data-search="عيادة الجراحة surgery 1239 1238 2128 1240 2037 1239 1238 urology 2128 1240 2037 ">
+            <td class="col-name">
+                <div class="dept-name-ar">عيادة الجراحة</div>
+                <div class="dept-name-en">Surgery</div>
+            </td>
+            <td class="col-rec" data-label="الاستقبال Rec."><span class="badge-group"><a class="badge badge-rec tel-link" href="tel:25881240" aria-label="الاتصال بالتحويلة 1240"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1240</span></a></span></td><td class="col-ext" data-label="الأرقام الداخلية Ext Nos"><span class="badge-group"><a class="badge  tel-link" href="tel:25881239" aria-label="الاتصال بالتحويلة 1239"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1239</span></a></span><span class="badge-group"><a class="badge  tel-link" href="tel:25881238" aria-label="الاتصال بالتحويلة 1238"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1238</span></a></span><span class="badge-group"><span class="badge-label">Urology</span><a class="badge  tel-link" href="tel:25882128" aria-label="الاتصال بالتحويلة 2128"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2128</span></a></span></td><td class="col-hod" data-label="المسؤول HOD"><span class="badge-group"><a class="badge badge-hod tel-link" href="tel:25882037" aria-label="الاتصال بالتحويلة 2037"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2037</span></a></span></td><td class="col-oncall" data-label="المناوب On Call">—</td>
+        </tr>
+        <tr class="dept-row" data-search="عيادة العظام ortho 1323 1240 2138 1323 1240 2138 ">
+            <td class="col-name">
+                <div class="dept-name-ar">عيادة العظام</div>
+                <div class="dept-name-en">Ortho</div>
+            </td>
+            <td class="col-rec" data-label="الاستقبال Rec."><span class="badge-group"><a class="badge badge-rec tel-link" href="tel:25881240" aria-label="الاتصال بالتحويلة 1240"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1240</span></a></span></td><td class="col-ext" data-label="الأرقام الداخلية Ext Nos"><span class="badge-group"><a class="badge  tel-link" href="tel:25881323" aria-label="الاتصال بالتحويلة 1323"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1323</span></a></span></td><td class="col-hod" data-label="المسؤول HOD"><span class="badge-group"><a class="badge badge-hod tel-link" href="tel:25882138" aria-label="الاتصال بالتحويلة 2138"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2138</span></a></span></td><td class="col-oncall" data-label="المناوب On Call">—</td>
+        </tr>
+        <tr class="dept-row" data-search="عيادة طب الطوارئ accident & emergency 1275 1274 1215 1276 2082 1275-1274 er records 1215 1276 2082 ">
+            <td class="col-name">
+                <div class="dept-name-ar">عيادة طب الطوارئ</div>
+                <div class="dept-name-en">Accident & Emergency</div>
+            </td>
+            <td class="col-rec" data-label="الاستقبال Rec."><span class="badge-group"><a class="badge badge-rec tel-link" href="tel:25881276" aria-label="الاتصال بالتحويلة 1276"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1276</span></a></span></td><td class="col-ext" data-label="الأرقام الداخلية Ext Nos"><span class="badge-group"><a class="badge  tel-link" href="tel:25881275" aria-label="الاتصال بالتحويلة 1275"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1275</span></a><a class="badge  tel-link" href="tel:25881274" aria-label="الاتصال بالتحويلة 1274"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1274</span></a></span><span class="badge-group"><span class="badge-label">ER Records</span><a class="badge  tel-link" href="tel:25881215" aria-label="الاتصال بالتحويلة 1215"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1215</span></a></span></td><td class="col-hod" data-label="المسؤول HOD"><span class="badge-group"><a class="badge badge-hod tel-link" href="tel:25882082" aria-label="الاتصال بالتحويلة 2082"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2082</span></a></span></td><td class="col-oncall" data-label="المناوب On Call">—</td>
+        </tr>
+        <tr class="dept-row" data-search="عيادة العيون ophthalmology 1251 1501 1250 2072 1251 1501 1250 2072 ">
+            <td class="col-name">
+                <div class="dept-name-ar">عيادة العيون</div>
+                <div class="dept-name-en">Ophthalmology</div>
+            </td>
+            <td class="col-rec" data-label="الاستقبال Rec."><span class="badge-group"><a class="badge badge-rec tel-link" href="tel:25881250" aria-label="الاتصال بالتحويلة 1250"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1250</span></a></span></td><td class="col-ext" data-label="الأرقام الداخلية Ext Nos"><span class="badge-group"><a class="badge  tel-link" href="tel:25881251" aria-label="الاتصال بالتحويلة 1251"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1251</span></a></span><span class="badge-group"><a class="badge  tel-link" href="tel:25881501" aria-label="الاتصال بالتحويلة 1501"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1501</span></a></span></td><td class="col-hod" data-label="المسؤول HOD"><span class="badge-group"><a class="badge badge-hod tel-link" href="tel:25882072" aria-label="الاتصال بالتحويلة 2072"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2072</span></a></span></td><td class="col-oncall" data-label="المناوب On Call">—</td>
+        </tr>
+        <tr class="dept-row" data-search="عيادة الانف والاذن والحنجرة ent opd 1329 2073  1329 2073 ">
+            <td class="col-name">
+                <div class="dept-name-ar">عيادة الانف والاذن والحنجرة</div>
+                <div class="dept-name-en">ENT OPD</div>
+            </td>
+            <td class="col-rec" data-label="الاستقبال Rec."><span class="badge-group"><a class="badge badge-rec tel-link" href="tel:25881329" aria-label="الاتصال بالتحويلة 1329"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1329</span></a></span></td><td class="col-ext" data-label="الأرقام الداخلية Ext Nos">—</td><td class="col-hod" data-label="المسؤول HOD"><span class="badge-group"><a class="badge badge-hod tel-link" href="tel:25882073" aria-label="الاتصال بالتحويلة 2073"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2073</span></a></span></td><td class="col-oncall" data-label="المناوب On Call">—</td>
+        </tr>
+        <tr class="dept-row" data-search="عيادة الباطنية medicine opd 1266 1259 2086 1386 1270 2110 1266 cardiology 1259-2086 1386 1270 2110 ">
+            <td class="col-name">
+                <div class="dept-name-ar">عيادة الباطنية</div>
+                <div class="dept-name-en">Medicine OPD</div>
+            </td>
+            <td class="col-rec" data-label="الاستقبال Rec."><span class="badge-group"><a class="badge badge-rec tel-link" href="tel:25881270" aria-label="الاتصال بالتحويلة 1270"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1270</span></a></span></td><td class="col-ext" data-label="الأرقام الداخلية Ext Nos"><span class="badge-group"><a class="badge  tel-link" href="tel:25881266" aria-label="الاتصال بالتحويلة 1266"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1266</span></a></span><span class="badge-group"><span class="badge-label">Cardiology</span><a class="badge  tel-link" href="tel:25881259" aria-label="الاتصال بالتحويلة 1259"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1259</span></a><a class="badge  tel-link" href="tel:25882086" aria-label="الاتصال بالتحويلة 2086"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2086</span></a></span><span class="badge-group"><a class="badge  tel-link" href="tel:25881386" aria-label="الاتصال بالتحويلة 1386"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1386</span></a></span></td><td class="col-hod" data-label="المسؤول HOD"><span class="badge-group"><a class="badge badge-hod tel-link" href="tel:25882110" aria-label="الاتصال بالتحويلة 2110"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2110</span></a></span></td><td class="col-oncall" data-label="المناوب On Call">—</td>
+        </tr>
+        <tr class="dept-row" data-search="عيادة الأسنان dental opd 1226 2085  1226 2085 ">
+            <td class="col-name">
+                <div class="dept-name-ar">عيادة الأسنان</div>
+                <div class="dept-name-en">Dental OPD</div>
+            </td>
+            <td class="col-rec" data-label="الاستقبال Rec."><span class="badge-group"><a class="badge badge-rec tel-link" href="tel:25881226" aria-label="الاتصال بالتحويلة 1226"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1226</span></a></span></td><td class="col-ext" data-label="الأرقام الداخلية Ext Nos">—</td><td class="col-hod" data-label="المسؤول HOD"><span class="badge-group"><a class="badge badge-hod tel-link" href="tel:25882085" aria-label="الاتصال بالتحويلة 2085"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2085</span></a></span></td><td class="col-oncall" data-label="المناوب On Call">—</td>
+        </tr>
+        <tr class="dept-row" data-search="عيادة الأطفال pediatric opd 1230 2071  1230 2071 ">
+            <td class="col-name">
+                <div class="dept-name-ar">عيادة الأطفال</div>
+                <div class="dept-name-en">Pediatric OPD</div>
+            </td>
+            <td class="col-rec" data-label="الاستقبال Rec."><span class="badge-group"><a class="badge badge-rec tel-link" href="tel:25881230" aria-label="الاتصال بالتحويلة 1230"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1230</span></a></span></td><td class="col-ext" data-label="الأرقام الداخلية Ext Nos">—</td><td class="col-hod" data-label="المسؤول HOD"><span class="badge-group"><a class="badge badge-hod tel-link" href="tel:25882071" aria-label="الاتصال بالتحويلة 2071"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2071</span></a></span></td><td class="col-oncall" data-label="المناوب On Call">—</td>
+        </tr>
+        <tr class="dept-row" data-search="عيادة النساء والولادة ob-gyn clinic 1260 1258 2058 2100 1260 1258 2058 2100">
+            <td class="col-name">
+                <div class="dept-name-ar">عيادة النساء والولادة</div>
+                <div class="dept-name-en">OB-GYN Clinic</div>
+            </td>
+            <td class="col-rec" data-label="الاستقبال Rec."><span class="badge-group"><a class="badge badge-rec tel-link" href="tel:25881258" aria-label="الاتصال بالتحويلة 1258"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1258</span></a></span></td><td class="col-ext" data-label="الأرقام الداخلية Ext Nos"><span class="badge-group"><a class="badge  tel-link" href="tel:25881260" aria-label="الاتصال بالتحويلة 1260"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1260</span></a></span></td><td class="col-hod" data-label="المسؤول HOD"><span class="badge-group"><a class="badge badge-hod tel-link" href="tel:25882058" aria-label="الاتصال بالتحويلة 2058"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2058</span></a></span></td><td class="col-oncall" data-label="المناوب On Call"><span class="badge-group"><a class="badge badge-oncall tel-link" href="tel:25882100" aria-label="الاتصال بالتحويلة 2100"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2100</span></a></span></td>
+        </tr>
+        <tr class="dept-row" data-search="عيادة غسيل الكلي rmu (dialysis) 1495 2043  1495 2043 ">
+            <td class="col-name">
+                <div class="dept-name-ar">عيادة غسيل الكلي</div>
+                <div class="dept-name-en">RMU (Dialysis)</div>
+            </td>
+            <td class="col-rec" data-label="الاستقبال Rec."><span class="badge-group"><a class="badge badge-rec tel-link" href="tel:25881495" aria-label="الاتصال بالتحويلة 1495"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1495</span></a></span></td><td class="col-ext" data-label="الأرقام الداخلية Ext Nos">—</td><td class="col-hod" data-label="المسؤول HOD"><span class="badge-group"><a class="badge badge-hod tel-link" href="tel:25882043" aria-label="الاتصال بالتحويلة 2043"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2043</span></a></span></td><td class="col-oncall" data-label="المناوب On Call">—</td>
+        </tr>
+        <tr class="dept-row" data-search="العيادة النهارية day care unit 1280 2139  1280 endoscopy 2139 ">
+            <td class="col-name">
+                <div class="dept-name-ar">العيادة النهارية</div>
+                <div class="dept-name-en">Day Care Unit</div>
+            </td>
+            <td class="col-rec" data-label="الاستقبال Rec."><span class="badge-group"><a class="badge badge-rec tel-link" href="tel:25881280" aria-label="الاتصال بالتحويلة 1280"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1280</span></a></span></td><td class="col-ext" data-label="الأرقام الداخلية Ext Nos">—</td><td class="col-hod" data-label="المسؤول HOD"><span class="badge-group"><span class="badge-label">Endoscopy</span><a class="badge badge-hod tel-link" href="tel:25882139" aria-label="الاتصال بالتحويلة 2139"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2139</span></a></span></td><td class="col-oncall" data-label="المناوب On Call">—</td>
+        </tr>
+        <tr class="dept-row" data-search="عيادة الصحة النفسية psychiatric clinic 1424 1426 2088 1424 1426 2088 ">
+            <td class="col-name">
+                <div class="dept-name-ar">عيادة الصحة النفسية</div>
+                <div class="dept-name-en">Psychiatric Clinic</div>
+            </td>
+            <td class="col-rec" data-label="الاستقبال Rec."><span class="badge-group"><a class="badge badge-rec tel-link" href="tel:25881426" aria-label="الاتصال بالتحويلة 1426"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1426</span></a></span></td><td class="col-ext" data-label="الأرقام الداخلية Ext Nos"><span class="badge-group"><a class="badge  tel-link" href="tel:25881424" aria-label="الاتصال بالتحويلة 1424"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1424</span></a></span></td><td class="col-hod" data-label="المسؤول HOD"><span class="badge-group"><a class="badge badge-hod tel-link" href="tel:25882088" aria-label="الاتصال بالتحويلة 2088"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2088</span></a></span></td><td class="col-oncall" data-label="المناوب On Call">—</td>
+        </tr>
+            </tbody>
+        </table>
+        </div>
+    </section>
+
+    <section class="dept-section" id="medical" data-section-search="الأقسام الطبية والتشخيصية medical & diagnostic departments">
+        <h2 class="section-title">
+            <span class="section-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 3 6 3-4 8-6-3 4-8ZM3 21h18M9 17H4m10-7a6 6 0 0 1 3 11"/></svg></span>
+            <span class="section-title-text">
+                <span class="ar">الأقسام الطبية والتشخيصية</span>
+                <span class="en">Medical & Diagnostic Departments</span>
+            </span>
+            <span class="section-count">6</span>
+        </h2>
+        <div class="table-wrap">
+        <table class="dept-table">
+            <thead>
+                <tr>
+                    <th scope="col" class="col-name-header">القسم<br><span class="en">Department</span></th>
+                    <th scope="col">الاستقبال<br><span class='en'>Rec.</span></th><th scope="col">الأرقام الداخلية<br><span class='en'>Ext Nos</span></th><th scope="col">المسؤول<br><span class='en'>HOD</span></th><th scope="col">المناوب<br><span class='en'>On Call</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr class="dept-row" data-search="قسم الأشعة radiology 1162 1160 2009 2127 ct 1162 1160 2009 2127">
+            <td class="col-name">
+                <div class="dept-name-ar">قسم الأشعة</div>
+                <div class="dept-name-en">Radiology</div>
+            </td>
+            <td class="col-rec" data-label="الاستقبال Rec."><span class="badge-group"><a class="badge badge-rec tel-link" href="tel:25881160" aria-label="الاتصال بالتحويلة 1160"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1160</span></a></span></td><td class="col-ext" data-label="الأرقام الداخلية Ext Nos"><span class="badge-group"><span class="badge-label">CT</span><a class="badge  tel-link" href="tel:25881162" aria-label="الاتصال بالتحويلة 1162"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1162</span></a></span></td><td class="col-hod" data-label="المسؤول HOD"><span class="badge-group"><a class="badge badge-hod tel-link" href="tel:25882009" aria-label="الاتصال بالتحويلة 2009"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2009</span></a></span></td><td class="col-oncall" data-label="المناوب On Call"><span class="badge-group"><a class="badge badge-oncall tel-link" href="tel:25882127" aria-label="الاتصال بالتحويلة 2127"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2127</span></a></span></td>
+        </tr>
+        <tr class="dept-row" data-search="قسم المختبرات laboratory 1158 1150 2093 1158 1150 2093 ">
+            <td class="col-name">
+                <div class="dept-name-ar">قسم المختبرات</div>
+                <div class="dept-name-en">Laboratory</div>
+            </td>
+            <td class="col-rec" data-label="الاستقبال Rec."><span class="badge-group"><a class="badge badge-rec tel-link" href="tel:25881150" aria-label="الاتصال بالتحويلة 1150"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1150</span></a></span></td><td class="col-ext" data-label="الأرقام الداخلية Ext Nos"><span class="badge-group"><a class="badge  tel-link" href="tel:25881158" aria-label="الاتصال بالتحويلة 1158"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1158</span></a></span></td><td class="col-hod" data-label="المسؤول HOD"><span class="badge-group"><a class="badge badge-hod tel-link" href="tel:25882093" aria-label="الاتصال بالتحويلة 2093"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2093</span></a></span></td><td class="col-oncall" data-label="المناوب On Call">—</td>
+        </tr>
+        <tr class="dept-row" data-search="بنك الدم blood bank 2032 1340 supervisor 2032 1340  ">
+            <td class="col-name">
+                <div class="dept-name-ar">بنك الدم</div>
+                <div class="dept-name-en">Blood Bank</div>
+            </td>
+            <td class="col-rec" data-label="الاستقبال Rec."><span class="badge-group"><a class="badge badge-rec tel-link" href="tel:25881340" aria-label="الاتصال بالتحويلة 1340"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1340</span></a></span></td><td class="col-ext" data-label="الأرقام الداخلية Ext Nos"><span class="badge-group"><span class="badge-label">Supervisor</span><a class="badge  tel-link" href="tel:25882032" aria-label="الاتصال بالتحويلة 2032"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2032</span></a></span></td><td class="col-hod" data-label="المسؤول HOD">—</td><td class="col-oncall" data-label="المناوب On Call">—</td>
+        </tr>
+        <tr class="dept-row" data-search="قسم الصيدلة pharmacy 1217 2107  1217 2107 ">
+            <td class="col-name">
+                <div class="dept-name-ar">قسم الصيدلة</div>
+                <div class="dept-name-en">Pharmacy</div>
+            </td>
+            <td class="col-rec" data-label="الاستقبال Rec."><span class="badge-group"><a class="badge badge-rec tel-link" href="tel:25881217" aria-label="الاتصال بالتحويلة 1217"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1217</span></a></span></td><td class="col-ext" data-label="الأرقام الداخلية Ext Nos">—</td><td class="col-hod" data-label="المسؤول HOD"><span class="badge-group"><a class="badge badge-hod tel-link" href="tel:25882107" aria-label="الاتصال بالتحويلة 2107"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2107</span></a></span></td><td class="col-oncall" data-label="المناوب On Call">—</td>
+        </tr>
+        <tr class="dept-row" data-search="قسم العلاج التنفسي respiratory therapy 1370 2094  1370 2094 ">
+            <td class="col-name">
+                <div class="dept-name-ar">قسم العلاج التنفسي</div>
+                <div class="dept-name-en">Respiratory Therapy</div>
+            </td>
+            <td class="col-rec" data-label="الاستقبال Rec."><span class="badge-group"><a class="badge badge-rec tel-link" href="tel:25881370" aria-label="الاتصال بالتحويلة 1370"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1370</span></a></span></td><td class="col-ext" data-label="الأرقام الداخلية Ext Nos">—</td><td class="col-hod" data-label="المسؤول HOD"><span class="badge-group"><a class="badge badge-hod tel-link" href="tel:25882094" aria-label="الاتصال بالتحويلة 2094"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2094</span></a></span></td><td class="col-oncall" data-label="المناوب On Call">—</td>
+        </tr>
+        <tr class="dept-row" data-search="قسم التأهيل الطبي physical therapy 1285 2079  1285 2079 ">
+            <td class="col-name">
+                <div class="dept-name-ar">قسم التأهيل الطبي</div>
+                <div class="dept-name-en">Physical Therapy</div>
+            </td>
+            <td class="col-rec" data-label="الاستقبال Rec."><span class="badge-group"><a class="badge badge-rec tel-link" href="tel:25881285" aria-label="الاتصال بالتحويلة 1285"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1285</span></a></span></td><td class="col-ext" data-label="الأرقام الداخلية Ext Nos">—</td><td class="col-hod" data-label="المسؤول HOD"><span class="badge-group"><a class="badge badge-hod tel-link" href="tel:25882079" aria-label="الاتصال بالتحويلة 2079"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2079</span></a></span></td><td class="col-oncall" data-label="المناوب On Call">—</td>
+        </tr>
+            </tbody>
+        </table>
+        </div>
+    </section>
+
+    <section class="dept-section" id="wards" data-section-search="الأجنحة ووحدات العناية wards & intensive care units">
+        <h2 class="section-title">
+            <span class="section-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5v16m18-8v8M3 17h18M3 9h5a3 3 0 0 1 3 3v5m0-6h7a3 3 0 0 1 3 3"/></svg></span>
+            <span class="section-title-text">
+                <span class="ar">الأجنحة ووحدات العناية</span>
+                <span class="en">Wards & Intensive Care Units</span>
+            </span>
+            <span class="section-count">13</span>
+        </h2>
+        <div class="table-wrap">
+        <table class="dept-table">
+            <thead>
+                <tr>
+                    <th scope="col" class="col-name-header">القسم<br><span class="en">Department</span></th>
+                    <th scope="col" colspan='3'>رقم التحويلة<br><span class='en'>Extension</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr class="dept-row" data-search="جناح الجراحة رجال msw - male surgical ward 1205 1206  1205-1206  ">
+            <td class="col-name">
+                <div class="dept-name-ar">جناح الجراحة رجال</div>
+                <div class="dept-name-en">MSW - Male Surgical Ward</div>
+            </td>
+            <td class="col-rec" colspan="3" data-label="رقم التحويلة Extension"><span class="badge-group"><a class="badge badge-rec tel-link" href="tel:25881205" aria-label="الاتصال بالتحويلة 1205"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1205</span></a><a class="badge badge-rec tel-link" href="tel:25881206" aria-label="الاتصال بالتحويلة 1206"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1206</span></a></span></td>
+        </tr>
+        <tr class="dept-row" data-search="جناح الجراحة نساء fsw - female surgical ward 1195 1193 1194  1195-1193-1194  ">
+            <td class="col-name">
+                <div class="dept-name-ar">جناح الجراحة نساء</div>
+                <div class="dept-name-en">FSW - Female Surgical Ward</div>
+            </td>
+            <td class="col-rec" colspan="3" data-label="رقم التحويلة Extension"><span class="badge-group"><a class="badge badge-rec tel-link" href="tel:25881195" aria-label="الاتصال بالتحويلة 1195"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1195</span></a><a class="badge badge-rec tel-link" href="tel:25881193" aria-label="الاتصال بالتحويلة 1193"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1193</span></a><a class="badge badge-rec tel-link" href="tel:25881194" aria-label="الاتصال بالتحويلة 1194"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1194</span></a></span></td>
+        </tr>
+        <tr class="dept-row" data-search="جناح الباطنية رجال mmw - male medical ward 1200 1201  1200-1201  ">
+            <td class="col-name">
+                <div class="dept-name-ar">جناح الباطنية رجال</div>
+                <div class="dept-name-en">MMW - Male Medical Ward</div>
+            </td>
+            <td class="col-rec" colspan="3" data-label="رقم التحويلة Extension"><span class="badge-group"><a class="badge badge-rec tel-link" href="tel:25881200" aria-label="الاتصال بالتحويلة 1200"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1200</span></a><a class="badge badge-rec tel-link" href="tel:25881201" aria-label="الاتصال بالتحويلة 1201"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1201</span></a></span></td>
+        </tr>
+        <tr class="dept-row" data-search="جناح الباطنية نساء fmw - female medical ward 1190 1191 1192  1190-1191-1192  ">
+            <td class="col-name">
+                <div class="dept-name-ar">جناح الباطنية نساء</div>
+                <div class="dept-name-en">FMW - Female Medical Ward</div>
+            </td>
+            <td class="col-rec" colspan="3" data-label="رقم التحويلة Extension"><span class="badge-group"><a class="badge badge-rec tel-link" href="tel:25881190" aria-label="الاتصال بالتحويلة 1190"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1190</span></a><a class="badge badge-rec tel-link" href="tel:25881191" aria-label="الاتصال بالتحويلة 1191"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1191</span></a><a class="badge badge-rec tel-link" href="tel:25881192" aria-label="الاتصال بالتحويلة 1192"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1192</span></a></span></td>
+        </tr>
+        <tr class="dept-row" data-search="جناح امراض النساء gyn ward 1185 1186  1185-1186  ">
+            <td class="col-name">
+                <div class="dept-name-ar">جناح امراض النساء</div>
+                <div class="dept-name-en">Gyn Ward</div>
+            </td>
+            <td class="col-rec" colspan="3" data-label="رقم التحويلة Extension"><span class="badge-group"><a class="badge badge-rec tel-link" href="tel:25881185" aria-label="الاتصال بالتحويلة 1185"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1185</span></a><a class="badge badge-rec tel-link" href="tel:25881186" aria-label="الاتصال بالتحويلة 1186"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1186</span></a></span></td>
+        </tr>
+        <tr class="dept-row" data-search="جناح الولادة maternity ward 1180 1181  1180-1181  ">
+            <td class="col-name">
+                <div class="dept-name-ar">جناح الولادة</div>
+                <div class="dept-name-en">Maternity Ward</div>
+            </td>
+            <td class="col-rec" colspan="3" data-label="رقم التحويلة Extension"><span class="badge-group"><a class="badge badge-rec tel-link" href="tel:25881180" aria-label="الاتصال بالتحويلة 1180"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1180</span></a><a class="badge badge-rec tel-link" href="tel:25881181" aria-label="الاتصال بالتحويلة 1181"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1181</span></a></span></td>
+        </tr>
+        <tr class="dept-row" data-search="جناح الأطفال 1 paediatric ward 1 1173 1174 1175  1173-1174-1175  ">
+            <td class="col-name">
+                <div class="dept-name-ar">جناح الأطفال 1</div>
+                <div class="dept-name-en">Paediatric Ward 1</div>
+            </td>
+            <td class="col-rec" colspan="3" data-label="رقم التحويلة Extension"><span class="badge-group"><a class="badge badge-rec tel-link" href="tel:25881173" aria-label="الاتصال بالتحويلة 1173"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1173</span></a><a class="badge badge-rec tel-link" href="tel:25881174" aria-label="الاتصال بالتحويلة 1174"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1174</span></a><a class="badge badge-rec tel-link" href="tel:25881175" aria-label="الاتصال بالتحويلة 1175"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1175</span></a></span></td>
+        </tr>
+        <tr class="dept-row" data-search="جناح الأطفال متنوع paediatric m ward 1171 1170 1470  1171-1170-1470  ">
+            <td class="col-name">
+                <div class="dept-name-ar">جناح الأطفال متنوع</div>
+                <div class="dept-name-en">Paediatric M Ward</div>
+            </td>
+            <td class="col-rec" colspan="3" data-label="رقم التحويلة Extension"><span class="badge-group"><a class="badge badge-rec tel-link" href="tel:25881171" aria-label="الاتصال بالتحويلة 1171"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1171</span></a><a class="badge badge-rec tel-link" href="tel:25881170" aria-label="الاتصال بالتحويلة 1170"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1170</span></a><a class="badge badge-rec tel-link" href="tel:25881470" aria-label="الاتصال بالتحويلة 1470"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1470</span></a></span></td>
+        </tr>
+        <tr class="dept-row" data-search="عناية أطفال scbu 1300 1331  1300-1331  ">
+            <td class="col-name">
+                <div class="dept-name-ar">عناية أطفال</div>
+                <div class="dept-name-en">SCBU</div>
+            </td>
+            <td class="col-rec" colspan="3" data-label="رقم التحويلة Extension"><span class="badge-group"><a class="badge badge-rec tel-link" href="tel:25881300" aria-label="الاتصال بالتحويلة 1300"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1300</span></a><a class="badge badge-rec tel-link" href="tel:25881331" aria-label="الاتصال بالتحويلة 1331"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1331</span></a></span></td>
+        </tr>
+        <tr class="dept-row" data-search="صالة الولادة delivery suite (d/s) 1304 1305  1304-1305  ">
+            <td class="col-name">
+                <div class="dept-name-ar">صالة الولادة</div>
+                <div class="dept-name-en">Delivery Suite (D/S)</div>
+            </td>
+            <td class="col-rec" colspan="3" data-label="رقم التحويلة Extension"><span class="badge-group"><a class="badge badge-rec tel-link" href="tel:25881304" aria-label="الاتصال بالتحويلة 1304"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1304</span></a><a class="badge badge-rec tel-link" href="tel:25881305" aria-label="الاتصال بالتحويلة 1305"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1305</span></a></span></td>
+        </tr>
+        <tr class="dept-row" data-search="العناية المركزة icu 1293 1294  1293-1294  ">
+            <td class="col-name">
+                <div class="dept-name-ar">العناية المركزة</div>
+                <div class="dept-name-en">ICU</div>
+            </td>
+            <td class="col-rec" colspan="3" data-label="رقم التحويلة Extension"><span class="badge-group"><a class="badge badge-rec tel-link" href="tel:25881293" aria-label="الاتصال بالتحويلة 1293"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1293</span></a><a class="badge badge-rec tel-link" href="tel:25881294" aria-label="الاتصال بالتحويلة 1294"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1294</span></a></span></td>
+        </tr>
+        <tr class="dept-row" data-search="العمليات operating theatre (ot) 1295 1288  1295-1288  ">
+            <td class="col-name">
+                <div class="dept-name-ar">العمليات</div>
+                <div class="dept-name-en">Operating Theatre (OT)</div>
+            </td>
+            <td class="col-rec" colspan="3" data-label="رقم التحويلة Extension"><span class="badge-group"><a class="badge badge-rec tel-link" href="tel:25881295" aria-label="الاتصال بالتحويلة 1295"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1295</span></a><a class="badge badge-rec tel-link" href="tel:25881288" aria-label="الاتصال بالتحويلة 1288"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>1288</span></a></span></td>
+        </tr>
+        <tr class="dept-row" data-search="التخدير anesthesia 2002  2002  ">
+            <td class="col-name">
+                <div class="dept-name-ar">التخدير</div>
+                <div class="dept-name-en">Anesthesia</div>
+            </td>
+            <td class="col-rec" colspan="3" data-label="رقم التحويلة Extension"><span class="badge-group"><a class="badge badge-rec tel-link" href="tel:25882002" aria-label="الاتصال بالتحويلة 2002"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 2 5-3 2a15 15 0 0 0 7 7l2-3 5 2v3c0 2-2 3-4 2C9 19 5 15 3 7 2 5 3 3 5 3h3Z"/></svg><span>2002</span></a></span></td>
+        </tr>
+            </tbody>
+        </table>
+        </div>
+    </section>
+  <div id="noResults">
+    <div class="ico"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></div>
+    <div><h3>لم نعثر على نتيجة مطابقة</h3><p>جرّب اسمًا آخر للقسم أو أدخل رقم التحويلة.</p><button type="button" id="resetSearch">عرض جميع الأقسام</button></div>
+  </div>
+</main>
+
+<footer>
+  دليل التحويلات الداخلية — مستشفى عبري المرجعي · للاستخدام الداخلي فقط<br><span class="credit"><svg class="icon credit-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg><span>إعداد: فهد الشهومي</span><span class="credit-en" lang="en" dir="ltr">FAHAD ALSHUHUMI</span></span>
+</footer>
+
+<div id="shareToast" role="status" aria-live="polite"></div><button type="button" id="backTop" aria-label="العودة إلى أعلى الصفحة"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 14 5-5 5 5"/></svg></button>
+
+<script>
+(()=>{'use strict';
+const input=document.getElementById('searchInput'),clear=document.getElementById('clearBtn'),count=document.getElementById('resultCount'),empty=document.getElementById('noResults'),sections=[...document.querySelectorAll('.dept-section')],chips=[...document.querySelectorAll('.nav-chip')];
+const normalize=s=>(s||'').toLowerCase().replace(/[\u064B-\u065F\u0670ـ]/g,'').replace(/[إأآ]/g,'ا').replace(/ى/g,'ي').replace(/ة/g,'ه').replace(/[٠-٩]/g,d=>String(d.charCodeAt(0)-1632)).replace(/[۰-۹]/g,d=>String(d.charCodeAt(0)-1776)).trim();
+for(const cell of document.querySelectorAll('td')){if(cell.textContent.trim()==='—')cell.classList.add('empty-cell');if(cell.querySelectorAll('.tel-link').length>3)cell.classList.add('many-numbers');}
+for(const section of sections){const title=section.querySelector('.ar').textContent;section.querySelector('table').setAttribute('aria-label',title);for(const link of section.querySelectorAll('.tel-link')){const rowName=link.closest('tr').querySelector('.dept-name-ar').textContent;link.setAttribute('aria-label',rowName+'، '+link.closest('td').dataset.label+'، تحويلة '+link.textContent.trim());}}
+function runSearch(){const q=normalize(input.value),terms=q.split(/\s+/).filter(Boolean);let total=0;clear.style.display=q?'flex':'none';for(const section of sections){let visible=0;const title=normalize(section.dataset.sectionSearch);for(const row of section.querySelectorAll('.dept-row')){const hay=title+' '+normalize(row.dataset.search)+' '+[...row.querySelectorAll('a[href^="tel:"]')].map(a=>a.getAttribute('href').slice(4)).join(' ');const match=terms.every(t=>hay.includes(t));row.classList.toggle('hidden-row',!match);if(match)visible++;}section.classList.toggle('hidden-section',!visible);section.querySelector('.section-count').textContent=visible;total+=visible;}count.style.display=q?'block':'none';count.textContent=total+' نتيجة مطابقة';empty.style.display=total?'none':'block';updateSticky();}
+function reset(){input.value='';runSearch();input.focus();}
+input.addEventListener('input',runSearch);clear.addEventListener('click',reset);document.getElementById('resetSearch').addEventListener('click',reset);
+const reduced=()=>matchMedia('(prefers-reduced-motion: reduce)').matches;
+function activate(id){for(const c of chips){const yes=c.dataset.target===id;c.classList.toggle('active',yes);if(yes)c.setAttribute('aria-current','location');else c.removeAttribute('aria-current');}}
+for(const chip of chips)chip.addEventListener('click',()=>{if(input.value){input.value='';runSearch();}const section=document.getElementById(chip.dataset.target);activate(section.id);section.scrollIntoView({behavior:reduced()?'instant':'smooth',block:'start'});const heading=section.querySelector('h2')||section;heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true});});
+function updateSticky(){document.documentElement.style.setProperty('--sticky',document.querySelector('.toolbar').offsetHeight+12+'px');}
+if('ResizeObserver'in window)new ResizeObserver(updateSticky).observe(document.querySelector('.toolbar'));updateSticky();
+let queued=false;function onScroll(){if(queued)return;queued=true;requestAnimationFrame(()=>{const top=30;const visible=sections.filter(s=>!s.classList.contains('hidden-section'));let current=visible[0];for(const section of visible)if(section.getBoundingClientRect().top<=top)current=section;if(current)activate(current.id);document.getElementById('backTop').style.display=scrollY>550?'flex':'none';queued=false;});}window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+document.getElementById('backTop').addEventListener('click',()=>{window.scrollTo({top:0,behavior:reduced()?'instant':'smooth'});input.focus({preventScroll:true});});document.getElementById('printBtn').addEventListener('click',()=>window.print());
+let toastTimer;function toast(text){const box=document.getElementById('shareToast');box.textContent=text;box.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>box.classList.remove('show'),4000);}
+document.querySelectorAll('.wa-share-btn').forEach(link=>{link.setAttribute('aria-label','مشاركة '+link.dataset.name);link.addEventListener('click',async e=>{if(!navigator.share)return;e.preventDefault();try{await navigator.share({title:link.dataset.name,text:link.dataset.name+' — مستشفى عبري المرجعي',url:link.dataset.url});}catch(err){if(err.name!=='AbortError')toast('تعذرت المشاركة. يمكنك فتح الخدمة ومشاركة رابطها.');}});});
+document.addEventListener('keydown',e=>{const typing=/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)||document.activeElement.isContentEditable;if(e.key==='/'&&!typing&&!e.ctrlKey&&!e.metaKey&&!e.altKey){e.preventDefault();input.focus();}if(e.key==='Escape'&&document.activeElement===input)reset();});
+})();
+
+
+</script>
+
+<script>
+/* PWA: تسجيل السيرفيس وركر للعمل بدون إنترنت */
+if('serviceWorker' in navigator){
+  window.addEventListener('load',function(){
+    navigator.serviceWorker.register('sw.js').catch(function(err){
+      console.warn('Service Worker registration failed:',err);
+    });
+  });
+}
+</script>
+
+</body>
+</html>

@@ -122,6 +122,19 @@ footer{padding-bottom:calc(30px + env(safe-area-inset-bottom))}
 .ann-close:focus-visible{outline:2px solid #1a73c8;outline-offset:2px}
 @media(max-width:760px){.ann{padding:0 16px;margin-top:4px}.ann-card{padding:14px 14px 14px 42px;gap:11px;border-radius:20px}.ann-icon{width:40px;height:40px;border-radius:13px}.ann-icon svg{width:23px;height:23px}.ann-title{font-size:16px;margin-bottom:8px}.ann-info li{font-size:12.5px;padding:4px 10px}}
 @media print{.ann{display:none}}
+
+/* ===== إعلان اليوم العالمي للأشعة (يظهر فوق إعلان السكري) ===== */
+.ann--red{margin-top:6px}
+.ann--red+.ann{margin-top:10px}
+.ann--red .ann-card{border-color:#e6b9c2;background:linear-gradient(135deg,#fdf2f4 0%,#f8dde2 100%);color:#5e1121;box-shadow:0 8px 22px #9b123014}
+.ann--red .ann-icon{background:#9b1230}
+.ann--red .ann-eyebrow{color:#9b1230}
+.ann--red .ann-title{color:#6b0f22}
+.ann--red .ann-info li{border-color:#ecc3cb;color:#6b1a2b}
+.ann--red .ann-info svg{color:#9b1230}
+.ann--red .ann-note{color:#86505b}
+.ann--red .ann-close{color:#8a3345}
+.ann--red .ann-close:focus-visible{outline-color:#9b1230}
 </style>
 </head>
 <body>
@@ -129,6 +142,21 @@ footer{padding-bottom:calc(30px + env(safe-area-inset-bottom))}
 <a class="skip-link" href="#directory">تجاوز إلى دليل الأقسام</a>
 <div class="brandbar"><div class="brand-inner"><div class="brand"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21V3h8v18M3 21V9h5m8 0h5v12M10 7h4m-2-2v4M10 13h4m-4 4h4M1 21h22"/></svg><div><strong>مستشفى عبري المرجعي</strong><span lang="en" dir="ltr">Ibri Regional Hospital</span></div></div><span class="internal-tag">دليل التواصل الداخلي</span><div class="print-wrap"><button class="print-btn" id="printBtn" type="button"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V3h12v6M6 17H3V9h18v8h-3M6 14h12v7H6v-7Z"/></svg><span>طباعة الدليل</span></button></div></div></div>
 
+<section class="ann ann--red" id="annRad" role="region" aria-label="إعلان فعالية" hidden>
+  <div class="ann-card">
+    <div class="ann-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2"/><path d="M12 8v8M8 12h8"/></svg></div>
+    <div class="ann-body">
+      <span class="ann-eyebrow">قسم الأشعة · مستشفى عبري المرجعي</span>
+      <h2 class="ann-title">اليوم العالمي للأشعة <span lang="en" dir="ltr">IDOR 2026</span></h2>
+      <ul class="ann-info">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/></svg><span>9 نوفمبر 2026م &middot; التاسعة صباحاً</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-5.6 7-11a7 7 0 0 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg><span>المدخل الرئيسي</span></li>
+      </ul>
+      <p class="ann-note">يسر قسم الأشعة دعوتكم لحضور الفعالية &middot; مرآة الطب وعينه، دمتم مشعين بالعطاء</p>
+    </div>
+    <button type="button" class="ann-close" id="annRadClose" aria-label="إغلاق الإعلان">✕</button>
+  </div>
+</section>
 <section class="ann" id="ann" role="region" aria-label="إعلان فعالية" hidden>
   <div class="ann-card">
     <div class="ann-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3.6"/></svg></div>
@@ -889,6 +917,23 @@ if('serviceWorker' in navigator){
   try{ closed = localStorage.getItem(KEY)==='1'; }catch(e){}
   if(Date.now()<END && !closed) box.hidden=false;
   var btn=document.getElementById('annClose');
+  if(btn) btn.addEventListener('click',function(){
+    box.hidden=true;
+    try{ localStorage.setItem(KEY,'1'); }catch(e){}
+  });
+})();
+</script>
+
+<script>
+/* إعلان اليوم العالمي للأشعة: ينتهي 9 نوفمبر 2026 الساعة 2 مساءً (توقيت عُمان)، ويمكن للزائر إغلاقه */
+(function(){
+  var KEY='ih-ann-radiology-2026', box=document.getElementById('annRad');
+  if(!box) return;
+  var END=new Date('2026-11-09T14:00:00+04:00').getTime();
+  var closed=false;
+  try{ closed = localStorage.getItem(KEY)==='1'; }catch(e){}
+  if(Date.now()<END && !closed) box.hidden=false;
+  var btn=document.getElementById('annRadClose');
   if(btn) btn.addEventListener('click',function(){
     box.hidden=true;
     try{ localStorage.setItem(KEY,'1'); }catch(e){}

@@ -10652,14 +10652,25 @@
         }
         document.getElementById('rdShare').addEventListener('click',function(){
           var url=location.href.split('#')[0];
+          var msg='بوابة الخدمات والتحويلات الداخلية - مستشفى عبري\n\n'
+            +'الرابط المباشر:\n'+url+'\n\n'
+            +'\uD83D\uDCF2 طريقة تثبيت التطبيق على الهاتف:\n\n'
+            +'\uD83D\uDFE2 أندرويد (Android — Chrome):\n'
+            +'1. افتح الرابط في متصفح Chrome.\n'
+            +'2. اضغط على قائمة النقاط الثلاث (\u22EE) أعلى الشاشة.\n'
+            +'3. اختر «تثبيت التطبيق» أو «الإضافة إلى الشاشة الرئيسية».\n\n'
+            +'\uD83D\uDD35 آيفون (iPhone — Safari):\n'
+            +'1. افتح الرابط في متصفح Safari فقط.\n'
+            +'2. اضغط على زر المشاركة (المربع الذي يخرج منه سهم للأعلى \u2B06\uFE0F).\n'
+            +'3. اسحب القائمة للأسفل واختر «إضافة إلى الشاشة الرئيسية» (+).';
           if(navigator.share){
             navigator.share({
-              title:'دليل التحويلات الداخلية · Internal Extensions',text:'دليل التحويلات الداخلية — مستشفى عبري المرجعي',url:url
+              text:msg
             }).catch(function(){});
           }
           else if(navigator.clipboard){
-            navigator.clipboard.writeText(url).then(function(){
-              toast('تم نسخ الرابط · Link copied');
+            navigator.clipboard.writeText(msg).then(function(){
+              toast('تم نسخ النص · Text copied');
             },function(){
               toast(url);
             });

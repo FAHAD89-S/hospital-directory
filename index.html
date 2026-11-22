@@ -7431,40 +7431,24 @@
 .rd-cal-opt span{font-size:11.5px;opacity:.75;font-weight:500}
 </style>
 <style id="wjCss">
-.wj{position:relative;margin:2px 0 10px;padding:8px 12px 12px;border-radius:16px;border:1.5px solid #e4cfae;overflow:hidden;color:#4a2e1b;
-  background:radial-gradient(120% 140% at 100% 0%,#fff7e8 0%,#f4e3c6 55%,#ecd5ae 100%);box-shadow:0 10px 26px #7a4a1c22,0 1px 0 #fff9 inset}
-.wj::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:linear-gradient(90deg,#c8102e 0 33.3%,#fff 33.3% 66.6%,#0a7a3d 66.6% 100%)}
-.wj-x{position:absolute;left:6px;top:6px;width:24px;height:24px;border-radius:50%;border:0;background:#fffc;color:#5b3a24;font-size:12px;cursor:pointer;line-height:1;z-index:2}
-.wj-shine{position:absolute;top:0;bottom:0;width:60px;left:-80px;background:linear-gradient(100deg,transparent,#ffffffaa,transparent);transform:skewX(-18deg);animation:wjShine 6s ease-in-out infinite;pointer-events:none}
-@keyframes wjShine{0%,62%{left:-80px}100%{left:115%}}
-.wj-row{display:flex;align-items:center;gap:9px;padding-left:30px}
-.wj-ico{flex:none;width:34px;height:34px;border-radius:11px;display:grid;place-items:center;color:#fff;background:linear-gradient(150deg,#7a4a2a,#4a2e1b);box-shadow:0 6px 14px #4a2e1b44}
-.wj-ico svg{width:20px;height:20px;animation:wjSteam 3.4s ease-in-out infinite}
-@keyframes wjSteam{0%,100%{transform:translateY(0)}50%{transform:translateY(-1.5px)}}
-.wj-head{min-width:0;flex:1}
-.wj-tag{display:none;padding:2px 10px;border-radius:999px;background:#c8102e;color:#fff;font-size:11.5px;font-weight:800}
-.wj-tag i{font-style:normal;font-weight:600;opacity:.9;font-size:10.5px}
-.wj-name{margin:0;font-size:17px;line-height:1.15;font-weight:900;color:#4a2e1b;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
-.wj-name span{font-size:11.5px;font-weight:700;color:#8a6643;letter-spacing:.2px}
-.wj-offer{margin:4px 0 5px;font-size:12px;line-height:1.5;font-weight:700;color:#5b3a24}
-.wj-offer b{display:inline-block;margin:0 3px;padding:0 6px;border-radius:8px;background:#0a7a3d;color:#fff;font-weight:900}
-.wj-offer strong{display:block;font-size:14.5px;font-weight:900;color:#b3121a}
-.wj-cro{display:inline-block;animation:wjBob 2.6s ease-in-out infinite}
-@keyframes wjBob{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-3px) rotate(6deg)}}
-.wj-en{margin:2px 0 10px;font-size:11.5px;color:#8a6643;text-align:left}
-.wj-tick{position:relative;min-height:30px;padding:4px 10px;border-radius:10px;background:#fff9;border:1px solid #e9d6b6;cursor:pointer}
-.wj-tk{display:none;align-items:center;gap:10px;animation:wjIn .45s ease both}
-.wj-tk.on{display:flex}
-.wj-tk svg{flex:none;width:16px;height:16px;color:#0a7a3d}
-.wj-tk span{display:flex;flex-direction:row;align-items:baseline;gap:8px;min-width:0;flex-wrap:wrap}
-.wj-tk b{font-size:12.5px;font-weight:800;color:#4a2e1b}
-.wj-tk i{display:none;font-style:normal;font-size:11px;color:#8a6643}
-@keyframes wjIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-.wj-dots{display:none;justify-content:center;gap:7px;margin-top:6px;padding-bottom:0}
-.wj-dots button{width:8px;height:8px;border-radius:999px;border:0;padding:0;background:#c9b08a;cursor:pointer;transition:width .25s,background .25s}
-.wj-dots button.on{width:22px;background:#0a7a3d}
-.wj-x:focus-visible,.wj-dots button:focus-visible,.wj-tick:focus-visible{outline:3px solid #0a7a3d66;outline-offset:2px}
-@media (prefers-reduced-motion:reduce){.wj-shine,.wj-ico svg,.wj-cro,.wj-tk{animation:none!important}.wj-tick{min-height:0}.wj-tk{display:flex!important;padding:3px 0}.wj-dots{display:none}}
+.wj{margin:2px 0 10px}
+.wj-chip{display:inline-flex;align-items:center;gap:8px;min-height:38px;padding:4px 8px 4px 12px;border:1.5px solid #e4cfae;border-radius:999px;background:linear-gradient(120deg,#fff7e8,#f4e3c6);color:#4a2e1b;font:inherit;font-size:13.5px;cursor:pointer;box-shadow:0 3px 10px #7a4a1c1c;-webkit-tap-highlight-color:transparent}
+.wj-chip b{font-weight:900}
+.wj-chip b i{font-style:normal;font-weight:700;font-size:12px;color:#8a6643;margin-right:4px}
+.wj-ico{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;color:#fff;background:linear-gradient(150deg,#7a4a2a,#4a2e1b)}
+.wj-ico svg{width:15px;height:15px}
+.wj-chev{width:16px;height:16px;color:#0a7a3d;transition:transform .25s}
+.wj-chip[aria-expanded=true] .wj-chev{transform:rotate(180deg)}
+.wj-chip:focus-visible{outline:3px solid #0a7a3d66;outline-offset:2px}
+.wj-more{margin-top:6px;padding:8px 12px;border-radius:14px;border:1px solid #e4cfae;background:linear-gradient(120deg,#fff7e8,#f4e3c6);color:#4a2e1b;border-inline-start:4px solid #0a7a3d;animation:wjIn .3s ease both}
+.wj-more[hidden]{display:none}
+.wj-o{margin:0;font-size:13.5px;font-weight:900;color:#b3121a}
+.wj-o span{display:block;font-size:11.5px;font-weight:700;color:#8a6643}
+.wj-m{margin:5px 0 0;display:flex;flex-wrap:wrap;gap:4px 12px;font-size:12px;font-weight:700}
+.wj-m span{display:inline-flex;align-items:center;gap:5px}
+.wj-m span::before{content:"";width:6px;height:6px;border-radius:50%;background:#0a7a3d}
+@keyframes wjIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.wj-more{animation:none}.wj-chev{transition:none}}
 </style>
 </head>
   <body>
@@ -7479,23 +7463,12 @@
     </div>
     <div class="rd-view" id="view-home">
       <div class="rd-wrap">
-        <section class="wj" id="wjPromo" role="region" aria-label="عرض مقهى وهج">
-          <button type="button" class="wj-x" id="wjClose" aria-label="إغلاق العرض">✕</button>
-          <span class="wj-shine" aria-hidden="true"></span>
-          <div class="wj-row">
-            <div class="wj-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 9h11v5a5 5 0 0 1-5 5H10a5 5 0 0 1-5-5V9Z"/><path d="M16 11h2a2.5 2.5 0 0 1 0 5h-2M8 3.5c0 1 1 1 1 2M12 3.5c0 1 1 1 1 2"/></svg></div>
-            <div class="wj-head">
-              <span class="wj-tag">عرض خاص <i lang="en" dir="ltr">Special offer</i></span>
-              <h2 class="wj-name">وهج <span lang="en" dir="ltr">Wahaj · Speciality Coffee</span></h2>
-            </div>
+        <section class="wj" id="wjPromo" aria-label="عرض مقهى وهج">
+          <button type="button" class="wj-chip" id="wjChip" aria-expanded="false" aria-controls="wjMore"><span class="wj-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 9h11v5a5 5 0 0 1-5 5H10a5 5 0 0 1-5-5V9Z"/><path d="M16 11h2a2.5 2.5 0 0 1 0 5h-2M8 3.5c0 1 1 1 1 2M12 3.5c0 1 1 1 1 2"/></svg></span><b>عرض وهج <i lang="en" dir="ltr">Wahaj</i></b><svg class="wj-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="wj-more" id="wjMore" hidden>
+            <p class="wj-o">🥐 ميني كرواسون مع كل مشروب <span>خلال أيام العيد الوطني 56</span></p>
+            <p class="wj-m"><span>ساري حتى نهاية نوفمبر</span><span>المقهى داخل المستشفى</span><span dir="ltr" lang="en">@wahajcafe.om</span></p>
           </div>
-          <p class="wj-offer">خلال أيام العيد الوطني <b>56</b> المجيد<strong>🥐 ميني كرواسون مع كل مشروب</strong></p>
-          <div class="wj-tick" id="wjTick">
-            <div class="wj-tk on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/></svg><span><b>ساري حتى نهاية شهر نوفمبر</b><i lang="en" dir="ltr">Valid until the end of November</i></span></div>
-            <div class="wj-tk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-5.6 7-11a7 7 0 0 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg><span><b>المقهى داخل مستشفى عبري المرجعي</b><i lang="en" dir="ltr">Inside Ibri Regional Hospital</i></span></div>
-            <div class="wj-tk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8"/></svg><span><b dir="ltr" lang="en">@wahajcafe.om</b><i lang="en" dir="ltr">Follow us for updates</i></span></div>
-          </div>
-          <div class="wj-dots" id="wjDots" role="tablist" aria-label="معلومات العرض"><button type="button" class="on" aria-label="المدة"></button><button type="button" aria-label="الموقع"></button><button type="button" aria-label="حساب التواصل"></button></div>
         </section>
         <section class="rd-live" id="rdLive" aria-labelledby="rdLiveT">
           <div class="rd-live-head"><span class="rd-pulse" aria-hidden="true"></span>
@@ -7547,54 +7520,7 @@
                 <button type="button" class="ann-close" id="annClose" aria-label="إغلاق الإعلان">✕</button>
               </div>
             </section>
-            <section class="ann ann--oman" id="annNat" role="region" aria-label="إعلان فعالية">
-              <div class="ann-card">
-                <div class="ann-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 5h13l-3 4 3 4H5"/></svg>
-                </div>
-                <div class="ann-body">
-                  <span class="rd-newtag" data-added="2026-11-15T20:17:00+04:00">جديد <i lang="en" dir="ltr">NEW</i></span>
-                  <div class="ann-cmp">
-                    <div class="cr"><b class="ar">حفل اليوم الوطني السادس والخمسين المجيد</b>
-                    </div>
-                    <div class="cr"><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>الأحد 22 نوفمبر 2026</span><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>7:30 ص</span><span class="en" lang="en" dir="ltr">22 Nov · 7:30 AM</span>
-                    </div>
-                    <div class="cr cr3"><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-5.6 7-11a7 7 0 0 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>قاعة المؤتمرات، مستشفى عبري</span>
-                    </div>
-                  </div>
-                  <h2 class="ann-title">حفل اليوم الوطني السادس والخمسين المجيد
-                  </h2>
-                  <span class="ann-sub" lang="en" dir="ltr">Celebration of the 56th Glorious National Day</span>
-                  <span class="ann-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/></svg><span>الأحد 22 نوفمبر 2026م</span></span><button type="button" class="rd-more" aria-expanded="false"><span class="t-open">التفاصيل<i class="bn" lang="en" dir="ltr">Details</i></span><span class="t-close">إخفاء<i class="bn" lang="en" dir="ltr">Hide</i></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
-                  <div class="ann-meta"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>التجمع 7:30 ص</span></span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-5.6 7-11a7 7 0 0 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg><span>قاعة المؤتمرات، مستشفى عبري</span></span>
-                  </div>
-                  <p class="ann-note">يسرنا دعوتكم لحضور <b>حفل اليوم الوطني السادس والخمسين المجيد</b>، يوم <b>الأحد ٢٢ نوفمبر ٢٠٢٦م</b>، في قاعة المؤتمرات بمستشفى عبري.
-                  </p>
-                  <p class="ann-note">التجمع <b>الساعة ٧:٣٠ صباحًا أمام مبنى قسم الشؤون الهندسية والصيانة استعدادًا لانطلاق المسيرة.</b>
-                  </p>
-                  <p class="ann-note ann-en" lang="en" dir="ltr">You are invited to the 56th National Day celebration, Sunday 22 Nov 2026, at the Conference Hall, Ibri Hospital. Assembly at 7:30 AM in front of the Engineering &amp; Maintenance building, ahead of the march.
-                  </p>
-                  <button type="button" class="rd-cal" data-cal-id="annNat" data-cal-title="حفل اليوم الوطني السادس والخمسين المجيد" data-cal-start="2026-11-22T07:30:00+04:00" data-cal-end="2026-11-22T09:30:00+04:00" data-cal-loc="قاعة المؤتمرات، مستشفى عبري (التجمع أمام مبنى قسم الشؤون الهندسية والصيانة)" data-cal-desc="دعوة لحضور حفل اليوم الوطني السادس والخمسين المجيد. التجمع الساعة 7:30 صباحًا أمام مبنى قسم الشؤون الهندسية والصيانة استعدادًا لانطلاق المسيرة." aria-label="إضافة إلى التقويم"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18M12 13v5M9.5 15.5h5"/></svg><span>أضف للتقويم</span></button>
-</div>
-                <button type="button" class="ann-close" id="annNatClose" aria-label="إغلاق الإعلان">✕</button>
-              </div>
-            </section>
-            <script>
-              (function(){
-                var box=document.getElementById('annNat'),KEY='annNatClosed2026',END=new Date('2026-11-22T14:00:00+04:00').getTime(),closed=false;
-                try{
-                  closed=sessionStorage.getItem(KEY)==='1';
-                }catch(e){}
-                if(Date.now()>=END||closed)box.hidden=true;
-                var b=document.getElementById('annNatClose');
-                if(b)b.addEventListener('click',function(){
-                  box.hidden=true;
-                  try{
-                    sessionStorage.setItem(KEY,'1');
-                  }catch(e){}
-                });
-              })();
-            </script>
-<section class="ann ann--oman" id="annNd1" role="region" aria-label="إعلان فعالية">
+            <section class="ann ann--oman" id="annNd1" role="region" aria-label="إعلان فعالية">
   <div class="ann-card">
     <div class="ann-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 5h13l-3 4 3 4H5"/></svg></div>
     <div class="ann-body">
@@ -12213,29 +12139,13 @@
 (function(){
   var box=document.getElementById('wjPromo');
   if(!box)return;
-  var END=new Date('2026-11-30T23:59:59+04:00').getTime(),KEY='wjPromoClosed2026',closed=false;
-  try{closed=sessionStorage.getItem(KEY)==='1';}catch(e){}
-  if(Date.now()>END||closed){box.hidden=true;return;}
-  document.getElementById('wjClose').addEventListener('click',function(){
-    box.hidden=true;
-    try{sessionStorage.setItem(KEY,'1');}catch(e){}
+  if(Date.now()>new Date('2026-11-30T23:59:59+04:00').getTime()){box.hidden=true;return;}
+  var chip=document.getElementById('wjChip'),more=document.getElementById('wjMore');
+  chip.addEventListener('click',function(){
+    var open=more.hidden;
+    more.hidden=!open;
+    chip.setAttribute('aria-expanded',open?'true':'false');
   });
-  var items=box.querySelectorAll('.wj-tk'),dots=box.querySelectorAll('#wjDots button'),n=0,timer=null;
-  function show(i){
-    n=(i+items.length)%items.length;
-    items.forEach(function(el,k){el.classList.toggle('on',k===n);});
-    dots.forEach(function(d,k){d.classList.toggle('on',k===n);});
-  }
-  function start(){
-    stop();
-    if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-    timer=setInterval(function(){show(n+1);},3600);
-  }
-  function stop(){if(timer){clearInterval(timer);timer=null;}}
-  dots.forEach(function(d,k){d.addEventListener('click',function(e){e.stopPropagation();show(k);start();});});
-  document.getElementById('wjTick').addEventListener('click',function(){show(n+1);start();});
-  document.addEventListener('visibilitychange',function(){if(document.hidden)stop();else start();});
-  start();
 })();
 </script>
 </body>

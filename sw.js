@@ -9,7 +9,7 @@
  * عند تغيير الأيقونات أو إضافة ملفات جديدة: ارفع رقم CACHE_VERSION.
  */
 
-const CACHE_VERSION = 'v10';
+const CACHE_VERSION = 'v11';
 const CACHE_PREFIX = 'ih-ext-';
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
 const NETWORK_TIMEOUT_MS = 3000;
@@ -18,6 +18,7 @@ const NETWORK_TIMEOUT_MS = 3000;
 const PRECACHE_URLS = [
   './',
   './index.html',
+  './contest.html',
   './manifest.json',
   './icons/icon-192.png',
   './icons/icon-512.png',

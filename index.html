@@ -7450,6 +7450,27 @@
 @keyframes wjIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.wj-more{animation:none}.wj-chev{transition:none}}
 </style>
+<style id="ctCss">
+.ct-card{display:flex;align-items:center;gap:12px;width:100%;margin:2px 0 10px;padding:10px 12px 14px;border:0;border-radius:18px;font:inherit;text-align:right;color:#fff;cursor:pointer;position:relative;overflow:hidden;background:linear-gradient(120deg,#08422a,#0b5d36 55%,#12905a);box-shadow:0 8px 20px #0b5d3638;-webkit-tap-highlight-color:transparent;transition:transform .2s}
+.ct-card:active{transform:scale(.985)}
+.ct-card:focus-visible{outline:3px solid #0a7a3d66;outline-offset:2px}
+.ct-card::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:linear-gradient(90deg,#c8102e 0 33.3%,#fff 33.3% 66.6%,#0a7a3d 66.6%)}
+.ct-ico{flex:none;width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:#ffffff22;color:#f3d58a;animation:ctPop 2.8s ease-in-out infinite}
+.ct-ico svg{width:26px;height:26px}
+@keyframes ctPop{0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(1.08) rotate(-6deg)}}
+.ct-tx{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.35}
+.ct-tx small{font-size:11px;opacity:.85;font-weight:600}
+.ct-tx b{font-size:15px;font-weight:900}
+.ct-st{font-size:12.5px;font-weight:800;color:#f3d58a}
+.ct-st em{font-style:normal;direction:ltr;unicode-bidi:isolate;font-variant-numeric:tabular-nums;color:#fff;background:#c8102e;padding:0 8px;border-radius:8px;margin-right:4px}
+.ct-go{flex:none;display:inline-flex;align-items:center;gap:2px;padding:6px 12px;border-radius:999px;background:#ffffff26;font-size:12px;font-weight:800;white-space:nowrap}
+.ct-chev{width:14px;height:14px}
+.ct-dlg{border:0;padding:0;margin:0;width:100vw;max-width:100vw;height:100vh;height:100dvh;max-height:none;background:#f6f3ec;overflow:hidden}
+.ct-dlg iframe{display:block;width:100%;height:100%;border:0}
+.ct-x{position:absolute;top:max(10px,env(safe-area-inset-top));left:10px;z-index:3;padding:7px 14px;border:0;border-radius:999px;background:#ffffffe6;color:#0b5d36;font:inherit;font-weight:800;font-size:13px;cursor:pointer;box-shadow:0 4px 12px #0003}
+html[data-theme=dark] .ct-dlg iframe{filter:invert(1) hue-rotate(180deg)}
+@media (prefers-reduced-motion:reduce){.ct-ico{animation:none}.ct-card{transition:none}}
+</style>
 </head>
   <body>
     <a class="skip-link" href="#directory">تجاوز إلى دليل الأقسام / Skip to directory</a>
@@ -7463,6 +7484,11 @@
     </div>
     <div class="rd-view" id="view-home">
       <div class="rd-wrap">
+        <button type="button" class="ct-card" id="ctCard" aria-haspopup="dialog">
+          <span class="ct-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4h8v5a4 4 0 0 1-8 0V4Z"/><path d="M8 6H5v1a3 3 0 0 0 3 3M16 6h3v1a3 3 0 0 1-3 3M12 13v4M8.5 20h7M10 17h4"/></svg></span>
+          <span class="ct-tx"><small>العيد الوطني المجيد</small><b>إعلان نتائج مسابقة أفضل تزيين للقسم</b><span class="ct-st" id="ctSt">اليوم الساعة 7:30 مساءً</span></span>
+          <span class="ct-go" id="ctGo">شاهد<svg class="ct-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg></span>
+        </button>
         <section class="wj" id="wjPromo" aria-label="عرض مقهى وهج">
           <button type="button" class="wj-chip" id="wjChip" aria-expanded="false" aria-controls="wjMore"><span class="wj-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 9h11v5a5 5 0 0 1-5 5H10a5 5 0 0 1-5-5V9Z"/><path d="M16 11h2a2.5 2.5 0 0 1 0 5h-2M8 3.5c0 1 1 1 1 2M12 3.5c0 1 1 1 1 2"/></svg></span><b>عرض وهج <i lang="en" dir="ltr">Wahaj</i></b><svg class="wj-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
           <div class="wj-more" id="wjMore" hidden>
@@ -10289,6 +10315,10 @@
         </div>
       </div>
     </dialog>
+    <dialog class="ct-dlg" id="ctDlg" aria-label="إعلان نتائج مسابقة أفضل تزيين للقسم">
+      <button type="button" class="ct-x" id="ctX">✕ رجوع</button>
+      <iframe id="ctIf" title="إعلان نتائج المسابقة" allow="autoplay" src="about:blank"></iframe>
+    </dialog>
     <dialog class="rd-dlg rd-srv" id="rdSrvDet" aria-labelledby="rdDetT">
       <div class="rd-dlg-in">
         <h3 id="rdDetT">
@@ -12146,6 +12176,46 @@
     more.hidden=!open;
     chip.setAttribute('aria-expanded',open?'true':'false');
   });
+})();
+</script>
+<script>
+(function(){
+  /* ★ موعد إعلان النتائج — يجب أن يطابق START_AT داخل contest.html (توقيت عُمان +04:00، نظام 24 ساعة) */
+  var TARGET=new Date('2026-11-23T19:30:00+04:00').getTime();
+  var HIDE_AFTER=new Date('2026-11-30T23:59:59+04:00').getTime();   // تختفي البطاقة بعد هذا التاريخ
+  var card=document.getElementById('ctCard'),st=document.getElementById('ctSt'),go=document.getElementById('ctGo');
+  var dlg=document.getElementById('ctDlg'),ifr=document.getElementById('ctIf');
+  if(!card||!dlg)return;
+  if(Date.now()>HIDE_AFTER){card.hidden=true;return;}
+  var chev=go.querySelector('svg').outerHTML,auto=false;
+  function open(live){
+    ifr.src='contest.html'+(live?'?preview':'');
+    if(!dlg.open){if(dlg.showModal)dlg.showModal();else dlg.setAttribute('open','');}
+  }
+  function close(){if(dlg.open)dlg.close();}
+  dlg.addEventListener('close',function(){ifr.src='about:blank';});
+  card.addEventListener('click',function(){open(false);});
+  document.getElementById('ctX').addEventListener('click',close);
+  function pad(n){return String(n).padStart(2,'0')}
+  function tick(){
+    var d=TARGET-Date.now();
+    if(d>0){
+      var s=Math.floor(d/1000),dd=Math.floor(s/86400);s%=86400;
+      var t=(dd?pad(dd)+':':'')+pad(Math.floor(s/3600))+':'+pad(Math.floor(s%3600/60))+':'+pad(s%60);
+      st.innerHTML='يبدأ الإعلان بعد <em>'+t+'</em>';
+      go.innerHTML='شاهد'+chev;
+    }else{
+      st.textContent='تم إعلان النتائج — شاهد الأقسام الفائزة';
+      go.innerHTML='النتائج'+chev;
+      /* عند حلول الموعد والتطبيق مفتوح: يبدأ العرض تلقائيًا */
+      if(!auto&&d>-60000&&!document.hidden){
+        auto=true;var seen=false;
+        try{seen=sessionStorage.getItem('ctAuto2026')==='1';sessionStorage.setItem('ctAuto2026','1');}catch(e){}
+        if(!seen&&!dlg.open)open(true);
+      }
+    }
+  }
+  tick();setInterval(tick,1000);
 })();
 </script>
 </body>

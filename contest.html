@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b5d36">
+<title>إعلان الأقسام الفائزة | مستشفى عبري</title>
+<style>
+:root{--red:#c8102e;--green:#0a7a3d;--deep:#0b5d36;--ink:#17261f;--mut:#5d6b63;--bg:#f6f3ec;--card:#fff;--gold:#d9a521;--silver:#8f9aa3;--bronze:#b9733a}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Segoe UI",Tahoma,"Noto Naskh Arabic","Noto Sans Arabic",system-ui,sans-serif;line-height:1.7;overflow-x:hidden}
+.wrap{max-width:880px;margin:0 auto;padding:0 16px 90px}
+#confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:50}
+
+/* الهيدر */
+.hero{position:relative;color:#fff;text-align:center;padding:34px 18px 52px;background:radial-gradient(120% 90% at 50% 0%,#12905170,transparent 60%),linear-gradient(160deg,#0b5d36,#08422a);border-radius:0 0 34px 34px;overflow:hidden}
+.hero::before{content:"";position:absolute;top:0;left:0;right:0;height:8px;background:linear-gradient(90deg,var(--red) 0 33.3%,#fff 33.3% 66.6%,var(--green) 66.6%)}
+.hero::after{content:"";position:absolute;inset:auto -10% -60% -10%;height:70%;background:radial-gradient(closest-side,#ffffff14,transparent);pointer-events:none}
+.badge{display:inline-block;padding:4px 16px;border-radius:999px;background:var(--red);font-weight:800;font-size:14px;letter-spacing:.3px;box-shadow:0 6px 16px #0004}
+h1{margin:12px 0 10px;font-size:clamp(24px,5.4vw,40px);line-height:1.35;font-weight:900}
+h1 em{font-style:normal;color:#f3d58a}
+.intro{max-width:720px;margin:0 auto;font-size:clamp(14px,2.9vw,17px);opacity:.96}
+.intro p{margin:8px 0}
+
+/* العد التنازلي */
+.count{margin:-30px auto 0;position:relative;z-index:2;max-width:620px;padding:20px 16px 22px;background:var(--card);border-radius:24px;text-align:center;box-shadow:0 14px 34px #0b5d3622;border:1px solid #e6dfcf}
+.count h2{margin:0 0 4px;font-size:clamp(16px,3.6vw,20px);color:var(--deep)}
+.count small{color:var(--mut);font-size:13px}
+.units{display:flex;justify-content:center;gap:10px;margin-top:14px;direction:ltr}
+.u{flex:1;max-width:120px;padding:12px 4px 8px;border-radius:18px;background:linear-gradient(160deg,#0b5d36,#0a7a3d);color:#fff;box-shadow:0 8px 18px #0a7a3d33}
+.u:nth-child(odd){background:linear-gradient(160deg,#a50d26,#c8102e);box-shadow:0 8px 18px #c8102e33}
+.u b{display:block;font-size:clamp(30px,9vw,50px);line-height:1.1;font-variant-numeric:tabular-nums;font-weight:900}
+.u span{font-size:12.5px;opacity:.92}
+.snd{margin-top:14px;display:inline-flex;align-items:center;gap:8px;padding:9px 18px;border:0;border-radius:999px;background:#f3ead7;color:#6a4a12;font:inherit;font-weight:800;font-size:14px;cursor:pointer}
+.snd.on{background:#e3f3e9;color:var(--deep)}
+.snd.pulse{animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.05);box-shadow:0 0 0 8px #d9a52122}}
+
+/* النتائج */
+#results{margin-top:26px}
+.slot{position:relative;margin:0 0 14px;border-radius:22px;background:var(--card);border:1px solid #e6dfcf;box-shadow:0 8px 22px #0000000d;overflow:hidden;min-height:78px}
+.slot::before{content:"";position:absolute;right:0;top:0;bottom:0;width:8px;background:var(--c)}
+.slot[data-r="1"]{--c:var(--gold)}.slot[data-r="2"]{--c:var(--silver)}.slot[data-r="3"]{--c:var(--bronze)}.slot[data-r="4"]{--c:var(--green)}
+.s-in{display:flex;align-items:center;gap:14px;padding:14px 20px 14px 14px;padding-right:26px}
+.medal{flex:none;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-size:26px;font-weight:900;color:#fff;background:var(--c);box-shadow:0 6px 14px #0003,inset 0 -4px 0 #0002}
+.s-t{flex:1;min-width:0}
+.s-t h3{margin:0 0 6px;font-size:clamp(18px,4vw,24px);font-weight:900}
+.s-t h3 i{font-style:normal;font-size:12px;font-weight:700;color:var(--mut);margin-right:6px}
+.depts{display:flex;flex-wrap:wrap;gap:8px}
+.dept{border:0;font:inherit;cursor:default;padding:7px 14px;border-radius:999px;background:#eef6f0;color:var(--deep);font-weight:800;font-size:clamp(14px,3.3vw,17px);border:1.5px solid #cfe6d6;transition:transform .15s,background .15s}
+button.dept:hover{transform:translateY(-2px);background:#dff0e4}
+.dept{display:inline-flex;flex-direction:column;align-items:flex-start;gap:0;line-height:1.35;border-radius:18px;text-align:right}
+.dept .tg{font-size:11.5px;font-weight:800;color:var(--green)}
+.dept.sh .tg{color:var(--red)}
+.slot[data-r="1"] .dept{cursor:pointer;font-size:clamp(16px,3.8vw,21px);background:#fff6dc;border-color:#ecd48a;color:#7a5a05}
+/* قبل الكشف */
+.slot.locked .dept,.dept:not(.in){display:none}
+.slot.wait .s-t::after{display:none}
+.slot.locked .s-t h3{color:#a8aca9}
+.slot.locked .medal{background:#d8d5cc;box-shadow:none}
+.slot.locked .s-t::after{content:"سيُعلن قريبًا …";color:#a8aca9;font-weight:700;font-size:14px}
+.slot.locked{opacity:.75}
+/* الكشف */
+.slot.drop{animation:drop 1s cubic-bezier(.2,.9,.25,1.05) both}
+@keyframes drop{0%{transform:translateY(-90px) scale(.9);opacity:0}55%{transform:translateY(10px) scale(1.01);opacity:1}75%{transform:translateY(-4px)}100%{transform:none;opacity:1}}
+.dept.in{animation:chip .7s cubic-bezier(.2,.9,.3,1.2) both}
+.dots{display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 8px}
+.dots i{width:11px;height:11px;border-radius:50%;background:var(--c);animation:dot 1.2s ease-in-out infinite}
+.dots i:nth-child(2){animation-delay:.2s}.dots i:nth-child(3){animation-delay:.4s}
+@keyframes dot{0%,80%,100%{transform:translateY(0) scale(.7);opacity:.35}40%{transform:translateY(-7px) scale(1.15);opacity:1}}
+@keyframes chip{from{transform:translateY(-26px) scale(.7);opacity:0}to{transform:none;opacity:1}}
+.slot.drop .medal{animation:spin 1s ease-out both}
+@keyframes spin{from{transform:rotateY(180deg) scale(.4)}to{transform:none}}
+.slot.first.shine::after{content:"";position:absolute;top:0;bottom:0;width:90px;background:linear-gradient(100deg,transparent,#fff9,transparent);transform:skewX(-18deg);animation:shine 2.4s ease-in-out 1.1s 2}
+@keyframes shine{from{left:-120px}to{left:110%}}
+
+/* الرسالة الختامية */
+.closing{margin-top:22px;padding:24px 20px;border-radius:24px;text-align:center;color:#fff;background:linear-gradient(160deg,#0b5d36,#08422a);position:relative;overflow:hidden;box-shadow:0 14px 30px #0b5d3633}
+.closing::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,var(--red) 0 33.3%,#fff 33.3% 66.6%,var(--green) 66.6%)}
+.closing p{margin:8px auto;max-width:640px;font-size:clamp(15px,3.3vw,19px)}
+.closing .flags{font-size:28px;letter-spacing:6px;margin-top:10px}
+.closing.show{animation:rise 1s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+[hidden]{display:none!important}
+.again{display:block;margin:18px auto 0;padding:11px 26px;border:0;border-radius:999px;background:var(--red);color:#fff;font:inherit;font-weight:800;font-size:15px;cursor:pointer;box-shadow:0 8px 18px #c8102e44}
+
+/* لوحة الإدارة */
+.adm{position:fixed;left:10px;bottom:10px;z-index:60;font-size:13px}
+.adm>button.g{width:34px;height:34px;border-radius:50%;border:0;background:#0000000f;color:#0006;cursor:pointer;font-size:16px}
+.adm>button.g:hover{background:#0000001f}
+.adm .pn{position:absolute;left:0;bottom:42px;width:230px;padding:12px;border-radius:16px;background:#fff;box-shadow:0 14px 34px #0003;border:1px solid #e6dfcf;display:grid;gap:8px}
+.adm .pn button{padding:9px 10px;border:0;border-radius:10px;background:#eef6f0;color:var(--deep);font:inherit;font-weight:800;cursor:pointer}
+.adm .pn p{margin:0;font-size:11.5px;color:var(--mut)}
+
+/* نافذة التهنئة */
+dialog{border:0;border-radius:24px;padding:0;max-width:min(92vw,420px);width:100%;box-shadow:0 30px 70px #0006;direction:rtl}
+dialog::backdrop{background:#08241699;backdrop-filter:blur(3px)}
+.cong{padding:28px 22px 22px;text-align:center;background:radial-gradient(120% 90% at 50% 0,#fff7e0,#fff)}
+.cong .em{font-size:54px;line-height:1}
+.cong h4{margin:8px 0 4px;font-size:22px;color:var(--deep)}
+.cong p{margin:4px 0 16px;color:var(--mut)}
+.cong button{padding:10px 26px;border:0;border-radius:999px;background:var(--green);color:#fff;font:inherit;font-weight:800;cursor:pointer}
+@media (max-width:480px){.s-in{gap:10px;padding-left:12px}.medal{width:48px;height:48px;font-size:22px}.units{gap:7px}}
+@media (prefers-reduced-motion:reduce){.slot.drop,.dept.in,.slot.drop .medal,.closing.show,.snd.pulse,.slot.first.shine::after{animation-duration:.01s;animation-delay:0s}}
+</style>
+</head>
+<body>
+<canvas id="confetti" aria-hidden="true"></canvas>
+
+<header class="hero">
+  <span class="badge">إعلان الأقسام الفائزة</span>
+  <h1>مسابقة أفضل تزيين للقسم<br>بمناسبة <em>العيد الوطني</em> المجيد</h1>
+  <div class="intro">
+    <p>بكل فخر واعتزاز، يسرّ إدارة مستشفى عبري الإعلان عن نتائج مسابقة أفضل تزيين للقسم، التي أُقيمت احتفاءً بالعيد الوطني المجيد، بهدف تعزيز روح الانتماء والولاء للوطن، وتشجيع الإبداع والعمل الجماعي بين موظفي المستشفى.</p>
+    <p>وقد أسهمت المشاركات المتميزة في إبراز روح التعاون والابتكار، وإضفاء أجواء وطنية مميزة تعكس اعتزازنا بهويتنا الوطنية.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="count" id="count" aria-live="polite">
+    <h2>يبدأ إعلان النتائج الساعة 7:30 مساءً</h2>
+    <small>Winners will be announced at 7:30 PM</small>
+    <div class="units" role="timer">
+      <div class="u" id="uD" hidden><b>00</b><span>يوم</span></div>
+      <div class="u"><b id="nH">00</b><span>ساعة</span></div>
+      <div class="u"><b id="nM">00</b><span>دقيقة</span></div>
+      <div class="u"><b id="nS">00</b><span>ثانية</span></div>
+    </div>
+    <button type="button" class="snd pulse" id="sndEnable">🔊 اضغط لتفعيل الصوت قبل البدء</button>
+  </section>
+
+  <section id="results" hidden aria-label="النتائج"></section>
+
+  <section class="closing" id="closing" hidden>
+    <p>نتقدم بخالص التهنئة للأقسام الفائزة، وبجزيل الشكر والتقدير لجميع الأقسام المشاركة على جهودهم وإبداعاتهم المتميزة، التي عكست روح الفريق الواحد وأسهمت في إنجاح هذه الفعالية الوطنية.</p>
+    <p><b>دامت عُمان شامخةً بالعز والفخر، وكل عام وسلطنة عُمان قيادةً وشعباً بخير وازدهار.</b></p>
+    <div class="flags" aria-hidden="true">🇴🇲🇴🇲🇴🇲</div>
+    <button type="button" class="again" id="again" hidden>↻ إعادة العرض التشويقي</button>
+  </section>
+</main>
+
+<button type="button" class="snd" id="sndBtn" style="position:fixed;bottom:12px;right:12px;z-index:60;box-shadow:0 6px 16px #0003;padding:8px 14px;font-size:13px" aria-pressed="false" hidden>🔊 الصوت</button>
+
+<div class="adm">
+  <div class="pn" id="admPn" hidden>
+    <button type="button" id="admPrev">▶ تجربة العرض الآن / Preview</button>
+    <button type="button" id="admReset">⟲ العودة للعد التنازلي</button>
+    <p>للتجربة فقط؛ لا تؤثر على الموعد الحقيقي.</p>
+  </div>
+  <button type="button" class="g" id="admBtn" aria-label="لوحة الإدارة">⚙</button>
+</div>
+
+<dialog id="dlg"><div class="cong"><div class="em" id="dEm">🎉</div><h4 id="dT"></h4><p id="dP"></p><button type="button" id="dX">شكرًا</button></div></dialog>
+
+<script>
+/* ============================================================
+   ★ للتعديل: موعد بدء العرض (التاريخ والساعة بتوقيت سلطنة عُمان +04:00)
+   الصيغة: السنة-الشهر-اليومTالساعة:الدقيقة:الثانية+04:00  (الساعة بنظام 24)
+   مثال: 7:30 مساءً = 19:30
+   ============================================================ */
+var START_AT = '2026-11-23T19:30:00+04:00';
+
+/* ★ مدة الانتظار (بالمللي ثانية) مع نقاط الترقب — GAP بين الأقسام، GAP_FIRST قبل المركز الأول */
+var GAP = 3600, GAP_FIRST = 4000;   // الفاصل بين ظهور كل قسم والذي يليه (3.6 ثانية)
+
+/* ★ النتائج — من المركز الأول إلى الرابع (shared=true تعني مركزًا مشتركًا) */
+var RESULTS = [
+  {r:1, t:'المركز الأول',  m:'🥇', d:[{n:'جناح الباطنية / جراحة النساء'}]},
+  {r:2, t:'المركز الثاني', m:'🥈', d:[{n:'وحدة غسيل الكلى'},{n:'قسم الطب النفسي',s:1},{n:'جناح الأطفال',s:1}]},
+  {r:3, t:'المركز الثالث', m:'🥉', d:[{n:'صالة الولادة'},{n:'قسم الطوارئ',s:1},{n:'جناح النساء والولادة',s:1}]},
+  {r:4, t:'المركز الرابع', m:'4',  d:[{n:'قسم مكافحة العدوى'},{n:'العيادة النهارية',s:1}]}
+];
+
+var $ = function(q){return document.querySelector(q)};
+var sleep = function(ms){return new Promise(function(r){setTimeout(r,ms)})};
+
+/* ---------------- الصوت (Web Audio) ---------------- */
+var AC=null, master=null, muted=false;
+function audio(){
+  if(!AC){try{AC=new (window.AudioContext||window.webkitAudioContext)();master=AC.createGain();master.gain.value=.85;master.connect(AC.destination);}catch(e){AC=null}}
+  if(AC&&AC.state==='suspended'){try{AC.resume()}catch(e){}}
+  return AC;
+}
+function noiseBuf(ac){var b=ac.createBuffer(1,ac.sampleRate*.5,ac.sampleRate),d=b.getChannelData(0);for(var i=0;i<d.length;i++)d[i]=Math.random()*2-1;return b}
+function applause(sec,lvl){
+  var ac=audio();if(!ac||muted)return;
+  var buf=noiseBuf(ac),t0=ac.currentTime,n=Math.floor(sec*46);
+  for(var i=0;i<n;i++){
+    var p=i/n, dens=Math.sin(Math.PI*Math.min(1,p*1.15)); // يتصاعد ثم يخفت
+    if(Math.random()>.25+.75*dens)continue;
+    var t=t0+p*sec+Math.random()*.03, s=ac.createBufferSource(), f=ac.createBiquadFilter(), g=ac.createGain();
+    s.buffer=buf; f.type='bandpass'; f.frequency.value=1200+Math.random()*2600; f.Q.value=.7;
+    var a=(.05+Math.random()*.16)*lvl*(.4+dens*.9);
+    g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(a,t+.004);g.gain.exponentialRampToValueAtTime(.0008,t+.05+Math.random()*.05);
+    s.connect(f);f.connect(g);g.connect(master);s.start(t,Math.random()*.3,.14);
+  }
+}
+function tone(freq,t,dur,vol,type){
+  var ac=audio();if(!ac||muted)return;
+  var o=ac.createOscillator(),g=ac.createGain();o.type=type||'triangle';o.frequency.value=freq;
+  g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(vol,t+.02);g.gain.exponentialRampToValueAtTime(.0008,t+dur);
+  o.connect(g);g.connect(master);o.start(t);o.stop(t+dur+.05);
+}
+function whoosh(){
+  var ac=audio();if(!ac||muted)return;
+  var s=ac.createBufferSource(),f=ac.createBiquadFilter(),g=ac.createGain(),t=ac.currentTime;
+  s.buffer=noiseBuf(ac);f.type='bandpass';f.Q.value=1.2;f.frequency.setValueAtTime(2400,t);f.frequency.exponentialRampToValueAtTime(260,t+.7);
+  g.gain.setValueAtTime(.0001,t);g.gain.linearRampToValueAtTime(.22,t+.12);g.gain.exponentialRampToValueAtTime(.0008,t+.8);
+  s.connect(f);f.connect(g);g.connect(master);s.start(t,0,.8);
+}
+function fanfare(big){
+  var ac=audio();if(!ac||muted)return;var t=ac.currentTime+.05;
+  var seq=big?[523,659,784,1047,784,1047,1319]:[523,659,784,1047];
+  seq.forEach(function(f,i){tone(f,t+i*.11,.5,.16,'triangle');tone(f*2,t+i*.11,.4,.05,'sine')});
+}
+function sfx(rank){
+  whoosh();
+  setTimeout(function(){fanfare(rank===1);applause(rank===1?5.2:3.2,rank===1?1.25:.9)},650);
+}
+
+/* ---------------- القصاصات الورقية (Canvas) ---------------- */
+var cv=$('#confetti'),cx=cv.getContext('2d'),P=[],raf=0,W=0,H=0,DPR=1;
+var COL=['#c8102e','#ffffff','#0a7a3d','#d9a521','#f3d58a','#12a05a'];
+var calm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+function size(){DPR=Math.min(window.devicePixelRatio||1,2);W=innerWidth;H=innerHeight;cv.width=W*DPR;cv.height=H*DPR;cx.setTransform(DPR,0,0,DPR,0,0)}
+addEventListener('resize',size);size();
+function add(x,y,vx,vy){P.push({x:x,y:y,vx:vx,vy:vy,w:6+Math.random()*7,h:3+Math.random()*5,r:Math.random()*6.28,vr:(Math.random()-.5)*.35,c:COL[Math.random()*COL.length|0],life:0,max:170+Math.random()*90,ph:Math.random()*6.28})}
+function burst(n,xf,yf,ang,spread,pow){
+  if(calm)n=Math.ceil(n/4);
+  for(var i=0;i<n;i++){var a=ang+(Math.random()-.5)*spread,v=pow*(.45+Math.random()*.7);add(W*xf,H*yf,Math.cos(a)*v,Math.sin(a)*v)}
+  loop();
+}
+function rain(n,ms){
+  if(calm)n=Math.ceil(n/4);
+  var k=0,iv=setInterval(function(){for(var i=0;i<n/20;i++)add(Math.random()*W,-12,(Math.random()-.5)*2,2+Math.random()*3);loop();if(++k>=20)clearInterval(iv)},ms/20);
+}
+function cannons(level){
+  var up=-Math.PI/2;
+  burst(60*level,.08,.95,up+.55,.7,17);burst(60*level,.92,.95,up-.55,.7,17);
+  if(level>=2){setTimeout(function(){burst(90,.5,.9,up,1.1,19)},350);setTimeout(function(){burst(70,.2,.85,up+.3,.9,16);burst(70,.8,.85,up-.3,.9,16)},800)}
+}
+function loop(){if(!raf)raf=requestAnimationFrame(tick)}
+function tick(){
+  raf=0;cx.clearRect(0,0,W,H);
+  for(var i=P.length-1;i>=0;i--){
+    var p=P[i];p.life++;p.vy+=.2;p.vx*=.992;p.vy*=.992;p.x+=p.vx+Math.sin(p.life*.07+p.ph)*.6;p.y+=p.vy;p.r+=p.vr;
+    if(p.life>p.max||p.y>H+20){P.splice(i,1);continue}
+    cx.save();cx.translate(p.x,p.y);cx.rotate(p.r);cx.globalAlpha=Math.min(1,(p.max-p.life)/40);
+    cx.fillStyle=p.c;var sc=Math.abs(Math.cos(p.life*.12+p.ph));cx.fillRect(-p.w/2,-p.h/2*sc,p.w,Math.max(1,p.h*sc));cx.restore();
+  }
+  if(P.length)raf=requestAnimationFrame(tick);
+}
+
+/* ---------------- بناء النتائج ---------------- */
+var resEl=$('#results');
+function build(){
+  resEl.innerHTML='';
+  RESULTS.forEach(function(x){
+    var s=document.createElement('article');s.className='slot locked'+(x.r===1?' first':'');s.dataset.r=x.r;
+    var h='<div class="s-in"><div class="medal" aria-hidden="true">'+x.m+'</div><div class="s-t"><h3>'+x.t+'</h3><div class="depts">';
+    x.d.forEach(function(d,i){var tg=x.r===1?'button type="button"':'div';var te=x.r===1?'button':'div';h+='<'+tg+' class="dept'+(d.s?' sh':'')+'" data-r="'+x.r+'" data-i="'+i+'" data-n="'+d.n+'" data-l="'+x.t+(d.s?' مكرر':'')+'"><span class="dn">'+d.n+'</span><span class="tg">'+x.t+(d.s?' مكرر':'')+'</span></'+te+'>'});
+    s.innerHTML=h+'</div></div></div>';resEl.appendChild(s);
+  });
+}
+function slot(r){return resEl.querySelector('.slot[data-r="'+r+'"]')}
+var dots=document.createElement('span');dots.className='dots';dots.setAttribute('aria-hidden','true');dots.innerHTML='<i></i><i></i><i></i>';
+function showDots(s){s.classList.add('wait');s.querySelector('.depts').appendChild(dots)}
+function hideDots(s){if(dots.parentNode)dots.parentNode.removeChild(dots);s.classList.remove('wait')}
+/* يُظهر قسمًا واحدًا: i = ترتيبه داخل المركز */
+function revealDept(r,i){
+  var s=slot(r),chip=s.querySelectorAll('.dept')[i];
+  if(i===0){
+    s.classList.remove('locked');s.classList.remove('drop');void s.offsetWidth;s.classList.add('drop');
+    s.scrollIntoView({behavior:'smooth',block:'center'});
+    sfx(r);
+    setTimeout(function(){
+      if(r===1){cannons(2);rain(160,2600);s.classList.add('shine')}else if(r===2){cannons(1.3)}else{cannons(1)}
+    },450);
+  }else{
+    whoosh();
+    setTimeout(function(){var ac=audio();if(ac&&!muted){var t=ac.currentTime;tone(659,t,.4,.14);tone(988,t+.1,.5,.14)}applause(2,.75)},500);
+    setTimeout(function(){burst(45,.5,.62,-Math.PI/2,1.5,13)},450);
+  }
+  chip.classList.add('in');
+}
+
+/* ---------------- التسلسل ---------------- */
+var token=0,done=false;
+async function play(){
+  var my=++token;
+  $('#count').hidden=true;resEl.hidden=false;$('#closing').hidden=true;$('#closing').classList.remove('show');$('#again').hidden=true;
+  build();$('#sndBtn').hidden=false;
+  window.scrollTo({top:0});await sleep(700);if(my!==token)return;
+  var steps=[];
+  [4,3,2,1].forEach(function(r){RESULTS.filter(function(x){return x.r===r})[0].d.forEach(function(d,i){steps.push([r,i])})});
+  for(var k=0;k<steps.length;k++){
+    var r=steps[k][0],i=steps[k][1],s=slot(r);
+    showDots(s);
+    if(i===0)s.scrollIntoView({behavior:'smooth',block:'center'});
+    await sleep(r===1?GAP_FIRST:GAP);if(my!==token)return;
+    hideDots(s);revealDept(r,i);
+    await sleep(i===0?1300:900);if(my!==token)return;
+  }
+  await sleep(3200);if(my!==token)return;
+  var c=$('#closing');c.hidden=false;c.classList.add('show');
+  c.scrollIntoView({behavior:'smooth',block:'center'});
+  rain(110,2200);applause(2.6,.8);
+  await sleep(1200);if(my!==token)return;
+  $('#again').hidden=false;done=true;
+}
+function showFinal(){
+  token++;$('#count').hidden=true;resEl.hidden=false;build();
+  resEl.querySelectorAll('.slot').forEach(function(s){s.classList.remove('locked')});
+  resEl.querySelectorAll('.dept').forEach(function(d){d.classList.add('in')});
+  var c=$('#closing');c.hidden=false;$('#again').hidden=false;$('#sndBtn').hidden=false;done=true;
+}
+
+/* ---------------- العد التنازلي ---------------- */
+var target=new Date(START_AT).getTime(),timer=null,started=false;
+function pad(n){return String(n).padStart(2,'0')}
+function tickDown(){
+  var d=target-Date.now();
+  if(d<=0){clearInterval(timer);if(!started){started=true;play()}return}
+  var s=Math.floor(d/1000),dd=Math.floor(s/86400);s%=86400;
+  $('#nH').textContent=pad(Math.floor(s/3600));$('#nM').textContent=pad(Math.floor(s%3600/60));$('#nS').textContent=pad(s%60);
+  var u=$('#uD');u.hidden=dd<1;u.querySelector('b').textContent=pad(dd);
+}
+function init(){
+  if(/[?&]preview\b/.test(location.search)){started=true;setTimeout(play,300);return}
+  if(Date.now()>=target){started=true;showFinal();return}   // فُتحت الصفحة بعد الموعد: تظهر النتائج النهائية مباشرة
+  tickDown();timer=setInterval(tickDown,250);
+}
+
+/* ---------------- الأزرار ---------------- */
+function setMute(m){muted=m;var b=$('#sndBtn');b.textContent=m?'🔇 الصوت متوقف':'🔊 الصوت يعمل';b.classList.toggle('on',!m);b.setAttribute('aria-pressed',String(!m))}
+setMute(false);
+$('#sndBtn').addEventListener('click',function(){audio();setMute(!muted)});
+$('#sndEnable').addEventListener('click',function(){
+  audio();setMute(false);var b=$('#sndEnable');b.classList.remove('pulse');b.classList.add('on');b.textContent='✔ تم تفعيل الصوت';
+  tone(784,AC.currentTime+.02,.35,.12);tone(1047,AC.currentTime+.14,.45,.12);
+});
+document.addEventListener('pointerdown',function(){audio()},{once:true});
+$('#again').addEventListener('click',function(){audio();play()});
+$('#admBtn').addEventListener('click',function(){var p=$('#admPn');p.hidden=!p.hidden});
+$('#admPrev').addEventListener('click',function(){audio();started=true;clearInterval(timer);$('#admPn').hidden=true;play()});
+$('#admReset').addEventListener('click',function(){location.href=location.pathname});
+resEl.addEventListener('click',function(e){
+  var b=e.target.closest('.dept');if(!b||b.dataset.r!=='1')return;
+  var r=+b.dataset.r,em=['','🥇','🥈','🥉','🎖️'][r];
+  $('#dEm').textContent=em;$('#dT').textContent='تهانينا لـ '+b.dataset.n;
+  $('#dP').textContent='على تحقيق «'+b.dataset.l+'» في مسابقة أفضل تزيين للقسم بمناسبة العيد الوطني المجيد. دمتم متألقين 🇴🇲';
+  var d=$('#dlg');if(d.showModal)d.showModal();else d.setAttribute('open','');
+  fanfare(false);burst(70,.5,.55,-Math.PI/2,1.6,13);
+});
+$('#dX').addEventListener('click',function(){$('#dlg').close()});
+$('#dlg').addEventListener('click',function(e){if(e.target===this)this.close()});
+init();
+</script>
+</body>
+</html>

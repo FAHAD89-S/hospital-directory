@@ -142,7 +142,7 @@ dialog::backdrop{background:#08241699;backdrop-filter:blur(3px)}
 
 <button type="button" class="snd" id="sndBtn" style="position:fixed;bottom:12px;right:12px;z-index:60;box-shadow:0 6px 16px #0003;padding:8px 14px;font-size:13px" aria-pressed="false" hidden>🔊 الصوت</button>
 
-<div class="adm">
+<div class="adm" id="adm" hidden>
   <div class="pn" id="admPn" hidden>
     <button type="button" id="admPrev">▶ تجربة العرض الآن / Preview</button>
     <button type="button" id="admReset">⟲ العودة للعد التنازلي</button>
@@ -327,6 +327,8 @@ function tickDown(){
   var u=$('#uD');u.hidden=dd<1;u.querySelector('b').textContent=pad(dd);
 }
 function init(){
+  /* لوحة التجربة مخفية عن الجميع؛ تظهر فقط عند فتح الصفحة بالرابط المنتهي بـ ?admin */
+  if(/[?&]admin\b/.test(location.search))$('#adm').hidden=false;
   if(/[?&]preview\b/.test(location.search)){started=true;setTimeout(play,300);return}
   if(Date.now()>=target){started=true;showFinal();return}   // فُتحت الصفحة بعد الموعد: تظهر النتائج النهائية مباشرة
   tickDown();timer=setInterval(tickDown,250);

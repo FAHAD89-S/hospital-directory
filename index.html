@@ -7405,6 +7405,24 @@
       border-color: #9fcdb0!important;
     }
 
+    /* المعرض التوعوي — مكافحة العدوى: أخضر وأزرق */
+    .ann--hyg .ann-card{position:relative;border-color:#b3dcc0;background:linear-gradient(135deg,#fff 0%,#eef8f2 55%,#e6f2fb 100%);color:#134b3a;box-shadow:0 8px 22px #1769b414}
+    .ann--hyg .ann-card::before{content:"";position:absolute;left:16px;right:16px;bottom:0;height:3px;border-radius:3px 3px 0 0;background:linear-gradient(90deg,#2e9b3a 0 50%,#1769b4 50% 100%);pointer-events:none}
+    .ann--hyg .ann-icon{background:linear-gradient(160deg,#2e9b3a 0 50%,#1769b4 50% 100%);color:#fff}
+    .ann--hyg .ann-title{color:#0f4f86}
+    .ann--hyg .ann-sub,.ann--hyg .ann-cmp .en{color:#3f7a96}
+    .ann--hyg .ann-cmp .ar{color:#134b3a}
+    .ann--hyg .ann-cmp b.ar{color:#0f4f86;font-size:13.5px}
+    .ann--hyg .ann-cmp .ar svg,.ann--hyg .ann-meta svg,.ann--hyg .ann-date svg{color:#2e9b3a}
+    .ann--hyg .rd-newtag{background:#1769b4!important;color:#fff!important}
+    .ann--hyg .rd-more{border-color:#2e9b3a!important;color:#14632a!important}
+    .ann--hyg .ann-note b{color:#0f4f86}
+    .ann--hyg .ann-meta,.ann--hyg .ann-meta span,.ann--hyg .ann-date,.ann--hyg .ann-date span{color:#134b3a!important}
+    .ann--hyg .ann-note{color:#2f5a4a}
+    .ann--hyg .ann-note.ann-en{text-align:left;direction:ltr}
+    .rd-rail .ann--hyg:not(.open) .ann-card{border-color:#9fd0b0!important}
+    .ann--hyg .rd-cal{border-color:#1769b4;color:#0f4f86}
+
     /* مستشفى عبري: بدون وميض/إطار متحرك — مثل مديرية الظاهرة */
     .rd-tile.t-main {
       border: 1px solid var(--rd-line)!important;
@@ -7502,7 +7520,33 @@ html[data-theme=dark] .ct-dlg iframe{filter:invert(1) hue-rotate(180deg)}
             </h2>
           </div>
           <div class="rd-rail" id="rdRail">
-            <section class="ann ann--red" id="annRad" role="region" aria-label="إعلان فعالية" hidden>
+            <section class="ann ann--hyg" id="annExh" role="region" aria-label="إعلان فعالية">
+  <div class="ann-card">
+    <div class="ann-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v5c0 4.4 3 8 7 10 4-2 7-5.6 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+    <div class="ann-body">
+      <span class="rd-newtag" data-added="2026-11-24T08:30:00+04:00">جديد <i lang="en" dir="ltr">NEW</i></span>
+      <div class="ann-cmp"><div class="cr"><b class="ar">المعرض التوعوي</b></div><div class="cr"><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>الثلاثاء 24 نوفمبر 2026</span><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>9:00 ص</span><span class="en" lang="en" dir="ltr">24 Nov · 9:00 AM</span></div><div class="cr cr3"><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-5.6 7-11a7 7 0 0 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>البهو الرئيسي للمستشفى</span></div></div>
+      <h2 class="ann-title">المعرض التوعوي</h2>
+      <span class="ann-sub" lang="en" dir="ltr">Awareness Exhibition</span>
+      <span class="ann-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/></svg><span>الثلاثاء 24 نوفمبر 2026م</span></span><button type="button" class="rd-more" aria-expanded="false"><span class="t-open">التفاصيل<i class="bn" lang="en" dir="ltr">Details</i></span><span class="t-close">إخفاء<i class="bn" lang="en" dir="ltr">Hide</i></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+      <div class="ann-meta"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>9:00 ص (لمدة ساعتين)</span></span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-5.6 7-11a7 7 0 0 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg><span>البهو الرئيسي للمستشفى</span></span></div>
+      <p class="ann-note">يدعوكم <b>قسم مكافحة العدوى وخدمات التعقيم</b> لحضور المعرض التوعوي اليوم الساعة 9 صباحًا في البهو الرئيسي للمستشفى.</p><p class="ann-note">أركان تثقيفية وتفاعلية حول مكافحة العدوى، التعقيم، ونظافة المستشفى.</p><p class="ann-note"><b>حضوركم يسعدنا ومشاركتكم تثري فعالياتنا.</b></p>
+      <p class="ann-note ann-en" lang="en" dir="ltr">The Infection Control &amp; Sterilization Services Department invites you to the Awareness Exhibition today at 9:00 AM (2 hours) in the Hospital Main Lobby. Interactive educational booths on infection control, sterilization, and hospital cleanliness. We look forward to your attendance and participation.</p>
+      <button type="button" class="rd-cal" data-cal-id="annExh" data-cal-title="المعرض التوعوي — مكافحة العدوى وخدمات التعقيم" data-cal-start="2026-11-24T09:00:00+04:00" data-cal-end="2026-11-24T11:00:00+04:00" data-cal-loc="البهو الرئيسي للمستشفى" data-cal-desc="يدعوكم قسم مكافحة العدوى وخدمات التعقيم لحضور المعرض التوعوي: أركان تثقيفية وتفاعلية حول مكافحة العدوى والتعقيم ونظافة المستشفى. المكان: البهو الرئيسي للمستشفى." aria-label="إضافة إلى التقويم"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18M12 13v5M9.5 15.5h5"/></svg><span>أضف للتقويم</span></button>
+</div>
+    <button type="button" class="ann-close" id="annExhClose" aria-label="إغلاق الإعلان">✕</button>
+  </div>
+</section>
+<script>
+(function(){
+  var box=document.getElementById('annExh'),KEY='annExhClosed2026',END=new Date('2026-11-24T12:00:00+04:00').getTime(),closed=false;
+  try{closed=sessionStorage.getItem(KEY)==='1';}catch(e){}
+  if(Date.now()>=END||closed)box.hidden=true;
+  var b=document.getElementById('annExhClose');
+  if(b)b.addEventListener('click',function(){box.hidden=true;try{sessionStorage.setItem(KEY,'1');}catch(e){}});
+})();
+</script>
+                        <section class="ann ann--red" id="annRad" role="region" aria-label="إعلان فعالية" hidden>
               <div class="ann-card">
                 <div class="ann-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2"/><path d="M12 8v8M8 12h8"/></svg>
                 </div>

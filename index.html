@@ -10381,10 +10381,11 @@
     <dialog class="rd-dlg dr-dlg" id="drDlg" aria-labelledby="drT">
       <div class="rd-dlg-in">
         <h3 id="drT">التسجيل في السحب<small lang="en" dir="ltr">Prize draw registration</small></h3>
-        <p class="dr-p">سجّل اسمك ورقم هاتفك للدخول في السحب العشوائي. لكل موظف مشاركة واحدة.</p>
+        <p class="dr-p">سجّل اسمك وقسمك ورقم هاتفك للدخول في السحب العشوائي. لكل موظف مشاركة واحدة.</p>
         <span class="dr-badge" id="drBadge" hidden></span>
         <form class="dr-f" id="drForm" novalidate autocomplete="on">
           <label>الاسم<input type="text" id="drName" name="name" autocomplete="name" maxlength="60" placeholder="الاسم الكامل"></label>
+          <label>القسم<input type="text" id="drDept" name="organization-title" autocomplete="off" maxlength="60" placeholder="اسم القسم"></label>
           <label>رقم الهاتف<input type="tel" id="drNum" name="tel" autocomplete="tel" inputmode="tel" maxlength="14" placeholder="9XXXXXXX" dir="ltr"></label>
           <input class="dr-hp" type="text" id="drHp" tabindex="-1" autocomplete="off" aria-hidden="true">
           <p class="dr-msg" id="drMsg" role="alert" aria-live="polite"></p>
@@ -12301,10 +12302,12 @@
     e.preventDefault();if(busy)return;
     var name=document.getElementById('drName').value.replace(/\s+/g,' ').trim(),num=digits(document.getElementById('drNum').value);
     if(name.length<3){msg.textContent='يرجى كتابة الاسم (3 أحرف على الأقل).';return;}
+    var dept=document.getElementById('drDept').value.replace(/\s+/g,' ').trim();
+    if(dept.length<3){msg.textContent='يرجى كتابة اسم القسم.';return;}
     if(!/^[279]\d{7}$/.test(num)){msg.textContent='يرجى كتابة رقم هاتف صحيح (8 أرقام).';return;}
     busy=true;btn.disabled=true;btn.textContent='جارٍ التسجيل…';msg.textContent='';
     var ctl=window.AbortController?new AbortController():null,t=setTimeout(function(){ctl&&ctl.abort()},20000);
-    fetch(API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({name:name,number:num,website:document.getElementById('drHp').value}),signal:ctl?ctl.signal:undefined})
+    fetch(API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({name:name,dept:dept,number:num,website:document.getElementById('drHp').value}),signal:ctl?ctl.signal:undefined})
       .then(function(r){return r.json()}).then(function(j){
         clearTimeout(t);
         if(j&&j.ok){ls(LS,JSON.stringify({ref:j.ref,t:Date.now()}));if(state&&state.count!=null)state.count++;paint();view();}

@@ -7468,26 +7468,45 @@
 @keyframes wjIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.wj-more{animation:none}.wj-chev{transition:none}}
 </style>
-<style id="ctCss">
-.ct-card{display:flex;align-items:center;gap:12px;width:100%;margin:2px 0 10px;padding:10px 12px 14px;border:0;border-radius:18px;font:inherit;text-align:right;color:#fff;cursor:pointer;position:relative;overflow:hidden;background:linear-gradient(120deg,#08422a,#0b5d36 55%,#12905a);box-shadow:0 8px 20px #0b5d3638;-webkit-tap-highlight-color:transparent;transition:transform .2s}
-.ct-card:active{transform:scale(.985)}
-.ct-card:focus-visible{outline:3px solid #0a7a3d66;outline-offset:2px}
-.ct-card::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:linear-gradient(90deg,#c8102e 0 33.3%,#fff 33.3% 66.6%,#0a7a3d 66.6%)}
-.ct-ico{flex:none;width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:#ffffff22;color:#f3d58a;animation:ctPop 2.8s ease-in-out infinite}
-.ct-ico svg{width:26px;height:26px}
-@keyframes ctPop{0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(1.08) rotate(-6deg)}}
-.ct-tx{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.35}
-.ct-tx small{font-size:11px;opacity:.85;font-weight:600}
-.ct-tx b{font-size:15px;font-weight:900}
-.ct-st{font-size:12.5px;font-weight:800;color:#f3d58a}
-.ct-st em{font-style:normal;direction:ltr;unicode-bidi:isolate;font-variant-numeric:tabular-nums;color:#fff;background:#c8102e;padding:0 8px;border-radius:8px;margin-right:4px}
-.ct-go{flex:none;display:inline-flex;align-items:center;gap:2px;padding:6px 12px;border-radius:999px;background:#ffffff26;font-size:12px;font-weight:800;white-space:nowrap}
-.ct-chev{width:14px;height:14px}
-.ct-dlg{border:0;padding:0;margin:0;width:100vw;max-width:100vw;height:100vh;height:100dvh;max-height:none;background:#f6f3ec;overflow:hidden}
-.ct-dlg iframe{display:block;width:100%;height:100%;border:0}
-.ct-x{position:absolute;top:max(10px,env(safe-area-inset-top));left:10px;z-index:3;padding:7px 14px;border:0;border-radius:999px;background:#ffffffe6;color:#0b5d36;font:inherit;font-weight:800;font-size:13px;cursor:pointer;box-shadow:0 4px 12px #0003}
-html[data-theme=dark] .ct-dlg iframe{filter:invert(1) hue-rotate(180deg)}
-@media (prefers-reduced-motion:reduce){.ct-ico{animation:none}.ct-card{transition:none}}
+<style id="drCss">
+.dr-card{display:flex;align-items:center;gap:12px;width:100%;margin:2px 0 10px;padding:10px 12px 14px;border:0;border-radius:18px;font:inherit;text-align:right;color:#2e2100;cursor:pointer;position:relative;overflow:hidden;background:linear-gradient(120deg,#f5a700,#ffc82e 55%,#ffdf6b);box-shadow:0 8px 20px #f5a70055;-webkit-tap-highlight-color:transparent;transition:transform .2s}
+.dr-card:active{transform:scale(.985)}
+.dr-card:focus-visible{outline:3px solid #0a7a3d66;outline-offset:2px}
+.dr-card::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:linear-gradient(90deg,#c8102e 0 33.3%,#fff 33.3% 66.6%,#0a7a3d 66.6%)}
+.dr-ico{flex:none;width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:#ffffff66;color:#7a4b00;animation:drPop 2.8s ease-in-out infinite}
+.dr-ico svg{width:26px;height:26px}
+@keyframes drPop{0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(1.08) rotate(-6deg)}}
+.dr-tx{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.35}
+.dr-tx b{font-size:16px;font-weight:900}
+.dr-st{font-size:12.5px;font-weight:800;color:#5a3a00}
+.dr-go{flex:none;display:inline-flex;align-items:center;gap:2px;padding:6px 12px;border-radius:999px;background:#2e2100;color:#ffd24a;font-size:12px;font-weight:800;white-space:nowrap}
+.dr-go.done{background:#0b5d36;color:#fff}
+.dr-chev{width:14px;height:14px}
+.dr-dlg .rd-dlg-in{padding:18px 16px 16px}
+.dr-dlg h3{margin:0;font-size:20px;font-weight:900;color:#8a5a00}
+.dr-dlg h3 small{display:block;font-size:12px;font-weight:600;color:#5d6b63}
+.dr-p{margin:10px 0 4px;font-size:13.5px;line-height:1.6}
+.dr-badge{display:inline-block;margin:6px 0 2px;padding:3px 12px;border-radius:999px;background:#fff1c2;color:#7a4b00;font-size:12.5px;font-weight:800}
+.dr-badge.off{background:#fbe6e9;color:#a50d26}
+.dr-f{display:grid;gap:10px;margin-top:10px}
+.dr-f label{display:grid;gap:4px;font-size:13px;font-weight:800}
+.dr-f input[type=text],.dr-f input[type=tel]{width:100%;padding:11px 12px;border:1.5px solid #cfd8d2;border-radius:12px;font:inherit;font-size:16px;background:#fff;color:#17261f}
+.dr-f input:focus{outline:3px solid #0a7a3d44;border-color:#0a7a3d}
+.dr-f input[type=tel]{direction:ltr;text-align:right}
+.dr-chk-unused{display:flex!important;grid-template-columns:none;align-items:flex-start;gap:8px;font-weight:600!important;font-size:12.5px!important;line-height:1.5;color:#3f4f47}
+.dr-chk input{margin-top:3px;width:18px;height:18px;flex:none;accent-color:#0a7a3d}
+.dr-f[hidden],.dr-ok[hidden],.dr-badge[hidden]{display:none!important}
+.dr-hp{position:absolute!important;left:-9999px;width:1px;height:1px;opacity:0}
+.dr-msg{min-height:20px;margin:0;font-size:13px;font-weight:700;color:#a50d26}
+.dr-ok{margin-top:12px;padding:16px;border-radius:16px;background:linear-gradient(135deg,#f1f8f3,#e3f3e9);border:1px solid #b9d9c3;text-align:center}
+.dr-ok .em{font-size:34px;line-height:1}
+.dr-ok b{display:block;margin-top:4px;font-size:17px;color:#0b5d36}
+.dr-ok span.n{display:inline-block;margin-top:6px;padding:4px 16px;border-radius:12px;background:#0b5d36;color:#fff;font-size:20px;font-weight:900;letter-spacing:2px;direction:ltr}
+.dr-ok p{margin:8px 0 0;font-size:12.5px;color:#3f4f47}
+.dr-btn{width:100%;padding:12px;border:0;border-radius:14px;background:#e69a00;color:#2e2100;font:inherit;font-size:15px;font-weight:900;cursor:pointer}
+.dr-btn[disabled]{opacity:.6;cursor:default}
+.dr-x{margin-top:8px;width:100%;padding:10px;border:1.5px solid #cfd8d2;border-radius:14px;background:#fff;font:inherit;font-weight:800;color:#0b5d36;cursor:pointer}
+@media (prefers-reduced-motion:reduce){.dr-ico{animation:none}.dr-card{transition:none}}
 </style>
 </head>
   <body>
@@ -7502,10 +7521,10 @@ html[data-theme=dark] .ct-dlg iframe{filter:invert(1) hue-rotate(180deg)}
     </div>
     <div class="rd-view" id="view-home">
       <div class="rd-wrap">
-        <button type="button" class="ct-card" id="ctCard" aria-haspopup="dialog">
-          <span class="ct-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4h8v5a4 4 0 0 1-8 0V4Z"/><path d="M8 6H5v1a3 3 0 0 0 3 3M16 6h3v1a3 3 0 0 1-3 3M12 13v4M8.5 20h7M10 17h4"/></svg></span>
-          <span class="ct-tx"><small>العيد الوطني المجيد</small><b>إعلان نتائج مسابقة أفضل تزيين للقسم</b><span class="ct-st" id="ctSt">اليوم الساعة 7:30 مساءً</span></span>
-          <span class="ct-go" id="ctGo">شاهد<svg class="ct-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg></span>
+        <button type="button" class="dr-card" id="drCard" aria-haspopup="dialog">
+          <span class="dr-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M5 12v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-8M7.5 8a2.5 2.5 0 0 1 0-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 0 1 0 5"/></svg></span>
+          <span class="dr-tx"><b>سجّل في السحب</b><span class="dr-st" id="drSt">سجّل اسمك ورقمك وادخل السحب</span></span>
+          <span class="dr-go" id="drGo">سجّل<svg class="dr-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg></span>
         </button>
         <section class="wj" id="wjPromo" aria-label="عرض مقهى وهج">
           <button type="button" class="wj-chip" id="wjChip" aria-expanded="false" aria-controls="wjMore"><span class="wj-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 9h11v5a5 5 0 0 1-5 5H10a5 5 0 0 1-5-5V9Z"/><path d="M16 11h2a2.5 2.5 0 0 1 0 5h-2M8 3.5c0 1 1 1 1 2M12 3.5c0 1 1 1 1 2"/></svg></span><b>عرض وهج <i lang="en" dir="ltr">Wahaj</i></b><svg class="wj-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
@@ -10359,9 +10378,26 @@ html[data-theme=dark] .ct-dlg iframe{filter:invert(1) hue-rotate(180deg)}
         </div>
       </div>
     </dialog>
-    <dialog class="ct-dlg" id="ctDlg" aria-label="إعلان نتائج مسابقة أفضل تزيين للقسم">
-      <button type="button" class="ct-x" id="ctX">✕ رجوع</button>
-      <iframe id="ctIf" title="إعلان نتائج المسابقة" allow="autoplay" src="about:blank"></iframe>
+    <dialog class="rd-dlg dr-dlg" id="drDlg" aria-labelledby="drT">
+      <div class="rd-dlg-in">
+        <h3 id="drT">التسجيل في السحب<small lang="en" dir="ltr">Prize draw registration</small></h3>
+        <p class="dr-p">سجّل اسمك ورقم هاتفك للدخول في السحب العشوائي. لكل موظف مشاركة واحدة.</p>
+        <span class="dr-badge" id="drBadge" hidden></span>
+        <form class="dr-f" id="drForm" novalidate autocomplete="on">
+          <label>الاسم<input type="text" id="drName" name="name" autocomplete="name" maxlength="60" placeholder="الاسم الكامل"></label>
+          <label>رقم الهاتف<input type="tel" id="drNum" name="tel" autocomplete="tel" inputmode="tel" maxlength="14" placeholder="9XXXXXXX" dir="ltr"></label>
+          <input class="dr-hp" type="text" id="drHp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <p class="dr-msg" id="drMsg" role="alert" aria-live="polite"></p>
+          <button type="submit" class="dr-btn" id="drSubmit">تسجيل في السحب</button>
+        </form>
+        <div class="dr-ok" id="drDone" hidden>
+          <div class="em" aria-hidden="true">✅</div>
+          <b>تم تسجيلك في السحب</b>
+          <span class="n" id="drRef"></span>
+          <p id="drDoneP">احتفظ برقم المشاركة. سنتواصل مع الفائزين على الرقم المسجَّل.</p>
+        </div>
+        <button type="button" class="dr-x" id="drClose">إغلاق · Close</button>
+      </div>
     </dialog>
     <dialog class="rd-dlg rd-srv" id="rdSrvDet" aria-labelledby="rdDetT">
       <div class="rd-dlg-in">
@@ -12224,42 +12260,59 @@ html[data-theme=dark] .ct-dlg iframe{filter:invert(1) hue-rotate(180deg)}
 </script>
 <script>
 (function(){
-  /* ★ موعد إعلان النتائج — يجب أن يطابق START_AT داخل contest.html (توقيت عُمان +04:00، نظام 24 ساعة) */
-  var TARGET=new Date('2026-11-23T19:30:00+04:00').getTime();
-  var HIDE_AFTER=new Date('2026-11-30T23:59:59+04:00').getTime();   // تختفي البطاقة بعد هذا التاريخ
-  var card=document.getElementById('ctCard'),st=document.getElementById('ctSt'),go=document.getElementById('ctGo');
-  var dlg=document.getElementById('ctDlg'),ifr=document.getElementById('ctIf');
+  /* ★ رابط تطبيق الويب (Google Apps Script) الخاص بجدول المسابقة */
+  var API='https://script.google.com/macros/s/AKfycbwAoHeQ4ZeXqK1-eyPOFGj5O4pNO3he9-6J4yqc9YTZnLR5P9oPitzUisRpMtLrEiw/exec';
+  var LS='drEntry2026';
+  var card=document.getElementById('drCard'),dlg=document.getElementById('drDlg');
   if(!card||!dlg)return;
-  if(Date.now()>HIDE_AFTER){card.hidden=true;return;}
-  var chev=go.querySelector('svg').outerHTML,auto=false;
-  function open(live){
-    ifr.src='contest.html'+(live?'?preview':'');
-    if(!dlg.open){if(dlg.showModal)dlg.showModal();else dlg.setAttribute('open','');}
+  var st=document.getElementById('drSt'),go=document.getElementById('drGo'),chev=go.querySelector('svg').outerHTML;
+  var form=document.getElementById('drForm'),msg=document.getElementById('drMsg'),btn=document.getElementById('drSubmit');
+  var done=document.getElementById('drDone'),badge=document.getElementById('drBadge'),state=null,busy=false;
+  function ls(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}}
+  function fmt(ms){try{var d=new Date(ms),o={timeZone:'Asia/Muscat'};return d.toLocaleDateString('ar-OM-u-nu-latn',Object.assign({day:'numeric',month:'long'},o))+'، '+d.toLocaleTimeString('ar-OM-u-nu-latn',Object.assign({hour:'numeric',minute:'2-digit'},o))}catch(e){return ''}}
+  function mine(){try{return JSON.parse(ls(LS)||'null')}catch(e){return null}}
+  function paint(){
+    var m=mine(),s=state&&state.status;
+    if(m){st.textContent='تم تسجيلك · رقم المشاركة '+m.ref;go.className='dr-go done';go.innerHTML='تم ✓'+chev;}
+    else if(s==='open'){st.innerHTML='التسجيل مفتوح'+(state.end?' <span style="white-space:nowrap">حتى '+fmt(state.end)+'</span>':'');go.className='dr-go';go.innerHTML='سجّل'+chev;}
+    else if(s==='not_started'){st.innerHTML='يبدأ التسجيل <span style="white-space:nowrap">'+fmt(state.start)+'</span>';go.className='dr-go';go.innerHTML='التفاصيل'+chev;}
+    else if(s){st.textContent='انتهى التسجيل'+(state.drawAt?' · السحب '+fmt(state.drawAt):'');go.className='dr-go';go.innerHTML='التفاصيل'+chev;}
+    else{st.textContent='سجّل اسمك ورقمك وادخل السحب';}
   }
-  function close(){if(dlg.open)dlg.close();}
-  dlg.addEventListener('close',function(){ifr.src='about:blank';});
-  card.addEventListener('click',function(){open(false);});
-  document.getElementById('ctX').addEventListener('click',close);
-  function pad(n){return String(n).padStart(2,'0')}
-  function tick(){
-    var d=TARGET-Date.now();
-    if(d>0){
-      var s=Math.floor(d/1000),dd=Math.floor(s/86400);s%=86400;
-      var t=(dd?pad(dd)+':':'')+pad(Math.floor(s/3600))+':'+pad(Math.floor(s%3600/60))+':'+pad(s%60);
-      st.innerHTML='يبدأ الإعلان بعد <em>'+t+'</em>';
-      go.innerHTML='شاهد'+chev;
-    }else{
-      st.textContent='تم إعلان النتائج — شاهد الأقسام الفائزة';
-      go.innerHTML='النتائج'+chev;
-      /* عند حلول الموعد والتطبيق مفتوح: يبدأ العرض تلقائيًا */
-      if(!auto&&d>-60000&&!document.hidden){
-        auto=true;var seen=false;
-        try{seen=sessionStorage.getItem('ctAuto2026')==='1';sessionStorage.setItem('ctAuto2026','1');}catch(e){}
-        if(!seen&&!dlg.open)open(true);
-      }
-    }
+  function load(){
+    var ctl=window.AbortController?new AbortController():null,t=setTimeout(function(){ctl&&ctl.abort()},10000);
+    return fetch(API,{cache:'no-store',signal:ctl?ctl.signal:undefined}).then(function(r){return r.json()}).then(function(j){clearTimeout(t);if(j&&j.ok){state=j;paint();}}).catch(function(){clearTimeout(t)});
   }
-  tick();setInterval(tick,1000);
+  function view(){
+    var m=mine(),s=state&&state.status;
+    msg.textContent='';badge.hidden=true;
+    if(m){form.hidden=true;done.hidden=false;document.getElementById('drRef').textContent=m.ref;
+      document.getElementById('drDoneP').textContent=(state&&state.drawAt?'موعد السحب: '+fmt(state.drawAt)+'. ':'')+'احتفظ برقم المشاركة. سنتواصل مع الفائزين على الرقم المسجَّل.';return;}
+    done.hidden=true;
+    if(s==='not_started'){form.hidden=true;badge.hidden=false;badge.className='dr-badge off';badge.textContent='يبدأ التسجيل '+fmt(state.start);}
+    else if(s&&s!=='open'){form.hidden=true;badge.hidden=false;badge.className='dr-badge off';badge.textContent='انتهى التسجيل'+(state.drawAt?' · السحب '+fmt(state.drawAt):'');}
+    else{form.hidden=false;if(s==='open'){badge.hidden=false;badge.className='dr-badge';badge.textContent='التسجيل مفتوح'+(state.end?' حتى '+fmt(state.end):'');}}
+  }
+  card.addEventListener('click',function(){view();if(dlg.showModal)dlg.showModal();else dlg.setAttribute('open','');load().then(view);});
+  document.getElementById('drClose').addEventListener('click',function(){dlg.close()});
+  dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close()});
+  function digits(v){return String(v||'').replace(/[\u0660-\u0669]/g,function(c){return c.charCodeAt(0)-0x660}).replace(/[\u06F0-\u06F9]/g,function(c){return c.charCodeAt(0)-0x6F0}).replace(/[\s\-().]/g,'').replace(/^(\+|00)?968/,'')}
+  form.addEventListener('submit',function(e){
+    e.preventDefault();if(busy)return;
+    var name=document.getElementById('drName').value.replace(/\s+/g,' ').trim(),num=digits(document.getElementById('drNum').value);
+    if(name.length<3){msg.textContent='يرجى كتابة الاسم (3 أحرف على الأقل).';return;}
+    if(!/^[279]\d{7}$/.test(num)){msg.textContent='يرجى كتابة رقم هاتف صحيح (8 أرقام).';return;}
+    busy=true;btn.disabled=true;btn.textContent='جارٍ التسجيل…';msg.textContent='';
+    var ctl=window.AbortController?new AbortController():null,t=setTimeout(function(){ctl&&ctl.abort()},20000);
+    fetch(API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({name:name,number:num,website:document.getElementById('drHp').value}),signal:ctl?ctl.signal:undefined})
+      .then(function(r){return r.json()}).then(function(j){
+        clearTimeout(t);
+        if(j&&j.ok){ls(LS,JSON.stringify({ref:j.ref,t:Date.now()}));if(state&&state.count!=null)state.count++;paint();view();}
+        else{msg.textContent=(j&&j.message)||'تعذّر التسجيل. حاول مرة أخرى.';}
+      }).catch(function(){clearTimeout(t);msg.textContent='تعذّر الاتصال. تأكد من الإنترنت وحاول مرة أخرى.';})
+      .then(function(){busy=false;btn.disabled=false;btn.textContent='تسجيل في السحب';});
+  });
+  paint();load();
 })();
 </script>
 </body>

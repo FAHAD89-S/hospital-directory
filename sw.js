@@ -9,7 +9,7 @@
  * عند تغيير الأيقونات أو إضافة ملفات جديدة: ارفع رقم CACHE_VERSION.
  */
 
-const CACHE_VERSION = 'v15';
+const CACHE_VERSION = 'v16';
 const CACHE_PREFIX = 'ih-ext-';
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
 const NETWORK_TIMEOUT_MS = 3000;

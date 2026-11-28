@@ -7468,46 +7468,6 @@
 @keyframes wjIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.wj-more{animation:none}.wj-chev{transition:none}}
 </style>
-<style id="drCss">
-.dr-card{display:flex;align-items:center;gap:12px;width:100%;margin:2px 0 10px;padding:10px 12px 14px;border:0;border-radius:18px;font:inherit;text-align:right;color:#2e2100;cursor:pointer;position:relative;overflow:hidden;background:linear-gradient(120deg,#f5a700,#ffc82e 55%,#ffdf6b);box-shadow:0 8px 20px #f5a70055;-webkit-tap-highlight-color:transparent;transition:transform .2s}
-.dr-card:active{transform:scale(.985)}
-.dr-card:focus-visible{outline:3px solid #0a7a3d66;outline-offset:2px}
-.dr-card::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:linear-gradient(90deg,#c8102e 0 33.3%,#fff 33.3% 66.6%,#0a7a3d 66.6%)}
-.dr-ico{flex:none;width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:#ffffff66;color:#7a4b00;animation:drPop 2.8s ease-in-out infinite}
-.dr-ico svg{width:26px;height:26px}
-@keyframes drPop{0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(1.08) rotate(-6deg)}}
-.dr-tx{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.35}
-.dr-tx b{font-size:16px;font-weight:900}
-.dr-st{font-size:12.5px;font-weight:800;color:#5a3a00}
-.dr-go{flex:none;display:inline-flex;align-items:center;gap:2px;padding:6px 12px;border-radius:999px;background:#2e2100;color:#ffd24a;font-size:12px;font-weight:800;white-space:nowrap}
-.dr-go.done{background:#0b5d36;color:#fff}
-.dr-chev{width:14px;height:14px}
-.dr-dlg .rd-dlg-in{padding:18px 16px 16px}
-.dr-dlg h3{margin:0;font-size:20px;font-weight:900;color:#8a5a00}
-.dr-dlg h3 small{display:block;font-size:12px;font-weight:600;color:#5d6b63}
-.dr-p{margin:10px 0 4px;font-size:13.5px;line-height:1.6}
-.dr-badge{display:inline-block;margin:6px 0 2px;padding:3px 12px;border-radius:999px;background:#fff1c2;color:#7a4b00;font-size:12.5px;font-weight:800}
-.dr-badge.off{background:#fbe6e9;color:#a50d26}
-.dr-f{display:grid;gap:10px;margin-top:10px}
-.dr-f label{display:grid;gap:4px;font-size:13px;font-weight:800}
-.dr-f input[type=text],.dr-f input[type=tel]{width:100%;padding:11px 12px;border:1.5px solid #cfd8d2;border-radius:12px;font:inherit;font-size:16px;background:#fff;color:#17261f}
-.dr-f input:focus{outline:3px solid #0a7a3d44;border-color:#0a7a3d}
-.dr-f input[type=tel]{direction:ltr;text-align:right}
-.dr-chk-unused{display:flex!important;grid-template-columns:none;align-items:flex-start;gap:8px;font-weight:600!important;font-size:12.5px!important;line-height:1.5;color:#3f4f47}
-.dr-chk input{margin-top:3px;width:18px;height:18px;flex:none;accent-color:#0a7a3d}
-.dr-f[hidden],.dr-ok[hidden],.dr-badge[hidden]{display:none!important}
-.dr-hp{position:absolute!important;left:-9999px;width:1px;height:1px;opacity:0}
-.dr-msg{min-height:20px;margin:0;font-size:13px;font-weight:700;color:#a50d26}
-.dr-ok{margin-top:12px;padding:16px;border-radius:16px;background:linear-gradient(135deg,#f1f8f3,#e3f3e9);border:1px solid #b9d9c3;text-align:center}
-.dr-ok .em{font-size:34px;line-height:1}
-.dr-ok b{display:block;margin-top:4px;font-size:17px;color:#0b5d36}
-.dr-ok span.n{display:inline-block;margin-top:6px;padding:4px 16px;border-radius:12px;background:#0b5d36;color:#fff;font-size:20px;font-weight:900;letter-spacing:2px;direction:ltr}
-.dr-ok p{margin:8px 0 0;font-size:12.5px;color:#3f4f47}
-.dr-btn{width:100%;padding:12px;border:0;border-radius:14px;background:#e69a00;color:#2e2100;font:inherit;font-size:15px;font-weight:900;cursor:pointer}
-.dr-btn[disabled]{opacity:.6;cursor:default}
-.dr-x{margin-top:8px;width:100%;padding:10px;border:1.5px solid #cfd8d2;border-radius:14px;background:#fff;font:inherit;font-weight:800;color:#0b5d36;cursor:pointer}
-@media (prefers-reduced-motion:reduce){.dr-ico{animation:none}.dr-card{transition:none}}
-</style>
 </head>
   <body>
     <a class="skip-link" href="#directory">تجاوز إلى دليل الأقسام / Skip to directory</a>
@@ -7521,11 +7481,6 @@
     </div>
     <div class="rd-view" id="view-home">
       <div class="rd-wrap">
-        <button type="button" class="dr-card" id="drCard" aria-haspopup="dialog">
-          <span class="dr-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M5 12v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-8M7.5 8a2.5 2.5 0 0 1 0-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 0 1 0 5"/></svg></span>
-          <span class="dr-tx"><b>سجّل في السحب</b><span class="dr-st" id="drSt">سجّل اسمك ورقمك وادخل السحب</span></span>
-          <span class="dr-go" id="drGo">سجّل<svg class="dr-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg></span>
-        </button>
         <section class="wj" id="wjPromo" aria-label="عرض مقهى وهج">
           <button type="button" class="wj-chip" id="wjChip" aria-expanded="false" aria-controls="wjMore"><span class="wj-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 9h11v5a5 5 0 0 1-5 5H10a5 5 0 0 1-5-5V9Z"/><path d="M16 11h2a2.5 2.5 0 0 1 0 5h-2M8 3.5c0 1 1 1 1 2M12 3.5c0 1 1 1 1 2"/></svg></span><b>عرض وهج <i lang="en" dir="ltr">Wahaj</i></b><svg class="wj-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
           <div class="wj-more" id="wjMore" hidden>
@@ -10378,28 +10333,6 @@
         </div>
       </div>
     </dialog>
-    <dialog class="rd-dlg dr-dlg" id="drDlg" aria-labelledby="drT">
-      <div class="rd-dlg-in">
-        <h3 id="drT">التسجيل في السحب<small lang="en" dir="ltr">Prize draw registration</small></h3>
-        <p class="dr-p">سجّل اسمك وقسمك ورقم هاتفك للدخول في السحب العشوائي. لكل موظف مشاركة واحدة.</p>
-        <span class="dr-badge" id="drBadge" hidden></span>
-        <form class="dr-f" id="drForm" novalidate autocomplete="on">
-          <label>الاسم<input type="text" id="drName" name="name" autocomplete="name" maxlength="60" placeholder="الاسم الكامل"></label>
-          <label>القسم<input type="text" id="drDept" name="organization-title" autocomplete="off" maxlength="60" placeholder="اسم القسم"></label>
-          <label>رقم الهاتف<input type="tel" id="drNum" name="tel" autocomplete="tel" inputmode="tel" maxlength="14" placeholder="9XXXXXXX" dir="ltr"></label>
-          <input class="dr-hp" type="text" id="drHp" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <p class="dr-msg" id="drMsg" role="alert" aria-live="polite"></p>
-          <button type="submit" class="dr-btn" id="drSubmit">تسجيل في السحب</button>
-        </form>
-        <div class="dr-ok" id="drDone" hidden>
-          <div class="em" aria-hidden="true">✅</div>
-          <b>تم تسجيلك في السحب</b>
-          <span class="n" id="drRef"></span>
-          <p id="drDoneP">احتفظ برقم المشاركة. سنتواصل مع الفائزين على الرقم المسجَّل.</p>
-        </div>
-        <button type="button" class="dr-x" id="drClose">إغلاق · Close</button>
-      </div>
-    </dialog>
     <dialog class="rd-dlg rd-srv" id="rdSrvDet" aria-labelledby="rdDetT">
       <div class="rd-dlg-in">
         <h3 id="rdDetT">
@@ -12257,65 +12190,6 @@
     more.hidden=!open;
     chip.setAttribute('aria-expanded',open?'true':'false');
   });
-})();
-</script>
-<script>
-(function(){
-  /* ★ رابط تطبيق الويب (Google Apps Script) الخاص بجدول المسابقة */
-  var API='https://script.google.com/macros/s/AKfycbwAoHeQ4ZeXqK1-eyPOFGj5O4pNO3he9-6J4yqc9YTZnLR5P9oPitzUisRpMtLrEiw/exec';
-  var LS='drEntry2026';
-  var card=document.getElementById('drCard'),dlg=document.getElementById('drDlg');
-  if(!card||!dlg)return;
-  var st=document.getElementById('drSt'),go=document.getElementById('drGo'),chev=go.querySelector('svg').outerHTML;
-  var form=document.getElementById('drForm'),msg=document.getElementById('drMsg'),btn=document.getElementById('drSubmit');
-  var done=document.getElementById('drDone'),badge=document.getElementById('drBadge'),state=null,busy=false;
-  function ls(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}}
-  function fmt(ms){try{var d=new Date(ms),o={timeZone:'Asia/Muscat'};return d.toLocaleDateString('ar-OM-u-nu-latn',Object.assign({day:'numeric',month:'long'},o))+'، '+d.toLocaleTimeString('ar-OM-u-nu-latn',Object.assign({hour:'numeric',minute:'2-digit'},o))}catch(e){return ''}}
-  function mine(){try{return JSON.parse(ls(LS)||'null')}catch(e){return null}}
-  function paint(){
-    var m=mine(),s=state&&state.status;
-    if(m){st.textContent='تم تسجيلك · رقم المشاركة '+m.ref;go.className='dr-go done';go.innerHTML='تم ✓'+chev;}
-    else if(s==='open'){st.innerHTML='التسجيل مفتوح'+(state.end?' <span style="white-space:nowrap">حتى '+fmt(state.end)+'</span>':'');go.className='dr-go';go.innerHTML='سجّل'+chev;}
-    else if(s==='not_started'){st.innerHTML='يبدأ التسجيل <span style="white-space:nowrap">'+fmt(state.start)+'</span>';go.className='dr-go';go.innerHTML='التفاصيل'+chev;}
-    else if(s){st.textContent='انتهى التسجيل'+(state.drawAt?' · السحب '+fmt(state.drawAt):'');go.className='dr-go';go.innerHTML='التفاصيل'+chev;}
-    else{st.textContent='سجّل اسمك ورقمك وادخل السحب';}
-  }
-  function load(){
-    var ctl=window.AbortController?new AbortController():null,t=setTimeout(function(){ctl&&ctl.abort()},10000);
-    return fetch(API,{cache:'no-store',signal:ctl?ctl.signal:undefined}).then(function(r){return r.json()}).then(function(j){clearTimeout(t);if(j&&j.ok){state=j;paint();}}).catch(function(){clearTimeout(t)});
-  }
-  function view(){
-    var m=mine(),s=state&&state.status;
-    msg.textContent='';badge.hidden=true;
-    if(m){form.hidden=true;done.hidden=false;document.getElementById('drRef').textContent=m.ref;
-      document.getElementById('drDoneP').textContent=(state&&state.drawAt?'موعد السحب: '+fmt(state.drawAt)+'. ':'')+'احتفظ برقم المشاركة. سنتواصل مع الفائزين على الرقم المسجَّل.';return;}
-    done.hidden=true;
-    if(s==='not_started'){form.hidden=true;badge.hidden=false;badge.className='dr-badge off';badge.textContent='يبدأ التسجيل '+fmt(state.start);}
-    else if(s&&s!=='open'){form.hidden=true;badge.hidden=false;badge.className='dr-badge off';badge.textContent='انتهى التسجيل'+(state.drawAt?' · السحب '+fmt(state.drawAt):'');}
-    else{form.hidden=false;if(s==='open'){badge.hidden=false;badge.className='dr-badge';badge.textContent='التسجيل مفتوح'+(state.end?' حتى '+fmt(state.end):'');}}
-  }
-  card.addEventListener('click',function(){view();if(dlg.showModal)dlg.showModal();else dlg.setAttribute('open','');load().then(view);});
-  document.getElementById('drClose').addEventListener('click',function(){dlg.close()});
-  dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close()});
-  function digits(v){return String(v||'').replace(/[\u0660-\u0669]/g,function(c){return c.charCodeAt(0)-0x660}).replace(/[\u06F0-\u06F9]/g,function(c){return c.charCodeAt(0)-0x6F0}).replace(/[\s\-().]/g,'').replace(/^(\+|00)?968/,'')}
-  form.addEventListener('submit',function(e){
-    e.preventDefault();if(busy)return;
-    var name=document.getElementById('drName').value.replace(/\s+/g,' ').trim(),num=digits(document.getElementById('drNum').value);
-    if(name.length<3){msg.textContent='يرجى كتابة الاسم (3 أحرف على الأقل).';return;}
-    var dept=document.getElementById('drDept').value.replace(/\s+/g,' ').trim();
-    if(dept.length<3){msg.textContent='يرجى كتابة اسم القسم.';return;}
-    if(!/^[279]\d{7}$/.test(num)){msg.textContent='يرجى كتابة رقم هاتف صحيح (8 أرقام).';return;}
-    busy=true;btn.disabled=true;btn.textContent='جارٍ التسجيل…';msg.textContent='';
-    var ctl=window.AbortController?new AbortController():null,t=setTimeout(function(){ctl&&ctl.abort()},20000);
-    fetch(API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({name:name,dept:dept,number:num,website:document.getElementById('drHp').value}),signal:ctl?ctl.signal:undefined})
-      .then(function(r){return r.json()}).then(function(j){
-        clearTimeout(t);
-        if(j&&j.ok){ls(LS,JSON.stringify({ref:j.ref,t:Date.now()}));if(state&&state.count!=null)state.count++;paint();view();}
-        else{msg.textContent=(j&&j.message)||'تعذّر التسجيل. حاول مرة أخرى.';}
-      }).catch(function(){clearTimeout(t);msg.textContent='تعذّر الاتصال. تأكد من الإنترنت وحاول مرة أخرى.';})
-      .then(function(){busy=false;btn.disabled=false;btn.textContent='تسجيل في السحب';});
-  });
-  paint();load();
 })();
 </script>
 </body>
